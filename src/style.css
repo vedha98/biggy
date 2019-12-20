@@ -220,3 +220,22 @@ html::-webkit-scrollbar-track {
 body{
     height: 2000vh;
 }
+.wrap-home{
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1284px;
+
+}
+#publication-date{
+font-size: 16px;
+}
+.hero-article{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-gap: 4rem;
+    font-size: 20px;
+    margin-bottom: 4rem;
+    padding-top: 1rem;
+    overflow: hidden;
+}
