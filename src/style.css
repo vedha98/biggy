@@ -410,3 +410,34 @@ a:hover .icon-arrow-right{
 .popular-header{
     margin: 3rem 0;
 }
+.mini-grid-card{
+    padding: 3rem;
+    overflow-x: scroll;
+    display: flex;
+}
+.mini-card{
+    min-width: 300px;
+    min-height: 350px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-transition: .2s;
+    transition: .2s;
+    margin: 0; 
+    position: relative;
+}
+.mini-card:hover {
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+    margin-right: 100px;
+}
+.mini-card:not(:first-child) {
+    margin-left: -130px;
+    
+}
