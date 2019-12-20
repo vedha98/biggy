@@ -385,3 +385,28 @@ a:hover .icon-arrow-right{
   -webkit-text-fill-color: transparent;
   border: 3px solid #fff;
 }
+.second-articles{
+    box-sizing: content-box;
+    display: flex;
+    width: calc(100vw - 71px);
+    margin: 0 0 5rem;
+    padding: 2rem 0;
+}
+.header-card{
+    background-image: linear-gradient(0deg,#ff8a00,#e52e71);
+    position: relative;
+    border-radius: 16px;
+    padding:2rem;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    flex: 0 0 320px;
+}
+
+.popular-header{
+    margin: 3rem 0;
+}
