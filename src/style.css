@@ -253,7 +253,7 @@ h1 {
     line-height: 1.15;
 }
 h1:hover>a{
-    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    background: linear-gradient(90deg,#ff8a00,#ff8a00,#ff8a00,#e52e71);
     z-index: 100;
     background-clip: border-box;
     -webkit-background-clip: text;
@@ -461,4 +461,21 @@ a:hover .icon-arrow-right{
 }
 .mini-grid-card::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
+}
+.mini-card .author-img img{
+    width: 40px;
+    height: 40px!important;
+    margin-right: 20px;
+    
+}
+.card-meta{
+    display: flex;
+}
+.card-meta>.author-img>#half-circle{
+    width: 60px;
+    height: 48px;
+}
+.card-meta{
+    font-size: 14px;
+    align-items: center;
 }
