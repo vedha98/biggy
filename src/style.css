@@ -110,7 +110,10 @@ html {
     -webkit-box-flex: 1;
     flex: 1;
     height: var(--nav-height);
+    
 }
+
+
 .main-nav .main-sections>li>a>svg {
     -webkit-transition: .2s;
     transition: .2s;
@@ -122,6 +125,41 @@ html {
     fill: none;
     stroke-width: 2;
     stroke: #c2c2c2;
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-articles{
+    fill: none;
+    stroke-width: 2;
+    stroke:#f18822;
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-videos{
+    fill: none;
+    stroke-width: 2;
+    stroke:#b5435f
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-almanac{
+    fill: none;
+    stroke-width: 2;
+    stroke:#ed5234;
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-snippets{
+    fill: none;
+    stroke-width: 2;
+    stroke:#9e4db0;
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-newsletter{
+    fill: none;
+    stroke-width: 2;
+    stroke:#3daaf4;
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-jobs{
+    fill: none;
+    stroke-width: 2;
+    stroke:#52af50
+}
+.main-nav:hover .main-sections>li>a>#icon-nav-guides{
+    fill: none;
+    stroke-width: 2;
+    stroke:#8bc34a
 }
 .main-nav .main-sections>li>a:hover {
     -webkit-text-fill-color: #fff;
@@ -181,7 +219,4 @@ html::-webkit-scrollbar-track {
 }
 body{
     height: 2000vh;
-}
-.main-nav:hover svg{
-    fill: blue;
 }
