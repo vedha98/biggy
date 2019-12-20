@@ -347,6 +347,13 @@ a:hover .icon-arrow-right{
   border-bottom: 1px solid #e52e71!important;
     padding-bottom: .15rem;
 }
+.article-content a:hover{
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    background-clip: border-box;
+    -webkit-background-clip: text;   
+  -webkit-text-fill-color: transparent;
+  
+}
 .article-content .read-more:hover{
     border-bottom: 1px solid #fff!important;
 }
@@ -370,6 +377,7 @@ a:hover .icon-arrow-right{
     border-radius: 2rem;
     padding: .2rem .85rem .25rem;
 }
+
 .tags a:hover{
     background: linear-gradient(90deg,#ff8a00,#e52e71);
     background-clip: border-box;
