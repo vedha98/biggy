@@ -504,3 +504,23 @@ a:hover .icon-arrow-right{
     padding: 1rem 1.5rem;
     font-weight: 700;
 }
+.monthly-specials{
+    background: #100e17;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    padding: 10rem 0;
+}
+.monthly-specials>h2{
+    grid-column: 2/4;
+}
+.background-star{
+    position: absolute;
+    top: 5%;
+    right: 16.66%;
+    width: 56.14%;
+    height: 100%;
+    pointer-events: none;
+    -webkit-filter: saturate(125%);
+    filter: saturate(125%);
+}
