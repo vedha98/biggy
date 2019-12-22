@@ -479,3 +479,20 @@ a:hover .icon-arrow-right{
     font-size: 14px;
     align-items: center;
 }
+.aside-and-articles{
+    display: grid;
+    grid-template-columns: 300px minmax(0,1fr);
+    grid-gap: 5.33rem;
+}
+.main-article{
+    position: relative;
+    display: grid;
+    grid-gap: 4rem;
+    font-size: 20px;
+    margin-bottom: 4rem;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+.main-article-wrapper h1{
+    font-size: 30px;
+}
