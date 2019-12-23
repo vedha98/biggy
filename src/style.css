@@ -752,6 +752,8 @@ hr.thick{
 }
 p{
     color: #b1b1b1;
+}
+.footer-news>p{
     text-align: center;
 }
 input[type=email]{
@@ -953,8 +955,23 @@ input[type=email]{
     white-space: normal;
     text-align: left;
 }
+.interlude .avatar {
+    position: absolute;
+    left: -1rem;
+    top: 1rem;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #201c29;
+}
 .article-ads{
     margin: 0;
     z-index: 2;
     align-self: end;
+}
+.site-wrap{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
