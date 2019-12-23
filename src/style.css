@@ -520,6 +520,7 @@ a:hover .icon-arrow-right{
     right: 16.66%;
     width: 56.14%;
     height: 100%;
+    fill: url(#linear);
     pointer-events: none;
     -webkit-filter: saturate(125%);
     filter: saturate(125%);
@@ -611,6 +612,29 @@ a:hover .icon-arrow-right{
     border-bottom-right-radius: 1rem;
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
+}
+.mdesign-card-1{
+    position: relative;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: linear-gradient(225.71deg,#110e17 -5.46%,#da1b60 55.6%,#ff8a00 103.75%);
+    border-top-right-radius: 1rem;
+    border-top: 4px solid #e52e71;
+    border-right:4px solid #e52e71;
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+    z-index: 2;
+}
+.mdesign-card-2{
+    position: relative;
+    grid-column: 6/7;
+    grid-row: 3/4;
+    background: linear-gradient(134.47deg,#110e17,#da1b60 127.34%,#ff8a00 195.33%);
+}
+.mdesign-card-3{
+    grid-column: 6/7;
+    grid-row: 1/2;
+    border-top: 4px solid #e52e71;
 }
 .author-avatar{
     grid-area: auto;
