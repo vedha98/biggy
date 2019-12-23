@@ -812,3 +812,82 @@ input[type=email]{
 .input-news>.search-form{
     height: 70px;
 }
+.social-links{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.social-links>a{
+    padding: .25rem 2rem;
+    transition: .2s;
+    color: #7a7a8c;
+    position: relative;
+}
+.social-links>a strong{
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    display: block;
+}
+.footer-colophon {
+    padding: 2rem 2rem 6rem;
+    display: -webkit-box;
+    display: flex;
+    color: #b1b1b1;
+}
+.footer-colophon>div {
+    max-width: 700px;
+    margin-right: auto;
+}
+.footer-colophon h4 {
+    color: #fff;
+    width: 100%;
+    text-align: initial;
+}
+.footer-colophon>nav {
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+.footer-colophon>nav>a {
+    width: 50%;
+    color: #b1b1b1;
+}
+.sponsors{
+    background: #151514;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    text-align: center;
+    font-size: 14px;
+    padding: 2rem 2rem 1rem;
+}
+.sponsor-card{
+    background: radial-gradient(circle at top right,#3f6e79,#0f0e16);
+    height: 200px;
+    border-radius: 0.5rem;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 8px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    box-shadow: inset 1px 1px 0 #000;
+}
+.sponsor-card svg{
+    max-width: 200px;
+}
+.shoptalk{
+        background: radial-gradient(circle at top right,#813102,transparent);
+    }
+.codepen-logo{
+    fill: none;
+    stroke: aliceblue;
+    margin: -40px;
+}
