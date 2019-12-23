@@ -717,6 +717,12 @@ a:hover .icon-arrow-right{
     flex-direction: column;
     transition: .2s;
 }
+.jobs-container>li>a:hover{
+    transform: translateY(-10px);
+}
+.jobs-container>li>a:hover>address>svg{
+    fill:url(#linear)
+}
 .jobs-container>li>a>.job-info{
     margin-bottom: 1rem;
 }
