@@ -217,9 +217,6 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
 }
-body{
-    height: 2000vh;
-}
 .wrap-home{
     padding: 2rem;
     margin: 0 auto;
@@ -890,4 +887,35 @@ input[type=email]{
     fill: none;
     stroke: aliceblue;
     margin: -40px;
+}
+.shoptalk-img{
+    transform: scale(0.3);
+    margin: -60px;
+    margin-bottom: -80px;
+
+}
+.footer-subsite {
+    text-align: center;
+    padding: 3rem 2rem;
+    display: block;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    box-shadow: inset 1px 1px 0 #000;
+    border-radius: 8px;
+}
+.footer-subsites {
+    background: #151514;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem 2rem;
+    grid-gap: 1rem;
+}
+.footer-subsite-serverless {
+    background: radial-gradient(circle at top right,#1e0e48,transparent);
+}
+.footer-subsite-conferences {
+    background: radial-gradient(circle at top right,#663700,transparent);
+}
+.nav-middle{
+    flex:0.9
 }
