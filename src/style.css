@@ -683,3 +683,6 @@ a:hover .icon-arrow-right{
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
+.jobs-foot-wrapper{
+    padding: 2rem;
+}
