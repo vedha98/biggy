@@ -733,3 +733,82 @@ a:hover .icon-arrow-right{
 .jobs-container>li>a>address>svg{
     fill: aliceblue;
 }
+.button-small{
+    padding: .4rem 1.5rem;
+}
+.button-outline{
+    background: none;
+    border-width: 3px;
+    border-color:#312d3c;
+    border-style: solid;
+    margin-top: 0.5rem;
+}
+hr.thick{
+    border: 0;
+    height: 5px;
+    margin: 4rem 0;
+    background-image: linear-gradient(90deg,#ff8a00,#e52e71);
+    border-radius: 5px;
+}
+.footer-news{
+    align-items: center;
+    text-align: center;
+}
+p{
+    color: #b1b1b1;
+    text-align: center;
+}
+input[type=email]{
+    height: 70px;
+    max-height: 70px;
+    width: calc(100% - 50px);
+    border-radius: 80px 0 0 80px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-size: 20px;
+    background: transparent;
+    font-weight: 500;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    opacity: 1;
+}
+.inner{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9;
+}
+.input-news{
+    display: inline-block;
+    width: calc(100% - 30px);
+    border-radius: 80px 80px 80px 80px;
+    background: #fff;
+    height: 70px;
+    max-height: 70px;
+   align-items: center;
+    margin-right: 30px;
+    position: relative;
+    transition: .5s ease-in-out;
+    transition-delay: .2s;
+    perspective: 10000px;
+    will-change: width;
+    height: 70px;
+    width: calc(100% - 400px);
+    max-width: 750px;
+    min-width: 350px;
+}
+.input-wrapper{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.input-news>.search-form{
+    height: 70px;
+}
