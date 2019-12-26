@@ -17,6 +17,10 @@ button{
     padding: 1rem 3rem;
     margin: 1rem;
 }
+.article-actions>button:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+}
 #main-nav{
     display: flex;
     height: var(--nav-height);
@@ -132,6 +136,7 @@ width: 100%;
 }
 .eco-card:hover{
     transform: scale(1.06);
+    cursor: pointer;
     box-shadow: 0 10px 20px 0 rgba(9,9,16,.15);
 }
 .ecosystem-header>p{
@@ -151,7 +156,14 @@ width: 100%;
     color: grey;
 }
 .card-img{
-    padding:0.5rem;
+    margin:0.5rem;
+    display: inline-block;
+    width: 90px;
+    
+}
+.card-img>img{
+    width: 100%;
+    transform: scale(0.3);
 }
 .article-video{
     position: absolute;
