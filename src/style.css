@@ -975,9 +975,36 @@ input[type=email]{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+#icon-search{
+    width: 26px;
+    height: 26px;
+    z-index: 99;
+   fill: aliceblue;
+}
+#icon-burger{
+    width: 26px;
+    height: 26px;
+    z-index: 99;
+   fill: aliceblue;
+}
+#mobile-nav-button{
+    background-color: #100E17;
+    border-left: 1px solid #201c29;
+    padding: 13px 22px;
+    border: none;
+    display: none
+}
+.search-opener{
+    background-color: #100E17;
+    border: none;
+    display: none
+}
 @media screen and (max-width:1250px){
     .search{
         display: none;
+    }
+    .search-opener{
+        display: block;
     }
 }
 @media screen and (max-width:1100px){
@@ -994,6 +1021,9 @@ input[type=email]{
     }
     .main-nav{
         display: none;
+    }
+    #mobile-nav-button{
+        display: block
     }
     .monthly-specials{
         display: none;
