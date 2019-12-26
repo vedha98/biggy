@@ -974,3 +974,78 @@ input[type=email]{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+@media screen and (max-width:1250px){
+    .search{
+        display: none;
+    }
+}
+@media screen and (max-width:1100px){
+    .single-module{
+        display: none;
+    }
+    .hero-article{
+        display: block;
+        font-size: 16px;
+    }
+    .aside-and-articles{
+        display: block;
+    }
+    .main-nav{
+        display: none;
+    }
+    .monthly-specials{
+        display: none;
+    }
+    h1{
+        font-size: 32px;
+    }
+    .site-wrap {
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
+    .wrap-home{
+        padding: 0.5rem;
+    }
+    .icon-arrow-right{
+        display: none;
+    }
+    nav{
+        height: 60px;
+    }
+    #icon-logo-star{
+        width: 20px;
+    height: 22px;
+    }
+    #logo-text{
+        height: 15px;
+    width: 116px;
+    }
+    .logo{
+        padding: 0 10px;
+    }
+    .second-articles{
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .mini-grid-card{
+        overflow:visible;
+    }
+    .popular-header{
+        writing-mode: vertical-rl;
+        width: 110px;
+        transform: rotate(180deg);
+        flex: 0;
+    }
+    .header-card-title{
+        margin: 0;
+    }
+    .header-card-sponsor{
+        margin: 0;
+    }
+    .header-card-title>br{
+        display: none;
+    }
+    .header-card-sponsor>br{
+        display: none;
+    }
+}
