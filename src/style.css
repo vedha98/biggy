@@ -12,6 +12,7 @@ nav{
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 #icon-logo-star{
     fill: #ff8a00;
@@ -986,6 +987,7 @@ input[type=email]{
     .hero-article{
         display: block;
         font-size: 16px;
+        background-color:#100E17;
     }
     .aside-and-articles{
         display: block;
@@ -1048,4 +1050,41 @@ input[type=email]{
     .header-card-sponsor>br{
         display: none;
     }
+    .jobs-container{
+        display: flex;
+    }
+    .jobs-foot-wrapper{
+        overflow-x: scroll;
+    }
+    .jobs-header>.button{
+        width: 200px;
+        font-weight: 400;
+    }
+    .input-news{
+        margin-right: 0px;
+    }
+    .social-links{
+        display: none;
+    }
+    .footer-colophon{
+        flex-direction: column;
+    }
+    .sponsors{
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+    .footer-subsites{
+        grid-template-columns: 1fr;
+    }
+    .article-content-header{
+        grid-template-columns: 60px auto 1fr;
+        grid-gap: .75rem;
+    }
+    .author-img{
+        transform: scale(0.5);
+    }
+    .main-article{
+        font-size: 16px;
+    }
+    
 }
