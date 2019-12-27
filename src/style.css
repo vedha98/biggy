@@ -457,6 +457,7 @@ li{
     height: 10%;
     width: 100%;
 }
+
 ul{
     list-style: none;
 }
@@ -465,7 +466,30 @@ ul{
     font-weight: 900;
     color: white
 }
-
+.input-group{
+    display: flex;
+    margin: 10rem;
+}
+.input{
+    outline:none;
+    width:100%;
+    height: 50px;
+    margin: 2rem 0.1rem;
+    border:1px solid #ED5127;
+    font-size: 1rem;
+    text-indent: 1rem;
+}
+.input-btn{
+    outline:none;
+    width:100%;
+    height: 50px;
+    margin: 2rem 1rem;
+    border:1px solid #ED5127;
+    font-size: 1.5rem;
+    background-color: #ED5127;
+    cursor: pointer;
+    color:white
+}
 @keyframes updown{
     0% {transform: translateY(0);}
     50% {transform: translateY(100px);}

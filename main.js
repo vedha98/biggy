@@ -56,6 +56,7 @@ var cards = [
     },
 ]
 window.onload = () => {
+    populateinputs()
     cards.forEach(val => {
         // var element = document.createElement('div')
         // element.classList.add("eco-card");
@@ -102,4 +103,19 @@ const hidesidebar=()=>{
 const scrool=(id)=>{
     document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' })
     document.getElementById("sidebar").classList.remove("active");
+}
+
+
+//doctors
+
+const populateinputs =()=>{
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Origin','*')
+    headers.append('Content-Type', 'application/json');
+    let URL = 'https://www.practo.com/health/api/top/omni/suggestion.json?city=coimbatore&locale=en-en&query_type=locality'
+    fetch(new Request(URL,{method:'GET',header:headers})).then(res=>{
+       
+            let resp = typeof res === 'string' ? JSON.parse(res) : res;
+            console.log(resp);
+    });
 }
