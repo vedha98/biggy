@@ -10,11 +10,23 @@
     <script src="./src/routing.js"></script>
 </head>
 <body>
+    <div id="sidebar" class="sidebar">
+        <div class="side-header"><img onclick="hidesidebar()" id="remove-icon" height="50%" src="./src/remove.svg" alt="" srcset=""></div>
+        <div class="side-container">
+            <ul>
+                <li onclick="scrool('docs')" class="sidelist">Documentation</li>
+                <li onclick="scrool('forge')" class="sidelist">Forge</li >
+                <li onclick="scrool('eco')" class="sidelist">Ecosystem</li >
+                <li onclick="scrool('news')" class="sidelist">News</li  >
+            </ul>
+        </div>
+    </div>
 <nav id="main-nav">
+    <div class="navitem" onclick="showsidebar()"><img height="40px" width="40px" id="ham-icon" src="./src/list-menu.svg" alt="" srcset=""></div>
     <div class="logo"><img height="100%" src="./src/laravel-logo.png" alt=""></div>
+    <div class="navitem"><p>Ecosystem</p></div>
     <div class="navitem"><p>Documentation</p></div>
     <div class="navitem"><p>Forge</p></div>
-    <div class="navitem"><p>Ecosystem</p></div>
     <div class="navitem"><p>News</p></div>
     <div class="navitem"><p>Partners</p></div>
     <div class="search"><div class="search-group"><input type="submit" value=""><input placeholder="Search Docs" type="text" class="search" id="navsearch"></div></div>
@@ -32,12 +44,12 @@
                <video width="100%" autoplay muted loop src="./src/hero.mp4"></video>
            </div>
            <div class="article-actions">
-               <button id="documentbtn">Documentation</button>
-               <button id="watchbtn">Watch Tutorials</button>
+               <button id="documentbtn"><span>Documentation</span></button>
+               <button id="watchbtn"><span>Watch Tutorial</span</button>
            </div>
        </div>
     </div>
-    <div class="ecosystem">
+    <div id="eco" class="ecosystem">
         <div class="ecosystem-header">
             <p>revolutionize the web</p>
             <h1>The laravel Ecosystem</h1>
@@ -49,6 +61,60 @@
         </div>
         
     </div>
+    <div    id="docs" class="documentation">
+    <div class="ecosystem-header1">
+        <br><br><br>
+        <h1>Documentation</h1>
+    </div>
+    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
+       
+Installation<br>
+Server Requirements<br>
+Installing Laravel<br>
+Configuration<br>
+Web Server Configuration<br>
+Directory Configuration<br>
+Pretty URLs<br>
+
+Installation<br>
+
+Server Requirements<br>
+The Laravel framework has a few system requirements. All of these requirements are satisfied by the Laravel Homestead virtual machine, so it's highly recommended that you use Homestead as your local Laravel development environment.
+
+However, if you are not using Homestead, <br>you will need to make sure your server meets the following requirements:
+
+PHP >= 7.2.0
+BCMath PHP Extension
+Ctype PHP Extension
+JSON PHP Extension
+Mbstring PHP Extension
+OpenSSL PHP Extension
+PDO PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+
+Insta
+    </p>
+</div  >
+<div id="forge" class="forge">
+    <div class="ecosystem-header1">
+        <br><br><br>
+        <h1>Forge</h1>
+    </div>
+    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<div id="news" class="documentation">
+    <div class="ecosystem-header1">
+        <br>
+        <h1>News</h1>
+    </div>
+    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;padding-bottom:0rem;color: gray;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p  >
+</div>
     <div class="video-gap" id="root">
         <img class="cube1" width="100px" src="./src/cube.png">
         <img class="cube2" width="100px" src="./src/cube.png">
@@ -68,7 +134,7 @@
                 <div class="partners-headers">Become a Laravel Partner</div>
                 <div class="partners-desc">Laravel Partners are elite shops providing top-notch Laravel development and consulting. Each of our partners can help you craft a beautiful, well-architected project.</div>
             </div>
-            <div class="partners-actions"><button>hello</button></div>
+            <div class="partners-actions"><button id="documentbtn"><span>Our Partners</span></button></div>
         </div>
         <div class="container">
             <div class="foot-logo"><img width="60%" src="./src/logotype.min.svg" alt="" srcset=""></div>
@@ -138,6 +204,9 @@
                 </ul>
                 
             </div>
+        </div>
+        <div class="last-logo">
+            <img class="last-img" src="./src/last.svg" alt="" srcset="">
         </div>
     </footer>
 </div>

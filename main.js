@@ -88,3 +88,18 @@ window.onload = () => {
 
     })
 }
+
+
+
+//sidebar
+const showsidebar=()=>{
+    console.log("showing")
+    document.getElementById("sidebar").classList.add("active");
+}
+const hidesidebar=()=>{
+    document.getElementById("sidebar").classList.remove("active");
+}
+const scrool=(id)=>{
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' })
+    document.getElementById("sidebar").classList.remove("active");
+}
