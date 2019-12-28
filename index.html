@@ -217,17 +217,16 @@
                 <div class="doctor-search">
                     <div class="input-group">
                         <div class="input-wrapper">
-                            <div class="input-text"><input oninput="filterloc()" onclick="showorhide('locations-ul')"
+                            <div class="input-text"><img class="input-icon" src="./src/location.svg" alt="" srcset=""><input oninput="filterloc()" onclick="show('locations-ul')"
                                     class="location-input input" type="text" name="" placeholder="Live Location"
                                     id="loc_input"></div>
                             <ul class="doc-ul" id="locations-ul">
                             </ul>
                         </div>
                         <div class="input-wrapper">
-                        <input class="suggestion-input input" oninput="filtersugg()" onclick="showorhide('sugg-ul')" type="text" name="" placeholder="Suggestion"
+                        <input class="suggestion-input input" oninput="filtersugg()" onclick="show('sugg-ul')" type="text" name="" placeholder="Suggestion"
                             id="sugg_input">
                             <ul class="doc-ul" id="sugg-ul">
-                                <li>suggestion</li>
                             </ul>
                         </div>
                     </div>

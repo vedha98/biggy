@@ -1,4 +1,4 @@
-
+var city
 var cards = [
     {
         img: './src/cashier.min.svg',
@@ -117,12 +117,21 @@ const getsuggestions =async(city) => {
     return data
     
 }
+const getdoctors = async ()=>{
+    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data
+
+}
 const setLocation = (index) => {
     document.getElementById('loc_input').value = locations[index].name;
+    city = locations[index].name;
     document.getElementById('sugg_input').focus()
     filterloc()
     populatesuggestion(locations[index].name)
     hide("locations-ul")
+    show('sugg-ul')
 }
 
 const populateinputs = () => {
@@ -132,6 +141,7 @@ const populateinputs = () => {
         li.innerText = val.name
         document.getElementById('locations-ul').appendChild(li)
     })
+    hide('sugg-ul')
 }
 const showorhide = (ele, type) => {
     let element = document.getElementById(ele);
@@ -147,6 +157,7 @@ const showorhide = (ele, type) => {
     }
 }
 const show = (ele, type) => {
+    hideall()
     let element = document.getElementById(ele);
     if (type) {
         element.style.display = type;
@@ -162,6 +173,8 @@ const hide = (ele) => {
 const hideall = (event) => {
     console.log("hides")
     document.getElementById('locations-ul').style.display = "none";
+    document.getElementById('sugg-ul').style.display = "none";
+
 }
 
 const populatefilter = (str) => {
@@ -220,7 +233,7 @@ const logalert=(str)=>{
 const mapsugg = ()=>{
     document.getElementById('sugg-ul').innerHTML="";
     sugg.map((val,key)=>{
-        document.getElementById('sugg-ul').innerHTML = document.getElementById('sugg-ul').innerHTML+`<li>${val.suggestion}</li>`
+        document.getElementById('sugg-ul').innerHTML = document.getElementById('sugg-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
     })
 }
 const populatesuggestion= (city)=>{
@@ -228,4 +241,9 @@ const populatesuggestion= (city)=>{
         sugg = val.results.default.matches
         mapsugg()
     })
+}
+const searchdoctors = (location)=>{
+hideall()
+document.getElementById('sugg_input').value = location
+console.log(location,city)
 }
