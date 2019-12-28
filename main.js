@@ -108,14 +108,25 @@ const scrool=(id)=>{
 
 //doctors
 
-const populateinputs =()=>{
-    let headers = new Headers();
-    headers.append('Access-Control-Allow-Origin','*')
-    headers.append('Content-Type', 'application/json');
-    let URL = 'https://www.practo.com/health/api/top/omni/suggestion.json?city=coimbatore&locale=en-en&query_type=locality'
-    fetch(new Request(URL,{method:'GET',header:headers})).then(res=>{
+
+const getsuggestions =(city)=>{
+    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
+    fetch(URL).then(res=>{
        
-            let resp = typeof res === 'string' ? JSON.parse(res) : res;
-            console.log(resp);
+            return res.json()
+    }).then(data=>{
+        return data
     });
+}
+const setLocation= (index)=>{
+document.getElementById('loc_input').value=locations[index].name;
+}
+
+const populateinputs =()=>{
+  locations.forEach((val,i)=>{
+      var li = document.createElement('li')
+      li.setAttribute('onclick',`setLocation(${i})`)
+      li.innerText = val.name
+      document.getElementById('location-ul').appendChild(li)
+  })
 }

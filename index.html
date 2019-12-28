@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>laravel</title>
     <link rel="stylesheet" href="./src/style.css">
+    <script src="./locations.js"></script>
     <script src="./main.js"></script>
-    <script src="./src/routing.js"></script>
+    
 </head>
 <body>
     <div id="sidebar" class="sidebar">
@@ -118,10 +119,14 @@ Insta
 
 <div class="doctor-search">
     <div class="input-group">
-         <input class="location-input input" type="text" name="" placeholder="Live Location" id="loc_input">
-         <input class="suggestion-input input" type="text" name="" placeholder="Suggestion" id="sugg_input">
-         <input class="input-btn" type="button" value="Search">
+        <div class="input-wrapper">
+         <div class="input-text"><input class="location-input input" type="text" name="" placeholder="Live Location" id="loc_input"></div>
+         <ul id="location-ul">
+         </ul>
         </div>
+         <input class="suggestion-input input" type="text" name="" placeholder="Suggestion" id="sugg_input">
+        </div>
+       
    
 </div>
     <div class="video-gap" id="root">
