@@ -125,11 +125,11 @@ const getdoctors = async ()=>{
 
 }
 const setLocation = (index) => {
-    document.getElementById('loc_input').value = locations[index].name;
-    city = locations[index].name;
+    document.getElementById('loc_input').value = locations[index];
+    city = locations[index]
     document.getElementById('sugg_input').focus()
     filterloc()
-    populatesuggestion(locations[index].name)
+    populatesuggestion(locations[index])
     hide("locations-ul")
     show('sugg-ul')
 }
@@ -138,7 +138,7 @@ const populateinputs = () => {
     locations.forEach((val, i) => {
         var li = document.createElement('li')
         li.setAttribute('onclick', `setLocation(${i})`)
-        li.innerText = val.name
+        li.innerText = val
         document.getElementById('locations-ul').appendChild(li)
     })
     hide('sugg-ul')
@@ -179,10 +179,10 @@ const hideall = (event) => {
 
 const populatefilter = (str) => {
     locations.forEach((val, i) => {
-        if (val.name.toLowerCase().indexOf(str.toLowerCase()) > -1) {
+        if (val.toLowerCase().indexOf(str.toLowerCase()) > -1) {
             var li = document.createElement('li')
             li.setAttribute('onclick', `setLocation(${i})`)
-            li.innerText = val.name
+            li.innerText = val
             document.getElementById('locations-ul').appendChild(li)
         }
     })
