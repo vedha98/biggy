@@ -55,7 +55,7 @@ var cards = [
         bgcolor: '#F0C376'
     },
 ]
-
+var sugg={}
 window.onload = () => {
     populateinputs()
     cards.forEach(val => {
@@ -121,6 +121,7 @@ const setLocation = (index) => {
     document.getElementById('loc_input').value = locations[index].name;
     document.getElementById('sugg_input').focus()
     filterloc()
+    populatesuggestion(locations[index].name)
     hide("locations-ul")
 }
 
@@ -173,11 +174,21 @@ const populatefilter = (str) => {
         }
     })
 }
+const suggfilter = (str) => {
+    sugg.forEach((val, i) => {
+       
+        if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
+            var li = document.createElement('li')
+            li.setAttribute('onclick', ``)
+            li.innerText = val.suggestion
+            document.getElementById('sugg-ul').appendChild(li)
+        }
+    })
+}
 const filterloc = () => {
     show('locations-ul')
     let quer = document.getElementById('loc_input').value;
     document.getElementById('locations-ul').innerHTML = "";
-    console.log(quer)
     if (quer == "") {
         populateinputs()
     } else {
@@ -185,6 +196,16 @@ const filterloc = () => {
     }
 
 
+}
+const filtersugg=()=>{
+    show('sugg-ul')
+    let quer = document.getElementById('sugg_input').value;
+    document.getElementById('sugg-ul').innerHTML = "";
+    if (quer == "") {
+        mapsugg()
+    } else {
+       suggfilter(quer)
+    }
 }
 const regalert=(str)=>{
     document.getElementById('reg-notify').innerHTML=`<div class="notification-item" ">
@@ -196,8 +217,15 @@ const logalert=(str)=>{
     <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
  </div>`
 }
+const mapsugg = ()=>{
+    document.getElementById('sugg-ul').innerHTML="";
+    sugg.map((val,key)=>{
+        document.getElementById('sugg-ul').innerHTML = document.getElementById('sugg-ul').innerHTML+`<li>${val.suggestion}</li>`
+    })
+}
 const populatesuggestion= (city)=>{
     getsuggestions(city).then(val=>{
-        console.log(val)
+        sugg = val.results.default.matches
+        mapsugg()
     })
 }

@@ -220,11 +220,16 @@
                             <div class="input-text"><input oninput="filterloc()" onclick="showorhide('locations-ul')"
                                     class="location-input input" type="text" name="" placeholder="Live Location"
                                     id="loc_input"></div>
-                            <ul id="locations-ul">
+                            <ul class="doc-ul" id="locations-ul">
                             </ul>
                         </div>
-                        <input class="suggestion-input input" type="text" name="" placeholder="Suggestion"
+                        <div class="input-wrapper">
+                        <input class="suggestion-input input" oninput="filtersugg()" onclick="showorhide('sugg-ul')" type="text" name="" placeholder="Suggestion"
                             id="sugg_input">
+                            <ul class="doc-ul" id="sugg-ul">
+                                <li>suggestion</li>
+                            </ul>
+                        </div>
                     </div>
 
 
