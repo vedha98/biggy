@@ -566,6 +566,31 @@ ul{
 #login{
     display: none;
 }
+.notification-item{
+   background-color: #ED5127;
+   color: white;
+   padding: .5rem;
+   width: 20rem;
+   box-shadow: 0 20px 30px -16px rgba(9,9,16,.2);;
+   text-align: center;
+   margin: 0.5rem;
+   font-size: 16px;
+   font-weight: 900;
+   animation: notify 5s;
+   display: flex;
+   align-items: center;
+   opacity: 0;
+   animation-iteration-count: none
+  
+}
+.notification-item>p{
+    width: 100%;
+    font-size: small;
+}
+.notification-item>img{
+    margin: 0.1rem;
+    filter: invert(1) grayscale(1) contrast(100);
+}
 @keyframes updown{
     0% {transform: translateY(0);}
     50% {transform: translateY(100px);}
@@ -585,5 +610,10 @@ ul{
     0% {transform: translateX(0);}
     50% {transform: translateX(200px);}
     100% {transform: translateX(0px);}
+}
+@keyframes notify{
+    0%{transform: translateY(100px);opacity: 0;}
+    10%{transform: translateY(0);opacity: 1;}
+    60%{opacity: 0;}
 }
 
