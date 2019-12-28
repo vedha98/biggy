@@ -497,6 +497,30 @@ ul{
     cursor: pointer;
     color:white
 }
+#locations-ul{
+    display: none;
+
+}
+.regsign{
+    display: flex;
+}
+.reg-btn{
+    background-color: #ED5127;
+    color: white;
+    padding: 1rem 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+}
+.sign-btn{
+    background-color:white;
+    color: #ED5127;
+    padding: 1rem 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid #ED5127;
+    outline: none;
+}
 @keyframes updown{
     0% {transform: translateY(0);}
     50% {transform: translateY(100px);}
