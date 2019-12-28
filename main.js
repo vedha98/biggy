@@ -110,20 +110,18 @@ const scrool = (id) => {
 //doctors
 
 
-const getsuggestions = (city) => {
+const getsuggestions =async(city) => {
     let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
-    fetch(URL).then(res => {
-
-        return res.json()
-    }).then(data => {
-        return data
-    });
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data
+    
 }
 const setLocation = (index) => {
     document.getElementById('loc_input').value = locations[index].name;
     document.getElementById('sugg_input').focus()
-    hideelement("locations-ul")
     filterloc()
+    hide("locations-ul")
 }
 
 const populateinputs = () => {
@@ -164,10 +162,7 @@ const hideall = (event) => {
     console.log("hides")
     document.getElementById('locations-ul').style.display = "none";
 }
-const hideelement = (ele) => {
-    console.log("hides")
-    document.getElementById(ele).style.display = "none";
-}
+
 const populatefilter = (str) => {
     locations.forEach((val, i) => {
         if (val.name.toLowerCase().indexOf(str.toLowerCase()) > -1) {
@@ -200,4 +195,9 @@ const logalert=(str)=>{
     document.getElementById('log-notify').innerHTML=`<div class="notification-item" ">
     <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
  </div>`
+}
+const populatesuggestion= (city)=>{
+    getsuggestions(city).then(val=>{
+        console.log(val)
+    })
 }

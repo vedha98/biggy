@@ -11,6 +11,7 @@ body{
     font-weight: 400;
     font-size: 16px;
     overflow-x: hidden;
+    margin: 0;
 }
 button{
     border: none;
@@ -537,8 +538,10 @@ ul{
     grid-column: 2/3;
     grid-row: 2/3;
     display: flex;
+    padding: 2rem;
     flex-direction: column;
-    border: 2px solid #ED5127;
+    box-shadow: 0 20px 30px -16px rgba(9,9,16,.2);
+    /* border: 2px solid #ED5127; */
 }
 .reginput{
     border: 1px solid #ED5127;
@@ -571,7 +574,7 @@ ul{
    color: white;
    padding: .5rem;
    width: 20rem;
-   box-shadow: 0 20px 30px -16px rgba(9,9,16,.2);;
+   box-shadow: 0 20px 30px -16px rgba(9,9,16,.2);
    text-align: center;
    margin: 0.5rem;
    font-size: 16px;
