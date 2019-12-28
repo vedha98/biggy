@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    
     <div class="signup" id="signup">
         <h2 style="text-align: center;">Register</h2>
         <img onclick="hide('signup')" class='regclose' src="./src/remove.svg" alt="" srcset="">
@@ -40,6 +41,11 @@
             <input class="reginput" placeholder="email" type="email" value="" id="regemail">
             <input class="reginput" placeholder="password" type="password" id="regpass">
             <button class="reg-btn" onclick="registerUser()">Create New User</button>
+        </div>
+        <div class="notification-wrapper" id="reg-notify">
+            <div class="notification-item" style="display:none" >
+               
+             </div>`
         </div>
     </div>
     <div class="signup" id="login">
@@ -50,7 +56,13 @@
             <input class="reginput" placeholder="password" type="password" id="logpass">
             <button class="reg-btn" onclick="loginUser()">Login User</button>
         </div>
+        <div class="notification-wrapper" id="log-notify">
+            <div class="notification-item" style="display:none" >
+               
+             </div>`
+        </div>
     </div>
+    
     <div id="sidebar" class="sidebar">
         <div class="side-header"><img onclick="hidesidebar()" id="remove-icon" height="50%" src="./src/remove.svg"
                 alt="" srcset=""></div>

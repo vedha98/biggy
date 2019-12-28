@@ -191,3 +191,13 @@ const filterloc = () => {
 
 
 }
+const regalert=(str)=>{
+    document.getElementById('reg-notify').innerHTML=`<div class="notification-item" ">
+    <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
+ </div>`
+}
+const logalert=(str)=>{
+    document.getElementById('log-notify').innerHTML=`<div class="notification-item" ">
+    <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
+ </div>`
+}

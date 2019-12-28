@@ -12,14 +12,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 const registerUser = () => {
     let email = document.getElementById('regemail').value
     let password = document.getElementById('regpass').value
-    if(!validateEmail(email)){console.log("invalid email"); return 0}
-    else if(!validatePassword(password)){console.log('invalid password'); return 0}
+    if(!validateEmail(email)){regalert('invalid email'); return 0}
+    else if(!validatePassword(password)){regalert('invalid password'); return 0}
     else{
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorMessage)
+            regalert(errorMessage)
         });
         console.log(firebase.auth().currentUser)
     }
@@ -28,17 +27,19 @@ const registerUser = () => {
 const loginUser = ()=>{
     let email = document.getElementById('logemail').value
     let password = document.getElementById('logpass').value
-
+    if(!validateEmail(email)){logalert('invalid email'); return 0}
+    else if(!validatePassword(password)){logalert('invalid password'); return 0}
+    else{
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
 
-        // ...
+        logalert(errorMessage)
     });
     console.log(firebase.auth().currentUser)
 
 
+}
 }
 const signout=()=>{
     firebase.auth().signOut()
