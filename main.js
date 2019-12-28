@@ -94,14 +94,14 @@ window.onload = () => {
 
 
 //sidebar
-const showsidebar=()=>{
+const showsidebar = () => {
     console.log("showing")
     document.getElementById("sidebar").classList.add("active");
 }
-const hidesidebar=()=>{
+const hidesidebar = () => {
     document.getElementById("sidebar").classList.remove("active");
 }
-const scrool=(id)=>{
+const scrool = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' })
     document.getElementById("sidebar").classList.remove("active");
 }
@@ -110,65 +110,84 @@ const scrool=(id)=>{
 //doctors
 
 
-const getsuggestions =(city)=>{
+const getsuggestions = (city) => {
     let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
-    fetch(URL).then(res=>{
-       
-            return res.json()
-    }).then(data=>{
+    fetch(URL).then(res => {
+
+        return res.json()
+    }).then(data => {
         return data
     });
 }
-const setLocation= (index)=>{
-document.getElementById('loc_input').value=locations[index].name;
-document.getElementById('sugg_input').focus()
-hideelement("locations-ul")
-filterloc()
+const setLocation = (index) => {
+    document.getElementById('loc_input').value = locations[index].name;
+    document.getElementById('sugg_input').focus()
+    hideelement("locations-ul")
+    filterloc()
 }
 
-const populateinputs =()=>{
-  locations.forEach((val,i)=>{
-      var li = document.createElement('li')
-      li.setAttribute('onclick',`setLocation(${i})`)
-      li.innerText = val.name
-      document.getElementById('locations-ul').appendChild(li)
-  })
+const populateinputs = () => {
+    locations.forEach((val, i) => {
+        var li = document.createElement('li')
+        li.setAttribute('onclick', `setLocation(${i})`)
+        li.innerText = val.name
+        document.getElementById('locations-ul').appendChild(li)
+    })
 }
-const showorhide= (ele)=>{
+const showorhide = (ele, type) => {
     let element = document.getElementById(ele);
-    if(element.style.display=="none"){
-        element.style.display="block"
-    }else{
-        element.style.display="none"
+    if (element.style.display == "none") {
+        if (type) {
+            element.style.display = type;
+        } else {
+            element.style.display = "block"
+        }
+
+    } else {
+        element.style.display = "none"
     }
 }
-const hideall = (event)=>{
-    console.log("hides")
-    document.getElementById('locations-ul').style.display="none";
+const show = (ele, type) => {
+    let element = document.getElementById(ele);
+    if (type) {
+        element.style.display = type;
+    } else {
+        element.style.display = "block"
+    }
 }
-const hideelement = (ele)=>{
-    console.log("hides")
-    document.getElementById(ele).style.display="none";
+const hide = (ele) => {
+    let element = document.getElementById(ele);
+    element.style.display='none'
 }
-const populatefilter =(str)=>{
-    locations.forEach((val,i)=>{
-        if(val.name.toLowerCase().indexOf(str.toLowerCase())>-1){
+
+const hideall = (event) => {
+    console.log("hides")
+    document.getElementById('locations-ul').style.display = "none";
+}
+const hideelement = (ele) => {
+    console.log("hides")
+    document.getElementById(ele).style.display = "none";
+}
+const populatefilter = (str) => {
+    locations.forEach((val, i) => {
+        if (val.name.toLowerCase().indexOf(str.toLowerCase()) > -1) {
             var li = document.createElement('li')
-            li.setAttribute('onclick',`setLocation(${i})`)
+            li.setAttribute('onclick', `setLocation(${i})`)
             li.innerText = val.name
             document.getElementById('locations-ul').appendChild(li)
         }
     })
 }
-const filterloc = ()=>{
-   let quer =  document.getElementById('loc_input').value;
-   document.getElementById('locations-ul').innerHTML="";
-   console.log(quer)
-   if (quer==""){
-       populateinputs()
-   }else{
-       populatefilter(quer)
-   }
+const filterloc = () => {
+    show('locations-ul')
+    let quer = document.getElementById('loc_input').value;
+    document.getElementById('locations-ul').innerHTML = "";
+    console.log(quer)
+    if (quer == "") {
+        populateinputs()
+    } else {
+        populatefilter(quer)
+    }
 
 
 }

@@ -19,6 +19,7 @@ button{
     display: block;
     position: relative;
     background: none;
+    cursor: pointer;
    
 }
 button:hover>span{
@@ -520,6 +521,50 @@ ul{
     cursor: pointer;
     border: 1px solid #ED5127;
     outline: none;
+}
+.signup{
+    position: fixed;
+    display: grid;
+    width: 110vw;
+    height: 110vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color:white;
+    align-items: center;
+    z-index: 99;
+}
+.inputgroup{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ED5127;
+}
+.reginput{
+    border: 1px solid #ED5127;
+    font-weight: 900;
+    padding:1rem 2rem;
+    margin: 1rem;
+    outline: none;
+}
+.regclose{
+    grid-column: 3/3;
+    height: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+.regclose:hover{
+   height: 35px;
+}
+#singout{
+    display: none;
+}
+#signup{
+    display: none;
+}
+#login{
+    display: none;
 }
 @keyframes updown{
     0% {transform: translateY(0);}

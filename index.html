@@ -1,231 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>laravel</title>
     <link rel="stylesheet" href="./src/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyDQYI64o45JkE305VNhM6Kv1QA5mtHMHaw",
+            authDomain: "myweb-7ba4a.firebaseapp.com",
+            databaseURL: "https://myweb-7ba4a.firebaseio.com",
+            projectId: "myweb-7ba4a",
+            storageBucket: "myweb-7ba4a.appspot.com",
+            messagingSenderId: "527969848344",
+            appId: "1:527969848344:web:091c80a0ae6bf3f9f1c76d"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./validation.js"></script>
     <script src="./locations.js"></script>
     <script src="./main.js"></script>
-    
+    <script src="./loginreg.js"></script>
+
 </head>
+
 <body>
+    <div class="signup" id="signup">
+        <h2 style="text-align: center;">Register</h2>
+        <img onclick="hide('signup')" class='regclose' src="./src/remove.svg" alt="" srcset="">
+        <div class="inputgroup">
+            <input class="reginput" placeholder="email" type="email" value="" id="regemail">
+            <input class="reginput" placeholder="password" type="password" id="regpass">
+            <button class="reg-btn" onclick="registerUser()">Create New User</button>
+        </div>
+    </div>
+    <div class="signup" id="login">
+        <h2 style="text-align: center;">Login</h2>
+        <img onclick="hide('login')" class='regclose' src="./src/remove.svg" alt="" srcset="">
+        <div class="inputgroup">
+            <input class="reginput" placeholder="email" type="email" value="" id="logemail">
+            <input class="reginput" placeholder="password" type="password" id="logpass">
+            <button class="reg-btn" onclick="loginUser()">Login User</button>
+        </div>
+    </div>
     <div id="sidebar" class="sidebar">
-        <div class="side-header"><img onclick="hidesidebar()" id="remove-icon" height="50%" src="./src/remove.svg" alt="" srcset=""></div>
+        <div class="side-header"><img onclick="hidesidebar()" id="remove-icon" height="50%" src="./src/remove.svg"
+                alt="" srcset=""></div>
         <div class="side-container">
             <ul>
                 <li onclick="scrool('docs')" class="sidelist">Documentation</li>
-                <li onclick="scrool('forge')" class="sidelist">Forge</li >
-                <li onclick="scrool('eco')" class="sidelist">Ecosystem</li >
-                <li onclick="scrool('news')" class="sidelist">News</li  >
+                <li onclick="scrool('forge')" class="sidelist">Forge</li>
+                <li onclick="scrool('eco')" class="sidelist">Ecosystem</li>
+                <li onclick="scrool('news')" class="sidelist">News</li>
             </ul>
         </div>
     </div>
-<nav id="main-nav">
-    <div class="navitem" onclick="showsidebar()"><img height="40px" width="40px" id="ham-icon" src="./src/list-menu.svg" alt="" srcset=""></div>
-    <div class="logo"><img height="100%" src="./src/laravel-logo.png" alt=""></div>
-    <div class="navitem"><p>Ecosystem</p></div>
-    <div class="navitem"><p>Documentation</p></div>
-    <div class="navitem"><p>Forge</p></div>
-    <div class="navitem"><p>News</p></div>
-    <div class="navitem"><p>Partners</p></div>
-    <div class="regsign">
-        <button class="reg-btn">Register</button>
-        <button class="sign-btn">Sign Up</button>
-    </div>
-</nav>
-<div class="site-wrap">
-    <div class="main-article">
-       <div class="article-wrapper">
-           <div class="article-header">
-               <h1>The PHP Framework for Web Artisans</h1>
-           </div>
-           <div class="article-content">
-               <p>Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.</p>
-           </div>
-           <div class="article-video" >
-               <video width="100%" autoplay muted loop src="./src/hero.mp4"></video>
-           </div>
-           <div class="article-actions">
-               <button id="documentbtn"><span>Documentation</span></button>
-               <button id="watchbtn"><span>Watch Tutorial</span</button>
-           </div>
-       </div>
-    </div>
-    <div id="eco" class="ecosystem">
-        <div class="ecosystem-header">
-            <p>revolutionize the web</p>
-            <h1>The laravel Ecosystem</h1>
+    <nav id="main-nav">
+        <div class="navitem" onclick="showsidebar()"><img height="40px" width="40px" id="ham-icon"
+                src="./src/list-menu.svg" alt="" srcset=""></div>
+        <div class="logo"><img height="100%" src="./src/laravel-logo.png" alt=""></div>
+        <div class="navitem">
+            <p>Ecosystem</p>
         </div>
-        <div class="ecosystem-grid-card" id="eco-card-grid">
-            
-            
-
+        <div class="navitem">
+            <p>Documentation</p>
         </div>
-        
-    </div>
-    <div    id="docs" class="documentation">
-    <div class="ecosystem-header1">
-        <br><br><br>
-        <h1>Documentation</h1>
-    </div>
-    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
-       
-Installation<br>
-Server Requirements<br>
-Installing Laravel<br>
-Configuration<br>
-Web Server Configuration<br>
-Directory Configuration<br>
-Pretty URLs<br>
-
-Installation<br>
-
-Server Requirements<br>
-The Laravel framework has a few system requirements. All of these requirements are satisfied by the Laravel Homestead virtual machine, so it's highly recommended that you use Homestead as your local Laravel development environment.
-
-However, if you are not using Homestead, <br>you will need to make sure your server meets the following requirements:
-
-PHP >= 7.2.0
-BCMath PHP Extension
-Ctype PHP Extension
-JSON PHP Extension
-Mbstring PHP Extension
-OpenSSL PHP Extension
-PDO PHP Extension
-Tokenizer PHP Extension
-XML PHP Extension
-
-Insta
-    </p>
-</div  >
-<div id="forge" class="forge">
-    <div class="ecosystem-header1">
-        <br><br><br>
-        <h1>Forge</h1>
-    </div>
-    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</div>
-<div id="news" class="documentation">
-    <div class="ecosystem-header1">
-        <br>
-        <h1>News</h1>
-    </div>
-    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;padding-bottom:0rem;color: gray;">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p  >
-</div>
-
-<div class="doctor-search">
-    <div class="input-group">
-        <div  class="input-wrapper">
-         <div class="input-text"><input oninput="filterloc()"  onclick="showorhide('locations-ul')" class="location-input input" type="text" name="" placeholder="Live Location" id="loc_input"></div>
-         <ul id="locations-ul">
-         </ul>
+        <div class="navitem">
+            <p>Forge</p>
         </div>
-         <input class="suggestion-input input" type="text" name="" placeholder="Suggestion" id="sugg_input">
+        <div class="navitem">
+            <p>News</p>
         </div>
-       
-   
-</div>
-    <div class="video-gap" id="root">
-        <img class="cube1" width="100px" src="./src/cube.png">
-        <img class="cube2" width="100px" src="./src/cube.png">
-        <img class="cube3" width="100px" src="./src/cube.png">
-        <img class="cube4" width="100px" src="./src/cube.png">
-        <img class="cube5" width="100px" src="./src/cube.png">
-        <img class="cube6" width="100px" src="./src/cube.png">
-        <img class="cube7" width="100px" src="./src/cube.png">
-        <img class="cube8" width="100px" src="./src/cube.png">
-        <img class="cube9" width="100px" src="./src/cube.png">
-        <img class="cube10" width="100px" src="./src/cube.png">
-        <img class="cube11" width="100px" src="./src/cube.png">
-    </div>
-    <footer>
-        <div class="partners">
-            <div class="partners-details">
-                <div class="partners-headers">Become a Laravel Partner</div>
-                <div class="partners-desc">Laravel Partners are elite shops providing top-notch Laravel development and consulting. Each of our partners can help you craft a beautiful, well-architected project.</div>
-            </div>
-            <div class="partners-actions"><button id="documentbtn"><span>Our Partners</span></button></div>
+        <div class="navitem">
+            <p>Partners</p>
         </div>
-        <div class="container">
-            <div class="foot-logo"><img width="60%" src="./src/logotype.min.svg" alt="" srcset=""></div>
-            <div class="footer-details">
-                <ul>
-                    <li class="list-header">Heading</li>
-                    <li><a >Release Notes</a></li>
-                    <li><a>Getting Started</a></li>
-                    <li><a>Routing</a></li>
-                    <li><a>Blade Templates</a></li>
-                    <li><a>Authentication</a></li>
-                    <li><a>Authorization</a></li>
-                    <li><a>Artisan Console</a></li>
-                    <li><a>Database</a></li>
-                    <li><a>Eloquent ORM</a></li>
-                    <li><a>Testing</a></li>
-                </ul>
-                <ul>
-                    <li class="list-header">Heading</li>
-                    <li><a >Release Notes</a></li>
-                    <li><a>Getting Started</a></li>
-                    <li><a>Routing</a></li>
-                    <li><a>Blade Templates</a></li>
-                    <li><a>Authentication</a></li>
-                    <li><a>Authorization</a></li>
-                    <li><a>Artisan Console</a></li>
-                    <li><a>Database</a></li>
-                    <li><a>Eloquent ORM</a></li>
-                    <li><a>Testing</a></li>
-                </ul>
-                <ul>
-                    <li class="list-header">Heading</li>
-                    <li><a >Release Notes</a></li>
-                    <li><a>Getting Started</a></li>
-                    <li><a>Routing</a></li>
-                    <li><a>Blade Templates</a></li>
-                    <li><a>Authentication</a></li>
-                    <li><a>Authorization</a></li>
-                    <li><a>Artisan Console</a></li>
-                    <li><a>Database</a></li>
-                    <li><a>Eloquent ORM</a></li>
-                    <li><a>Testing</a></li>
-                </ul>
-                <ul>
-                    <li class="list-header">Heading</li>
-                    <li><a >Release Notes</a></li>
-                    <li><a>Getting Started</a></li>
-                    <li><a>Routing</a></li>
-                    <li><a>Blade Templates</a></li>
-                    <li><a>Authentication</a></li>
-                    <li><a>Authorization</a></li>
-                    <li><a>Artisan Console</a></li>
-                    <li><a>Database</a></li>
-                    <li><a>Eloquent ORM</a></li>
-                    <li><a>Testing</a></li>
-                </ul>
-                <ul>
-                    <li><p>Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in most web projects.
-                        </p><p></p>
-                        Laravel is a Trademark of Taylor Otwell.
-                        Copyright © 2011-2019 Laravel LLC.</p></li>
-                        <div class="social-links">
-                            <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
-                            <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
-                            <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
+        <div class="regsign" id="regsign">
+            <button onclick="showorhide('signup','grid')" class="reg-btn">Register</button>
+            <button onclick="showorhide('login','grid')" class="sign-btn">Login</button>
+        </div>
+        <div class="signout" id="signout">
+            <button class="reg-btn" onclick="signout()">SignOut</button>
+        </div>
+    </nav>
+    <div class="site-wrap">
+        <div class="main-article">
+            <div class="article-wrapper">
+                <div class="article-header">
+                    <h1>The PHP Framework for Web Artisans</h1>
+                </div>
+                <div class="article-content">
+                    <p>Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the
+                        foundation — freeing you to create without sweating the small things.</p>
+                </div>
+                <div class="article-video">
+                    <video width="100%" autoplay muted loop src="./src/hero.mp4"></video>
+                </div>
+                <div class="article-actions">
+                    <button id="documentbtn"><span>Documentation</span></button>
+                    <button id="watchbtn"><span>Watch Tutorial</span</button> </div> </div> </div> <div id="eco"
+                                class="ecosystem">
+                            <div class="ecosystem-header">
+                                <p>revolutionize the web</p>
+                                <h1>The laravel Ecosystem</h1>
+                            </div>
+                            <div class="ecosystem-grid-card" id="eco-card-grid">
+
+
+
+                            </div>
+
+                </div>
+                <div id="docs" class="documentation">
+                    <div class="ecosystem-header1">
+                        <br><br><br>
+                        <h1>Documentation</h1>
+                    </div>
+                    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
+
+                        Installation<br>
+                        Server Requirements<br>
+                        Installing Laravel<br>
+                        Configuration<br>
+                        Web Server Configuration<br>
+                        Directory Configuration<br>
+                        Pretty URLs<br>
+
+                        Installation<br>
+
+                        Server Requirements<br>
+                        The Laravel framework has a few system requirements. All of these requirements are satisfied by
+                        the Laravel Homestead virtual machine, so it's highly recommended that you use Homestead as your
+                        local Laravel development environment.
+
+                        However, if you are not using Homestead, <br>you will need to make sure your server meets the
+                        following requirements:
+
+                        PHP >= 7.2.0
+                        BCMath PHP Extension
+                        Ctype PHP Extension
+                        JSON PHP Extension
+                        Mbstring PHP Extension
+                        OpenSSL PHP Extension
+                        PDO PHP Extension
+                        Tokenizer PHP Extension
+                        XML PHP Extension
+
+                        Insta
+                    </p>
+                </div>
+                <div id="forge" class="forge">
+                    <div class="ecosystem-header1">
+                        <br><br><br>
+                        <h1>Forge</h1>
+                    </div>
+                    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                        <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
+                        was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.</p>
+                </div>
+                <div id="news" class="documentation">
+                    <div class="ecosystem-header1">
+                        <br>
+                        <h1>News</h1>
+                    </div>
+                    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;padding-bottom:0rem;color: gray;">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                        and more recently with desktop publishing software like Aldus PageMaker including versions of
+                        Lorem Ipsum.
+                    </p>
+                    <p style="text-align:center;line-height: 20px;padding: 5rem 15rem;color: gray;">Lorem Ipsum is
+                        simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+
+                <div class="doctor-search">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <div class="input-text"><input oninput="filterloc()" onclick="showorhide('locations-ul')"
+                                    class="location-input input" type="text" name="" placeholder="Live Location"
+                                    id="loc_input"></div>
+                            <ul id="locations-ul">
+                            </ul>
                         </div>
-                </ul>
-                
+                        <input class="suggestion-input input" type="text" name="" placeholder="Suggestion"
+                            id="sugg_input">
+                    </div>
+
+
+                </div>
+                <div class="video-gap" id="root">
+                    <img class="cube1" width="100px" src="./src/cube.png">
+                    <img class="cube2" width="100px" src="./src/cube.png">
+                    <img class="cube3" width="100px" src="./src/cube.png">
+                    <img class="cube4" width="100px" src="./src/cube.png">
+                    <img class="cube5" width="100px" src="./src/cube.png">
+                    <img class="cube6" width="100px" src="./src/cube.png">
+                    <img class="cube7" width="100px" src="./src/cube.png">
+                    <img class="cube8" width="100px" src="./src/cube.png">
+                    <img class="cube9" width="100px" src="./src/cube.png">
+                    <img class="cube10" width="100px" src="./src/cube.png">
+                    <img class="cube11" width="100px" src="./src/cube.png">
+                </div>
+                <footer>
+                    <div class="partners">
+                        <div class="partners-details">
+                            <div class="partners-headers">Become a Laravel Partner</div>
+                            <div class="partners-desc">Laravel Partners are elite shops providing top-notch Laravel
+                                development and consulting. Each of our partners can help you craft a beautiful,
+                                well-architected project.</div>
+                        </div>
+                        <div class="partners-actions"><button id="documentbtn"><span>Our Partners</span></button></div>
+                    </div>
+                    <div class="container">
+                        <div class="foot-logo"><img width="60%" src="./src/logotype.min.svg" alt="" srcset=""></div>
+                        <div class="footer-details">
+                            <ul>
+                                <li class="list-header">Heading</li>
+                                <li><a>Release Notes</a></li>
+                                <li><a>Getting Started</a></li>
+                                <li><a>Routing</a></li>
+                                <li><a>Blade Templates</a></li>
+                                <li><a>Authentication</a></li>
+                                <li><a>Authorization</a></li>
+                                <li><a>Artisan Console</a></li>
+                                <li><a>Database</a></li>
+                                <li><a>Eloquent ORM</a></li>
+                                <li><a>Testing</a></li>
+                            </ul>
+                            <ul>
+                                <li class="list-header">Heading</li>
+                                <li><a>Release Notes</a></li>
+                                <li><a>Getting Started</a></li>
+                                <li><a>Routing</a></li>
+                                <li><a>Blade Templates</a></li>
+                                <li><a>Authentication</a></li>
+                                <li><a>Authorization</a></li>
+                                <li><a>Artisan Console</a></li>
+                                <li><a>Database</a></li>
+                                <li><a>Eloquent ORM</a></li>
+                                <li><a>Testing</a></li>
+                            </ul>
+                            <ul>
+                                <li class="list-header">Heading</li>
+                                <li><a>Release Notes</a></li>
+                                <li><a>Getting Started</a></li>
+                                <li><a>Routing</a></li>
+                                <li><a>Blade Templates</a></li>
+                                <li><a>Authentication</a></li>
+                                <li><a>Authorization</a></li>
+                                <li><a>Artisan Console</a></li>
+                                <li><a>Database</a></li>
+                                <li><a>Eloquent ORM</a></li>
+                                <li><a>Testing</a></li>
+                            </ul>
+                            <ul>
+                                <li class="list-header">Heading</li>
+                                <li><a>Release Notes</a></li>
+                                <li><a>Getting Started</a></li>
+                                <li><a>Routing</a></li>
+                                <li><a>Blade Templates</a></li>
+                                <li><a>Authentication</a></li>
+                                <li><a>Authorization</a></li>
+                                <li><a>Artisan Console</a></li>
+                                <li><a>Database</a></li>
+                                <li><a>Eloquent ORM</a></li>
+                                <li><a>Testing</a></li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <p>Laravel is a web application framework with expressive, elegant syntax. We
+                                        believe development must be an enjoyable and creative experience to be truly
+                                        fulfilling. Laravel attempts to take the pain out of development by easing
+                                        common tasks used in most web projects.
+                                    </p>
+                                    <p></p>
+                                    Laravel is a Trademark of Taylor Otwell.
+                                    Copyright © 2011-2019 Laravel LLC.</p>
+                                </li>
+                                <div class="social-links">
+                                    <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
+                                    <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
+                                    <img class="social-icon" src="./src/github.min.svg" alt="" srcset="">
+                                </div>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="last-logo">
+                        <img class="last-img" src="./src/last.svg" alt="" srcset="">
+                    </div>
+                </footer>
             </div>
-        </div>
-        <div class="last-logo">
-            <img class="last-img" src="./src/last.svg" alt="" srcset="">
-        </div>
-    </footer>
-</div>
+
 </body>
+
 </html>
