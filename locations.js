@@ -1,28 +1,52 @@
 
     var locations = [
-        {
-            "name":"Bangalore",
-            "type":"city"
-        },
-        {
-            "name":"Coimbatore",
-            "type":"city"
-        },
-        {
-            "name":"Chennai",
-            "type":"city"
-        },
-        {
-            "name":"Kalvin",
-            "type":"city"
-        },
-        {
-            "name":"Coimbatore",
-            "type":"city"
-        },
-        {
-            "name":"Chennai",
-            "type":"city"
-        }
+        "Bangalore",
+        "Mysore",
+        "Kurnool",
+        "Visakhapatnam",
+        "Vijayawada",
+        "Patna",
+        "Chandigarh",
+        "Raipur",
+        "Delhi",
+        "Ahmedabad",
+        "Rajkot",
+        "Surat",
+        "Vadodara",
+        "Panchkula",
+        "Faridabad",
+        "Gurgaon",
+        "Ranchi",
+        "Ernakulam",
+        "Thiruvananthapuram",
+        "Bhopal",
+        "Indore",
+        "Aurangabad",
+        "Mumbai",
+        "Thane",
+        "Nagpur",
+        "Nashik",
+        "Pune",
+        "Navi Mumbai",
+        "Puducherry",
+        "Amritsar",
+        "Ludhiana",
+        "Mohali",
+        "Jaipur",
+        "Jodhpur",
+        "Chennai",
+        "Coimbatore",
+        "Agra",
+        "Allahabad",
+        "Lucknow",
+        "Noida",
+        "Ghaziabad",
+        "Meerut",
+        "Muzaffarnagar",
+        "Varanasi",
+        "Kanpur",
+        "Greater Noida",
+        "Kolkata",
+        "Hyderabad"
 
     ]
