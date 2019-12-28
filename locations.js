@@ -11,6 +11,18 @@
         {
             "name":"Chennai",
             "type":"city"
+        },
+        {
+            "name":"Kalvin",
+            "type":"city"
+        },
+        {
+            "name":"Coimbatore",
+            "type":"city"
+        },
+        {
+            "name":"Chennai",
+            "type":"city"
         }
 
     ]

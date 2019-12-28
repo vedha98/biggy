@@ -30,7 +30,10 @@
     <div class="navitem"><p>Forge</p></div>
     <div class="navitem"><p>News</p></div>
     <div class="navitem"><p>Partners</p></div>
-    <div class="search"><div class="search-group"><input type="submit" value=""><input placeholder="Search Docs" type="text" class="search" id="navsearch"></div></div>
+    <div class="regsign">
+        <button class="reg-btn">Register</button>
+        <button class="sign-btn">Sign Up</button>
+    </div>
 </nav>
 <div class="site-wrap">
     <div class="main-article">
@@ -119,9 +122,9 @@ Insta
 
 <div class="doctor-search">
     <div class="input-group">
-        <div class="input-wrapper">
-         <div class="input-text"><input class="location-input input" type="text" name="" placeholder="Live Location" id="loc_input"></div>
-         <ul id="location-ul">
+        <div  class="input-wrapper">
+         <div class="input-text"><input oninput="filterloc()"  onclick="showorhide('locations-ul')" class="location-input input" type="text" name="" placeholder="Live Location" id="loc_input"></div>
+         <ul id="locations-ul">
          </ul>
         </div>
          <input class="suggestion-input input" type="text" name="" placeholder="Suggestion" id="sugg_input">

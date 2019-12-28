@@ -55,6 +55,7 @@ var cards = [
         bgcolor: '#F0C376'
     },
 ]
+
 window.onload = () => {
     populateinputs()
     cards.forEach(val => {
@@ -120,6 +121,9 @@ const getsuggestions =(city)=>{
 }
 const setLocation= (index)=>{
 document.getElementById('loc_input').value=locations[index].name;
+document.getElementById('sugg_input').focus()
+hideelement("locations-ul")
+filterloc()
 }
 
 const populateinputs =()=>{
@@ -127,6 +131,44 @@ const populateinputs =()=>{
       var li = document.createElement('li')
       li.setAttribute('onclick',`setLocation(${i})`)
       li.innerText = val.name
-      document.getElementById('location-ul').appendChild(li)
+      document.getElementById('locations-ul').appendChild(li)
   })
+}
+const showorhide= (ele)=>{
+    let element = document.getElementById(ele);
+    if(element.style.display=="none"){
+        element.style.display="block"
+    }else{
+        element.style.display="none"
+    }
+}
+const hideall = (event)=>{
+    console.log("hides")
+    document.getElementById('locations-ul').style.display="none";
+}
+const hideelement = (ele)=>{
+    console.log("hides")
+    document.getElementById(ele).style.display="none";
+}
+const populatefilter =(str)=>{
+    locations.forEach((val,i)=>{
+        if(val.name.toLowerCase().indexOf(str.toLowerCase())>-1){
+            var li = document.createElement('li')
+            li.setAttribute('onclick',`setLocation(${i})`)
+            li.innerText = val.name
+            document.getElementById('locations-ul').appendChild(li)
+        }
+    })
+}
+const filterloc = ()=>{
+   let quer =  document.getElementById('loc_input').value;
+   document.getElementById('locations-ul').innerHTML="";
+   console.log(quer)
+   if (quer==""){
+       populateinputs()
+   }else{
+       populatefilter(quer)
+   }
+
+
 }
