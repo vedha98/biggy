@@ -185,7 +185,6 @@ const hide = (ele) => {
 }
 
 const hideall = (event) => {
-    console.log("hides")
     document.getElementById('locations-ul').style.display = "none";
     document.getElementById('special-ul').style.display = "none";
     
