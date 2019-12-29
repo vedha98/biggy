@@ -1,5 +1,6 @@
 var city='Coimbatore'
 var loc=null;
+var currentpage,currentcategory,currentspecial,reqpage=1;
 var cards = [
     {
         img: './src/cashier.min.svg',
@@ -61,24 +62,6 @@ window.onload = () => {
     populateinputs()
     populatespecial()
     cards.forEach(val => {
-        // var element = document.createElement('div')
-        // element.classList.add("eco-card");
-        // var imgchild = document.createElement('div');
-        // imgchild.classList.add("card-img")
-        // imgchild.style.backgroundColor = val.bgcolor;
-        // var img = document.createElement('img')
-        // img.src = val.img;
-        // imgchild.appendChild(img);
-        // var carddetails = document.createElement('div');
-        // carddetails.classList.add('card-details');
-        // carddetails.innerText = (val.title);
-        // var cardspan = document.createElement('span');
-        // cardspan.innerText = val.desc;
-        // carddetails.appendChild(cardspan)
-        // element.appendChild(imgchild);
-        // element.appendChild(carddetails);
-        // document.getElementById("eco-card-grid").appendChild(element);
-
         var element = `<div class="eco-card">
        <div class="card-img" style='background-color:${val.bgcolor}'>
            <img height="100%" src="${val.img}" alt="">
@@ -229,11 +212,10 @@ const populatefilter = (str) => {
 const populatefilterspecial = (str) => {
     getspecialautocomplete(str).then((res)=>{
         var arr = res.results.default.matches
-        console.log(arr)
         arr.forEach((val, i) => {
             if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
                 var li = document.createElement('li')
-                li.setAttribute('onclick', `searchdoctors('${val.suggestion}','${val.category}')`)
+                li.setAttribute('onclick', `searchdoctors('${val.suggestion}','${val.category}'),1`)
                 li.innerText = val.suggestion
                 document.getElementById('special-ul').appendChild(li)
             }
@@ -294,22 +276,21 @@ const populatesuggestion= ()=>{
 const populatespecial=()=>{
     document.getElementById('special-ul').innerHTML=""
     getspecialities().then(val=>{
-        console.log(val)
         specials = val.results.default.matches;
         specials.forEach((val,index)=>{
-            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}','${val.category}')">${val.suggestion}</li>`
+            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}','${val.category}',1)">${val.suggestion}</li>`
         })
     })
 }
-const searchdoctors = (special,category)=>{
+const searchdoctors = (special,category,page)=>{
 hideall()
+if(page==1){currentpage=0;reqpage=1;currentspecial=special;currentcategory=category;document.getElementById('doctor-result').innerHTML="";console.log("cleaning")}
 document.getElementById('sugg_input').value = special
-document.getElementById('doctor-result').innerHTML=""
-getdoctors(special,category,1).then(val=>{
+getdoctors(special,category,page).then(val=>{
     val.doctors.forEach((doctor)=>{
        let carddata = `<div class="doctor-card">
         <div class="docphoto">
-            <img src="${doctor.profile_photo.url}" alt="" srcset="">
+            <img onerror=this.src="./src/docalt.jpg" src="${doctor.profile_photo.url}"  srcset="">
         </div>
         <div class="docdetails">
             <h3>${doctor.doctor_name}</h2>
@@ -324,5 +305,28 @@ getdoctors(special,category,1).then(val=>{
     </div>`
     document.getElementById('doctor-result').innerHTML =document.getElementById('doctor-result').innerHTML + carddata
     })
+    currentpage= currentpage+1
 })
+
+
+}
+
+let scrollevent=()=>{
+    var scrollLocation = document.scrollingElement.scrollTop;
+    var docresultHeight = document.getElementById('doctor-result').scrollHeight;
+    var belowdocheight = document.getElementById('below-doc').scrollHeight;
+    var fullheight = document.scrollingElement.scrollHeight;
+    if(fullheight-belowdocheight-scrollLocation<1000){
+       if(reqpage==currentpage){
+           reqpage= reqpage+1
+           searchdoctors(currentspecial,currentcategory,reqpage)
+           
+            
+            
+
+       }
+
+
+    }
+    
 }
