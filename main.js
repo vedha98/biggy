@@ -1,4 +1,4 @@
-var city
+var city,loc=null;
 var cards = [
     {
         img: './src/cashier.min.svg',
@@ -117,6 +117,24 @@ const getsuggestions =async(city) => {
     return data
     
 }
+const getautocomplete= async(str)=>{
+    let URL = `https://www.practo.com/client-api/v1/cerebro/v3/autocomplete?query=${str}&indexes=%5B%22city%22%2C%22locality%22%5D`
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data
+}
+const getspecialities= async(str)=>{
+    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=keyword&with_grouped=true`
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data
+}
+const getspecialautocomplete= async(str)=>{
+    let URL = `https://www.practo.com/cerebro/v3/autocomplete?query=${str}`
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data
+}
 const getdoctors = async ()=>{
     let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
     let res = await fetch(URL);
@@ -124,20 +142,26 @@ const getdoctors = async ()=>{
     return data
 
 }
-const setLocation = (index) => {
-    document.getElementById('loc_input').value = locations[index];
-    city = locations[index]
+const setlocation = (index,category,ciy) => {
+    document.getElementById('loc_input').value = index;
+    city = ciy
+    self = this
+    if(category.toLowerCase()==='locality'){
+        self.loc = index
+    }else{
+        loc=null
+    }
     document.getElementById('sugg_input').focus()
     filterloc()
-    populatesuggestion(locations[index])
-    hide("locations-ul")
-    show('sugg-ul')
+    hideall()
+    show('special-ul')
+    populatespecial()
 }
 
 const populateinputs = () => {
     locations.forEach((val, i) => {
         var li = document.createElement('li')
-        li.setAttribute('onclick', `setLocation(${i})`)
+        li.setAttribute('onclick', `setlocation('${val}','city','${val}')`)
         li.innerText = val
         document.getElementById('locations-ul').appendChild(li)
     })
@@ -173,31 +197,46 @@ const hide = (ele) => {
 const hideall = (event) => {
     console.log("hides")
     document.getElementById('locations-ul').style.display = "none";
-    document.getElementById('sugg-ul').style.display = "none";
+    document.getElementById('special-ul').style.display = "none";
+    
 
 }
 
 const populatefilter = (str) => {
-    locations.forEach((val, i) => {
-        if (val.toLowerCase().indexOf(str.toLowerCase()) > -1) {
-            var li = document.createElement('li')
-            li.setAttribute('onclick', `setLocation(${i})`)
-            li.innerText = val
-            document.getElementById('locations-ul').appendChild(li)
-        }
-    })
+    getautocomplete(str).then((res)=>{
+        var arr = res.results.default.matches
+        arr.forEach((val, i) => {
+            if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
+                var li = document.createElement('li')
+                li.setAttribute('onclick', `setlocation('${val.suggestion}','${val.category}','${val.city}')`)
+                li.innerText = val.suggestion
+                document.getElementById('locations-ul').appendChild(li)
+            }
+        })
+    }
+    )
+    
+
+    
 }
-const suggfilter = (str) => {
-    sugg.forEach((val, i) => {
-       
-        if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
-            var li = document.createElement('li')
-            li.setAttribute('onclick', ``)
-            li.innerText = val.suggestion
-            document.getElementById('sugg-ul').appendChild(li)
-        }
-    })
+const populatefilterspecial = (str) => {
+    getspecialautocomplete(str).then((res)=>{
+        var arr = res.results.default.matches
+        arr.forEach((val, i) => {
+            if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
+                var li = document.createElement('li')
+                li.setAttribute('onclick', `searchdoctors('${val.suggestion}')`)
+                li.innerText = val.suggestion
+                document.getElementById('special-ul').appendChild(li)
+            }
+        })
+    }
+    )
+    
+
+    
 }
+
 const filterloc = () => {
     show('locations-ul')
     let quer = document.getElementById('loc_input').value;
@@ -210,16 +249,19 @@ const filterloc = () => {
 
 
 }
-const filtersugg=()=>{
-    show('sugg-ul')
+const filterspecial = () => {
+    show('special-ul')
     let quer = document.getElementById('sugg_input').value;
-    document.getElementById('sugg-ul').innerHTML = "";
+    document.getElementById('special-ul').innerHTML = "";
     if (quer == "") {
-        mapsugg()
+        populatespecial()
     } else {
-       suggfilter(quer)
+        populatefilterspecial(quer)
     }
+
+
 }
+
 const regalert=(str)=>{
     document.getElementById('reg-notify').innerHTML=`<div class="notification-item" ">
     <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
@@ -231,15 +273,23 @@ const logalert=(str)=>{
  </div>`
 }
 const mapsugg = ()=>{
-    document.getElementById('sugg-ul').innerHTML="";
     sugg.map((val,key)=>{
-        document.getElementById('sugg-ul').innerHTML = document.getElementById('sugg-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
+        document.getElementById('locations-ul').innerHTML = document.getElementById('locations-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
     })
 }
-const populatesuggestion= (city)=>{
+const populatesuggestion= ()=>{
     getsuggestions(city).then(val=>{
         sugg = val.results.default.matches
         mapsugg()
+    })
+}
+const populatespecial=()=>{
+    document.getElementById('special-ul').innerHTML=""
+    getspecialities().then(val=>{
+        specials = val.results.grouped[0].matches;
+        specials.forEach((val,index)=>{
+            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
+        })
     })
 }
 const searchdoctors = (location)=>{
