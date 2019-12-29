@@ -1,4 +1,5 @@
-var city,loc=null;
+var city='Coimbatore'
+var loc=null;
 var cards = [
     {
         img: './src/cashier.min.svg',
@@ -58,6 +59,7 @@ var cards = [
 var sugg={}
 window.onload = () => {
     populateinputs()
+    populatespecial()
     cards.forEach(val => {
         // var element = document.createElement('div')
         // element.classList.add("eco-card");
@@ -124,7 +126,9 @@ const getautocomplete= async(str)=>{
     return data
 }
 const getspecialities= async(str)=>{
-    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=keyword&with_grouped=true`
+    let URL= `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=keyword`
+    
+     
     let res = await fetch(URL);
     let data = await res.json();
     return data
@@ -135,8 +139,9 @@ const getspecialautocomplete= async(str)=>{
     let data = await res.json();
     return data
 }
-const getdoctors = async ()=>{
-    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
+const getdoctors = async (special,category,page)=>{
+    
+    let URL = `https://www.practo.com/marketplace-api/dweb/search/provider?city=${city}&q=%5B%7B%22word%22%3A%22${encodeURIComponent(special)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22${category}%22%7D%2C%7B%22word%22%3A%22${encodeURIComponent(loc)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&page=${page}`
     let res = await fetch(URL);
     let data = await res.json();
     return data
@@ -144,12 +149,14 @@ const getdoctors = async ()=>{
 }
 const setlocation = (index,category,ciy) => {
     document.getElementById('loc_input').value = index;
-    city = ciy
+    
     self = this
     if(category.toLowerCase()==='locality'){
         self.loc = index
+        city = ciy
     }else{
         loc=null
+        city = index
     }
     document.getElementById('sugg_input').focus()
     filterloc()
@@ -165,7 +172,7 @@ const populateinputs = () => {
         li.innerText = val
         document.getElementById('locations-ul').appendChild(li)
     })
-    hide('sugg-ul')
+    
 }
 const showorhide = (ele, type) => {
     let element = document.getElementById(ele);
@@ -222,10 +229,11 @@ const populatefilter = (str) => {
 const populatefilterspecial = (str) => {
     getspecialautocomplete(str).then((res)=>{
         var arr = res.results.default.matches
+        console.log(arr)
         arr.forEach((val, i) => {
             if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
                 var li = document.createElement('li')
-                li.setAttribute('onclick', `searchdoctors('${val.suggestion}')`)
+                li.setAttribute('onclick', `searchdoctors('${val.suggestion}','${val.category}')`)
                 li.innerText = val.suggestion
                 document.getElementById('special-ul').appendChild(li)
             }
@@ -286,14 +294,35 @@ const populatesuggestion= ()=>{
 const populatespecial=()=>{
     document.getElementById('special-ul').innerHTML=""
     getspecialities().then(val=>{
-        specials = val.results.grouped[0].matches;
+        console.log(val)
+        specials = val.results.default.matches;
         specials.forEach((val,index)=>{
-            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
+            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}','${val.category}')">${val.suggestion}</li>`
         })
     })
 }
-const searchdoctors = (location)=>{
+const searchdoctors = (special,category)=>{
 hideall()
-document.getElementById('sugg_input').value = location
-console.log(location,city)
+document.getElementById('sugg_input').value = special
+document.getElementById('doctor-result').innerHTML=""
+getdoctors(special,category,1).then(val=>{
+    val.doctors.forEach((doctor)=>{
+       let carddata = `<div class="doctor-card">
+        <div class="docphoto">
+            <img src="${doctor.profile_photo.url}" alt="" srcset="">
+        </div>
+        <div class="docdetails">
+            <h3>${doctor.doctor_name}</h2>
+            <p>${doctor.specialties[0].specialty}</p>
+                <p>${doctor.experience_years} of experience overall</p>
+                <p><strong>${doctor.locality}</strong> . ${doctor.practice.city}</p>
+                <p>₹ ${doctor.amount} at the clinic</p>
+        </div>
+        <div class="docactions">
+            <button class="doc-btn">Book Now</button>
+        </div>
+    </div>`
+    document.getElementById('doctor-result').innerHTML =document.getElementById('doctor-result').innerHTML + carddata
+    })
+})
 }

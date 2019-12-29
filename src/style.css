@@ -470,7 +470,8 @@ ul{
 }
 .input-group{
     display: flex;
-    margin: 10rem;
+    margin:20rem 10rem;
+    margin-top: 2rem;
     align-items: baseline;
 }
 .input{
@@ -594,6 +595,9 @@ ul{
     top: 25%;
     margin: 0rem 1rem;
 }
+.input-wrapper{
+    position: relative;
+}
 .notification-item>p{
     width: 100%;
     font-size: small;
@@ -606,6 +610,10 @@ ul{
     border: solid 1px darkblue;
     padding: 1rem;
     margin: .3rem;
+    position: absolute;
+    width: 80%;
+    top: 60px;
+    left: 5%;
 }
 .doc-ul>li{
     padding: 1rem;
@@ -617,19 +625,65 @@ ul{
     display:block;
 }
 .doctor-result{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
+.doctor-card{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.37);
+}
 .docphoto{
-    grid-column: 1/3;
-    height: 200px;
+    display: flex;
+   
+ 
+}
+.docphoto>img{
+    width: 140px;
+    height: 140px;
+    border: 1px solid #f0f0f5;
+    border-radius: 50%;
 }
 .docdetails{
-    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    
+}
+.docdetails>*{
+    padding: none;
+    margin: 0.3rem;
+}
+.docdetails>h3{
+    color:#45AEDB;
+}
+.docdetails>p{
+    color: gray;
+    font-size: 14px;
 }
 .docactions{
-    grid-column: 3/3;
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+.doc-btn{
+    background-color: #45AEDB;
+    color: white;
+    font-weight: 900;
+    padding: 1rem 2rem;
+
+}
+.dot {
+    border-radius: 50%;
+    border: 2px solid #7f7f7f;
+    display: inline-block;
+    margin: 2px 3px;
 }
 @keyframes updown{
     0% {transform: translateY(0);}
