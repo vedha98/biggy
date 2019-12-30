@@ -709,6 +709,21 @@ ul{
     display: inline-block;
     margin: 2px 3px;
 }
+.loader{
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(9,9,16,.2);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+.loader-svg{
+   filter: invert(48%) sepia(13%) saturate(99999999%) hue-rotate(-4deg) brightness(95%) contrast(80%);
+    height: 10%;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
 @keyframes updown{
     0% {transform: translateY(0);}
     50% {transform: translateY(100px);}

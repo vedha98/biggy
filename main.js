@@ -284,6 +284,7 @@ const populatespecial = () => {
 const searchdoctors = (special, category, page,clear) => {
     hideall()
     show('doctor-result','flex')
+    show('loader')
     if (page == 1) { currentpage = 0; reqpage = 1; currentspecial = special; currentcategory = category; document.getElementById('doctor-result').innerHTML = ""; console.log("cleaning") }
     document.getElementById('sugg_input').value = special
     if(clear)document.getElementById('doctor-result').innerHTML = "";
@@ -308,7 +309,7 @@ const searchdoctors = (special, category, page,clear) => {
             document.getElementById('doctor-result').innerHTML = document.getElementById('doctor-result').innerHTML + carddata
         })
         currentpage = currentpage + 1
-        
+        hide('loader')
     })
    
 
