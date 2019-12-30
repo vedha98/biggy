@@ -1,6 +1,6 @@
-var city='Coimbatore'
-var loc=null;
-var currentpage,currentcategory,currentspecial,reqpage=1;
+var city = 'Coimbatore'
+var loc = null;
+var currentpage, currentcategory, currentspecial, reqpage = 1;
 var cards = [
     {
         img: './src/cashier.min.svg',
@@ -57,7 +57,7 @@ var cards = [
         bgcolor: '#F0C376'
     },
 ]
-var sugg={}
+var sugg = {}
 window.onload = () => {
     populateinputs()
     populatespecial()
@@ -95,50 +95,50 @@ const scrool = (id) => {
 //doctors
 
 
-const getsuggestions =async(city) => {
+const getsuggestions = async (city) => {
     let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=locality`
     let res = await fetch(URL);
     let data = await res.json();
     return data
-    
+
 }
-const getautocomplete= async(str)=>{
+const getautocomplete = async (str) => {
     let URL = `https://www.practo.com/client-api/v1/cerebro/v3/autocomplete?query=${str}&indexes=%5B%22city%22%2C%22locality%22%5D`
     let res = await fetch(URL);
     let data = await res.json();
     return data
 }
-const getspecialities= async(str)=>{
-    let URL= `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=keyword`
-    
-     
+const getspecialities = async (str) => {
+    let URL = `https://www.practo.com/health/api/top/omni/suggestion.json?city=${city}&locale=en-en&query_type=keyword`
+
+
     let res = await fetch(URL);
     let data = await res.json();
     return data
 }
-const getspecialautocomplete= async(str)=>{
+const getspecialautocomplete = async (str) => {
     let URL = `https://www.practo.com/cerebro/v3/autocomplete?query=${str}`
     let res = await fetch(URL);
     let data = await res.json();
     return data
 }
-const getdoctors = async (special,category,page)=>{
-    
+const getdoctors = async (special, category, page) => {
+
     let URL = `https://www.practo.com/marketplace-api/dweb/search/provider?city=${city}&q=%5B%7B%22word%22%3A%22${encodeURIComponent(special)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22${category}%22%7D%2C%7B%22word%22%3A%22${encodeURIComponent(loc)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&page=${page}`
     let res = await fetch(URL);
     let data = await res.json();
     return data
 
 }
-const setlocation = (index,category,ciy) => {
+const setlocation = (index, category, ciy) => {
     document.getElementById('loc_input').value = index;
-    
+
     self = this
-    if(category.toLowerCase()==='locality'){
+    if (category.toLowerCase() === 'locality') {
         self.loc = index
         city = ciy
-    }else{
-        loc=null
+    } else {
+        loc = null
         city = index
     }
     document.getElementById('sugg_input').focus()
@@ -155,7 +155,7 @@ const populateinputs = () => {
         li.innerText = val
         document.getElementById('locations-ul').appendChild(li)
     })
-    
+
 }
 const showorhide = (ele, type) => {
     let element = document.getElementById(ele);
@@ -181,18 +181,18 @@ const show = (ele, type) => {
 }
 const hide = (ele) => {
     let element = document.getElementById(ele);
-    element.style.display='none'
+    element.style.display = 'none'
 }
 
 const hideall = (event) => {
     document.getElementById('locations-ul').style.display = "none";
     document.getElementById('special-ul').style.display = "none";
-    
+
 
 }
 
 const populatefilter = (str) => {
-    getautocomplete(str).then((res)=>{
+    getautocomplete(str).then((res) => {
         var arr = res.results.default.matches
         arr.forEach((val, i) => {
             if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
@@ -204,12 +204,12 @@ const populatefilter = (str) => {
         })
     }
     )
-    
 
-    
+
+
 }
 const populatefilterspecial = (str) => {
-    getspecialautocomplete(str).then((res)=>{
+    getspecialautocomplete(str).then((res) => {
         var arr = res.results.default.matches
         arr.forEach((val, i) => {
             if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
@@ -221,9 +221,9 @@ const populatefilterspecial = (str) => {
         })
     }
     )
-    
 
-    
+
+
 }
 
 const filterloc = () => {
@@ -251,43 +251,46 @@ const filterspecial = () => {
 
 }
 
-const regalert=(str)=>{
-    document.getElementById('reg-notify').innerHTML=`<div class="notification-item" ">
+const regalert = (str) => {
+    document.getElementById('reg-notify').innerHTML = `<div class="notification-item" ">
     <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
  </div>`
 }
-const logalert=(str)=>{
-    document.getElementById('log-notify').innerHTML=`<div class="notification-item" ">
+const logalert = (str) => {
+    document.getElementById('log-notify').innerHTML = `<div class="notification-item" ">
     <img width="30px" src="./src/error.png" alt="" srcset=""><p>${str}</p> 
  </div>`
 }
-const mapsugg = ()=>{
-    sugg.map((val,key)=>{
-        document.getElementById('locations-ul').innerHTML = document.getElementById('locations-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
+const mapsugg = () => {
+    sugg.map((val, key) => {
+        document.getElementById('locations-ul').innerHTML = document.getElementById('locations-ul').innerHTML + `<li onclick="searchdoctors('${val.suggestion}')">${val.suggestion}</li>`
     })
 }
-const populatesuggestion= ()=>{
-    getsuggestions(city).then(val=>{
+const populatesuggestion = () => {
+    getsuggestions(city).then(val => {
         sugg = val.results.default.matches
         mapsugg()
     })
 }
-const populatespecial=()=>{
-    document.getElementById('special-ul').innerHTML=""
-    getspecialities().then(val=>{
+const populatespecial = () => {
+    document.getElementById('special-ul').innerHTML = ""
+    getspecialities().then(val => {
         specials = val.results.default.matches;
-        specials.forEach((val,index)=>{
-            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML+`<li onclick="searchdoctors('${val.suggestion}','${val.category}',1)">${val.suggestion}</li>`
+        specials.forEach((val, index) => {
+            document.getElementById('special-ul').innerHTML = document.getElementById('special-ul').innerHTML + `<li onclick="searchdoctors('${val.suggestion}','${val.category}',1)">${val.suggestion}</li>`
         })
     })
 }
-const searchdoctors = (special,category,page)=>{
-hideall()
-if(page==1){currentpage=0;reqpage=1;currentspecial=special;currentcategory=category;document.getElementById('doctor-result').innerHTML="";console.log("cleaning")}
-document.getElementById('sugg_input').value = special
-getdoctors(special,category,page).then(val=>{
-    val.doctors.forEach((doctor)=>{
-       let carddata = `<div class="doctor-card">
+const searchdoctors = (special, category, page,clear) => {
+    hideall()
+    show('doctor-result','flex')
+    if (page == 1) { currentpage = 0; reqpage = 1; currentspecial = special; currentcategory = category; document.getElementById('doctor-result').innerHTML = ""; console.log("cleaning") }
+    document.getElementById('sugg_input').value = special
+    if(clear)document.getElementById('doctor-result').innerHTML = "";
+    getdoctors(special, category, page).then(val => {
+        createpagination(page,val.doctorsFound)
+        val.doctors.forEach((doctor) => {
+            let carddata = `<div class="doctor-card">
         <div class="docphoto">
             <img onerror=this.src="./src/docalt.jpg" src="${doctor.profile_photo.url}"  srcset="">
         </div>
@@ -302,30 +305,51 @@ getdoctors(special,category,page).then(val=>{
             <button class="doc-btn">Book Now</button>
         </div>
     </div>`
-    document.getElementById('doctor-result').innerHTML =document.getElementById('doctor-result').innerHTML + carddata
+            document.getElementById('doctor-result').innerHTML = document.getElementById('doctor-result').innerHTML + carddata
+        })
+        currentpage = currentpage + 1
+        
     })
-    currentpage= currentpage+1
-})
+   
 
 
 }
-
-let scrollevent=()=>{
+let createpagination = (offset, number) => {
+    document.getElementById('pagination-content').innerHTML = ""
+    var currentnumber = offset;
+    var back = currentnumber-1
+    for (var i = 0; i < 5; i++) {
+        if (back>0) {
+            
+            document.getElementById('pagination-content').innerHTML = `<a onclick=" searchdoctors('${currentspecial}', '${currentcategory}', ${back},true)">${back}</a>`+document.getElementById('doc-pagination').innerHTML
+            back= back-1
+        }
+    }
+    for (var i = 0; i < 5; i++) {
+        if (currentnumber < number/10) {
+            
+            document.getElementById('pagination-content').innerHTML = document.getElementById('doc-pagination').innerHTML + `<a ${(currentnumber==offset)?'class="active"':''} onclick=" searchdoctors('${currentspecial}', '${currentcategory}', ${currentnumber},true)">${currentnumber}</a>`
+            currentnumber=currentnumber+1
+        }
+    }
+    
+}
+let scrollevent = () => {
     var scrollLocation = document.scrollingElement.scrollTop;
     var docresultHeight = document.getElementById('doctor-result').scrollHeight;
     var belowdocheight = document.getElementById('below-doc').scrollHeight;
     var fullheight = document.scrollingElement.scrollHeight;
-    if(fullheight-belowdocheight-scrollLocation<1000){
-       if(reqpage==currentpage){
-           reqpage= reqpage+1
-           searchdoctors(currentspecial,currentcategory,reqpage)
-           
-            
-            
+    if (fullheight - belowdocheight - scrollLocation < 1000) {
+        if (reqpage == currentpage) {
+            reqpage = reqpage + 1
+            searchdoctors(currentspecial, currentcategory, reqpage)
 
-       }
+
+
+
+        }
 
 
     }
-    
+
 }
