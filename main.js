@@ -214,7 +214,7 @@ const populatefilterspecial = (str) => {
         arr.forEach((val, i) => {
             if (val.suggestion.toLowerCase().indexOf(str.toLowerCase()) > -1) {
                 var li = document.createElement('li')
-                li.setAttribute('onclick', `searchdoctors('${val.suggestion}','${val.category}'),1`)
+                li.setAttribute('onclick', `searchdoctors('${val.suggestion}','${val.category}',1)`)
                 li.innerText = val.suggestion
                 document.getElementById('special-ul').appendChild(li)
             }
