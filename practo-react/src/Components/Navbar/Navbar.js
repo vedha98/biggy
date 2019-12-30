@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css'
-
+import Heading from './Heading'
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -14,22 +14,10 @@ class Navbar extends React.Component {
                         <img className="logo" src={window.location.origin + '/practo.svg'}></img>
                     </div>
                     <div className="nav-item main-nav">
-                        <div className="main-nav-item">
-                            <h4>Doctors</h4>
-                            <p>Book an Appoinment</p>
-                        </div>
-                        <div className="main-nav-item">
-                            <h4>Chat</h4>
-                            <p>Chat With Top Doctors</p>
-                        </div>
-                        <div className="main-nav-item">
-                            <h4>Pharmacy</h4>
-                            <p>Medicines & health products</p>
-                        </div>
-                        <div className="main-nav-item">
-                            <h4>Diagnostics</h4>
-                            <p>Book Tests & Checkup</p>
-                        </div>
+                        <Heading head="Doctors" desc="Book an Appointment"/>
+                        <Heading head="Chat" desc="Chat With Top Doctors"/>
+                        <Heading head="Pharmacy" desc="Medicines & health products"/>
+                        <Heading head="Diagnostics" desc="Book Tests & Checkup"/>
                     </div>
                     <div className="nav-item right-drop">
                         <div class="dropdown">For Providers</div>
