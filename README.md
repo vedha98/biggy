@@ -1,1 +1,0 @@
-# Vedha-Intern-Training
