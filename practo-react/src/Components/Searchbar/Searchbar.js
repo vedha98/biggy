@@ -11,7 +11,12 @@ export class Searchbar extends Component {
             specsuggestions:[],
             visibility:{
                 location:false
+            },
+            query:{
+                suggestion:"doctor",
+                category:'type',
             }
+
         }
         
     }
@@ -48,19 +53,7 @@ export class Searchbar extends Component {
             
         )
     }
-    getdoctors = () => {
-        
-        let special = this.state.query.suggestion,
-        category = this.state.query.category,
-        page=this.state.page;
-
-        let URL = `https://www.practo.com/marketplace-api/dweb/search/provider?city=${this.state.city}&q=%5B%7B%22word%22%3A%22${encodeURIComponent(special)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22${category}%22%7D%2C%7B%22word%22%3A%22${encodeURIComponent(this.state.loc)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&page=${page}`
-        axios.get(URL).then(val=>{
-            this.setState({doctors:val})
-            this.props.showDoctors(val.data.doctors)
-        })
-        
-    }
+    
     handleLocClick=(loc)=>{
         if(loc.city){
             this.setState({city:loc.city,loc:loc.suggestion})
@@ -75,11 +68,14 @@ export class Searchbar extends Component {
         this.setState({input_special:val.suggestion})
         this.setState({query:val})
         this.hide('speciality')
+        
 
     }
     searchDoctors=(e)=>{
         e.preventDefault()
-        this.getdoctors();
+        this.hideall()
+        this.props.clearDoctors()
+        this.props.showDoctors(this.state.query,this.state.city,this.state.location)
     }
     show=(value)=>{
         var visibility = {}
