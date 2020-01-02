@@ -11,7 +11,7 @@ class Navbar extends React.Component {
             <div>
                 <div className="nav-wrapper">
                     <div className="nav-item img-wrapper">
-                        <img className="logo" src={window.location.origin + '/practo.svg'}></img>
+                        <img className="logo" alt="logo" src={window.location.origin + '/practo.svg'}></img>
                     </div>
                     <div className="nav-item main-nav">
                         <Heading head="Doctors" desc="Book an Appointment"/>
@@ -20,8 +20,8 @@ class Navbar extends React.Component {
                         <Heading head="Diagnostics" desc="Book Tests & Checkup"/>
                     </div>
                     <div className="nav-item right-drop">
-                        <div class="dropdown">For Providers</div>
-                        <div class="dropdown">Security</div>
+                        <div className="dropdown">For Providers</div>
+                        <div className="dropdown">Security</div>
                         
                         <button className="nav-btn">Login/Signup</button>
                     
