@@ -10,7 +10,9 @@ export class Doctors extends Component {
         document.addEventListener('scroll', this.trackScrolling);
       }
       
-     
+      componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+      }
       
       trackScrolling = () => {
         const wrappedElement = document.getElementById('doctor-result');
