@@ -3,7 +3,7 @@ import DoctorCard from './DoctorCard'
 import  "./Doctor.css";
 export class Doctors extends Component {
      isBottom(el) {
-        return el.getBoundingClientRect().bottom <= window.innerHeight+100;
+        return el.getBoundingClientRect().bottom <= window.innerHeight+200;
       }
       
       componentDidMount() {
