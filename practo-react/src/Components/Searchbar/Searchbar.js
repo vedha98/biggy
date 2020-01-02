@@ -57,7 +57,7 @@ export class Searchbar extends Component {
         let URL = `https://www.practo.com/marketplace-api/dweb/search/provider?city=${this.state.city}&q=%5B%7B%22word%22%3A%22${encodeURIComponent(special)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22${category}%22%7D%2C%7B%22word%22%3A%22${encodeURIComponent(this.state.loc)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&page=${page}`
         axios.get(URL).then(val=>{
             this.setState({doctors:val})
-            console.log(this.state.doctors.data.doctors)
+            this.props.showDoctors(val.data.doctors)
         })
         
     }
