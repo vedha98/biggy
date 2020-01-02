@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './Components/Navbar/Navbar'
 import Searchbar from "./Components/Searchbar/Searchbar";
 import Doctors from './Components/Doctors/Doctors';
+import Loader from './Components/Loader/Loader'
 import axios from "axios";
 
 export class App extends Component {
@@ -11,10 +12,12 @@ export class App extends Component {
     this.state = {
       doctors: [],
       page: 0,
-      reqpage:0
+      reqpage:0,
+      loading:false
     }
   }
   showDoctors = (query, city, location) => {
+    this.setState({loading:true})
     this.setState(prevState => {
       return { reqpage: prevState.reqpage + 1 }
     })
@@ -27,7 +30,7 @@ export class App extends Component {
     
       docs = docs.concat(val.data.doctors)
       let page= this.state.page+1
-      this.setState({ doctors:docs ,query:query,city:city,location:location,page:page})
+      this.setState({ doctors:docs ,query:query,city:city,location:location,page:page,loading:false})
     })
 
 
@@ -46,6 +49,7 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
+        {this.state.loading?<Loader/>:null}
         <Navbar />
         <Searchbar clearDoctors={this.clearDoctors} showDoctors={this.showDoctors} />
         {this.state.doctors.length>1?<Doctors doctors={this.state.doctors} nextpage={this.nextpage} />:null}
