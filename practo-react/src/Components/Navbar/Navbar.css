@@ -49,6 +49,11 @@ p{
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    cursor: pointer;
+    padding: 0rem 1rem;
+}
+.main-nav-item:hover{
+    background-color: rgba(223, 223, 223, 0.5);
 }
 .nav-btn{
     margin: 1.4rem 0;
@@ -62,4 +67,9 @@ p{
 .img-wrapper{
     flex-direction: row;
     margin: 0 2rem;
+}
+@media screen and (max-width:800px){
+    .main-nav-item{
+        display: none;
+    }
 }
