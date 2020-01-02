@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
+import BookAppoint from './Components/BookAppoint/BookAppoint'
 import Navbar from './Components/Navbar/Navbar'
 import Searchbar from "./Components/Searchbar/Searchbar";
 import Doctors from './Components/Doctors/Doctors';
@@ -48,12 +55,21 @@ export class App extends Component {
   }
   render() {
     return (
+      <Router>
       <div className="app">
         {this.state.loading?<Loader/>:null}
         <Navbar />
+        <Switch>
+          <Route path="/bookappoint/:doctor">
+            <BookAppoint/>
+          </Route>
+          <Route path="/*">
         <Searchbar clearDoctors={this.clearDoctors} showDoctors={this.showDoctors} />
         {this.state.doctors.length>1?<Doctors doctors={this.state.doctors} nextpage={this.nextpage} />:null}
+        </Route>
+        </Switch>
       </div>
+      </Router>
     );
   }
 }

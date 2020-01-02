@@ -5,7 +5,7 @@ export class Searchbar extends Component {
     constructor(props){
         super(props)
         this.state={
-            city:"bangalore",
+            city:"Coimbatore",
             page:0,
             citysuggestions:[],
             specsuggestions:[],
@@ -13,7 +13,7 @@ export class Searchbar extends Component {
                 location:false
             },
             query:{
-                suggestion:"doctor",
+                suggestion:"Doctor",
                 category:'type',
             }
 
@@ -74,6 +74,13 @@ export class Searchbar extends Component {
     searchDoctors=(e)=>{
         e.preventDefault()
         this.hideall()
+        let location;
+        if(this.state.loc){
+            location=this.state.loc
+        }else{
+            location=this.state.city
+        }
+        this.setState({input_special:this.state.query.suggestion,input_location:location})
         this.props.clearDoctors()
         this.props.showDoctors(this.state.query,this.state.city,this.state.location)
     }
