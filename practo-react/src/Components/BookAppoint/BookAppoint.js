@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import TimeGrid from './TimeGrid'
 import Calendar from 'react-calendar'
+import Appointment from './Appointment'
 import 'react-calendar/dist/Calendar.css';
 import './BookAppoint.css'
 export class BookAppoint extends Component {
@@ -56,7 +57,7 @@ export class BookAppoint extends Component {
                 <div className="btn-wrap">
                     <button onClick={this.handleSubmit} className="button submit">Submit</button>
                 </div>
-                {this.state.show ? <div>{this.state.selectedTime.toDateString()}{this.state.name}{this.state.address}</div> : null}
+                {this.state.show?<Appointment doctor={this.state.doctor} name ={this.state.name} address={this.state.address}/>:null}
             </div>
         );
     }
