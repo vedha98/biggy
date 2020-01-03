@@ -1,0 +1,57 @@
+.TimeGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto ;
+    padding: 1rem 2rem;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.Time{
+    background-color: white;
+    color: gray;
+    width: 8rem;
+    text-align: center;
+    height: 4rem;
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.3px solid grey;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.form{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 20rem;
+}
+.input{
+    margin: 1rem 0rem;
+}
+.active{
+    background-color: #263077;
+    color: white;
+    transition: all 0.2s;
+    font-weight: 600;
+    border-color: black;
+}
+.GridWrapper{
+    display: flex;
+    justify-content: center;
+}
+.calender-wrap{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.submit{
+    padding: 1rem 2rem;
+    max-width: 200px;
+    margin: 1rem;
+}
+.btn-wrap{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

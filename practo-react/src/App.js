@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,withRouter
 } from "react-router-dom";
 import './App.css';
 import BookAppoint from './Components/BookAppoint/BookAppoint'
@@ -50,6 +51,9 @@ export class App extends Component {
     }
     
   }
+  getdoctorinfo=(doctorID)=>{
+    return this.state.doctors.find({doctor_id:doctorID})
+  }
   clearDoctors=()=>{
     this.setState({doctors:[],page:0,reqpage:0})
   }
@@ -60,9 +64,7 @@ export class App extends Component {
         {this.state.loading?<Loader/>:null}
         <Navbar />
         <Switch>
-          <Route path="/bookappoint/:doctor">
-            <BookAppoint/>
-          </Route>
+          <Route path="/bookappoint" component={BookAppoint}/>
           <Route path="/*">
         <Searchbar clearDoctors={this.clearDoctors} showDoctors={this.showDoctors} />
         {this.state.doctors.length>1?<Doctors doctors={this.state.doctors} nextpage={this.nextpage} />:null}

@@ -114,7 +114,7 @@ export class Searchbar extends Component {
                     { this.state.specsuggestions.map((val,key)=><li onClick={e=>this.handleSpecClick(val)} key={key}>{val.suggestion}</li>)}
                     </ul>:null}
                     </div>
-                    <button onClick={this.searchDoctors}>search</button>
+                    <button className="button" onClick={this.searchDoctors}>search</button>
                 </form>
             </div>
         );

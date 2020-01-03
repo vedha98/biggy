@@ -1,8 +1,14 @@
 import React from 'react';
-
-const DoctorCard = ({doctor}) => {
-
+import {useHistory,withRouter} from 'react-router-dom';
+import BookAppoint from '../BookAppoint/BookAppoint';
+const DoctorCard = (props) => {
+   
+    const bookclick=()=>{
+       props.history.push('/BookAppoint',{doctor:props.doctor})
+    }
+    let doctor= props.doctor;
     return (
+       
         <div className="doctor-card">
         <div className="docphoto">
             <img alt='doctor image' src={doctor.profile_photo.url?doctor.profile_photo.url:window.location.origin + '/docalt.jpg'}></img>
@@ -15,10 +21,10 @@ const DoctorCard = ({doctor}) => {
                 <p>₹ {doctor.amount} at the clinic</p>
         </div>
         <div className="docactions">
-            <button className="doc-btn">Book Now</button>
+            <button className="doc-btn button" onClick={bookclick}>Book Now</button>
         </div>
     </div>
     );
 }
 
-export default DoctorCard;
+export default withRouter(DoctorCard);
