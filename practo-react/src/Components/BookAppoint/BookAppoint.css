@@ -6,6 +6,9 @@
     justify-content: center;
     align-items: center;
 }
+.book-wrap>*{
+    padding-bottom: 4rem;
+    }
 .Time{
     background-color: white;
     color: gray;
@@ -66,6 +69,7 @@
     border-radius: .28571429rem;
     background-color:#45AEDB;
     overflow: hidden;
+    padding: 0;
 }
 .appointment-item{
     display: grid;
