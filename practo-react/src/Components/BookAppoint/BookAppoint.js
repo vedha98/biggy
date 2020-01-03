@@ -11,7 +11,7 @@ export class BookAppoint extends Component {
         this.state = {
             name: "",
             address: '',
-            selectedTime: new Date(),
+            selectedTime: new Date().toDateString(),
             show: false
         }
         if (props.location.state) {
@@ -46,7 +46,7 @@ export class BookAppoint extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="book-wrap">
                 <form className="form">
                     <input className="input" placeholder="name" onChange={this.handleChange('name')}></input>
                     <input className="input" placeholder="address" onChange={this.handleChange('address')}></input>
@@ -57,7 +57,7 @@ export class BookAppoint extends Component {
                 <div className="btn-wrap">
                     <button onClick={this.handleSubmit} className="button submit">Submit</button>
                 </div>
-                {this.state.show?<Appointment doctor={this.state.doctor} name ={this.state.name} address={this.state.address}/>:null}
+                {this.state.show?<Appointment date={this.state.selectedTime.toDateString()} doctor={this.state.doctor} name ={this.state.name} address={this.state.address}/>:null}
             </div>
         );
     }
