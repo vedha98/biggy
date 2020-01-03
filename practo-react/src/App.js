@@ -19,8 +19,8 @@ export class App extends Component {
     super(props);
     this.state = {
       doctors: [],
-      page: 0,
-      reqpage:0,
+      page: 1,
+      reqpage:1,
       loading:false
     }
   }
@@ -33,7 +33,7 @@ export class App extends Component {
       category = query.category
     let URL = `https://www.practo.com/marketplace-api/dweb/search/provider?city=${city}&q=%5B%7B%22word%22%3A%22${encodeURIComponent(special)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22${category}%22%7D%2C%7B%22word%22%3A%22${encodeURIComponent(location)}%22%2C%22autocompleted%22%3Atrue%2C%22category%22%3A%22locality%22%7D%5D&page=${this.state.page}`
     axios.get(URL).then(val => {
-      console.log(this.state.doctors)
+      console.log(this.state.page,this.state.reqpage)
       let docs = this.state.doctors
     
       docs = docs.concat(val.data.doctors)
@@ -55,7 +55,7 @@ export class App extends Component {
     return this.state.doctors.find({doctor_id:doctorID})
   }
   clearDoctors=()=>{
-    this.setState({doctors:[],page:0,reqpage:0})
+    this.setState({doctors:[],page:1,reqpage:1})
   }
   render() {
     return (
