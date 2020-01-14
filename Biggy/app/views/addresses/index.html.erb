@@ -1,0 +1,8 @@
+<%current_customer.addresses.each do |address|%>
+<div class="col p-5 shadow-sm d-flex flex-column">
+<%=address.address%>
+<%= link_to  "set address", change_address_path(:address=>address),:method=> :post %>
+</div>
+
+<%end%>
+<%= link_to  "create new address", new_address_path %>
