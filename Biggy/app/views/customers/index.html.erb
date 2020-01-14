@@ -1,0 +1,29 @@
+<%= render  "navbar" %>
+<div class="container-fluid">
+
+<div class="row mb-4 mt-3"  style="justify-content:space-evenly">
+  <% @restaurants.each do |resaurant| %>
+    <div class="col-3 m-2 ">
+    
+      <div class="row no-gutters shadow rounded overflow-hidden flex-md-row m-1 h-md-250 position-relative" ">
+      <div class="col-auto mt-2 d-flex flex-column" style="justify-content:center;height:100px;overflow:hidden">
+          <%= image_tag resaurant.image_url ,style: 'padding:1rem;width:100%;' %>
+        </div>
+        <div class=" p-4 d-flex flex-column position-static">
+
+          
+          <h5 class="mb-0"><%= resaurant.name %></h5>          
+          <div class="mb-1 text-muted"><%= resaurant.address%></div>
+        </div >
+        <div class="d-flex flex-column" style="align-items:center;height:100%">
+         <%= link_to 'Order', customers_path_url(resaurant) ,:class=>"btn btn-secondary m-2",:style=>"flex:1" %>
+        </div>
+      </div>
+      <div class="d-flex flex-row" style="justify-content:space-evenly;">
+     
+    </div>
+    </div>
+
+  <% end %>
+</div>
+  </div>

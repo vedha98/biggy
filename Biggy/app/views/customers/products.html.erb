@@ -1,0 +1,28 @@
+<%= render  "navbar" %>
+
+<div class="container-fluid">
+<h5 class="col mt-4"><%=@restaurant.name%></h5>
+<div class="row mb-4 mt-3"  style="justify-content:space-evenly">
+  <% @products.each do |product| %>
+  <div class="col-3 m-2 ">
+  <%= link_to create_cart_item_path(:product=>product),  :action => create_cart_item_path(:product=>product),method: :post,:style=>"width:100%" do %>
+    
+      <div class="row no-gutters shadow-sm rounded overflow-hidden flex-md-row m-1 h-md-250 position-relative" ">
+      <div class="col-auto d-flex flex-column" style="justify-content:center">
+          <%= image_tag product.image_url ,style: 'padding:1rem;height:120px;width:120px;' %>
+        </div>
+        <div class=" p-4 d-flex flex-column position-static">   
+          <h5 class="mb-0"><%= product.name %></h5>
+          <strong class="d-inline-block text-muted">₹<%= product.price %></strong>
+          <div class="mb-1 text-muted"><%= product.category %></div>
+        </div>
+        
+        
+      </div>
+      
+
+<%end%>
+    </div>
+  <% end %>
+</div>
+  </div>

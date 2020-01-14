@@ -1,0 +1,37 @@
+<%= form_for @address, :url=> addresses_path  do |form| %>
+ 
+  <% if @address.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@address.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @address.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :street %><br>
+    <%= form.text_field :street %>
+  </p>
+ 
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_area :city %>
+  </p>
+    <p>
+    <%= form.label :state %><br>
+    <%= form.text_area :state %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', customers_path %>
