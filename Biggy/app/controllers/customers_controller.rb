@@ -22,15 +22,19 @@ class CustomersController < ApplicationController
   def cart_create
     puts "create la irunthu"
     @exist = @cart.cart_items.find_by(product_id:params[:product])
+    @product = Product.find(params[:product])
+    if @cart.restaurant.to_i!=@product.restaurant_id
+
+      @cart.clearCart
+      @cart.restaurant = @product.restaurant_id
+      @cart.save
+    end
     if @exist.present?
       @exist.increment!(:quantity)
     else
     @cart_item = CartItem.new
     @cart_item.customer_cart = @cart
-    @product = Product.find(params[:product])
-    @cart_item.product = @product
-    @cart.restaurant = @product.restaurant_id
-    @cart.save
+    @cart_item.product = @product   
     @cart_item.save
     end
   end
