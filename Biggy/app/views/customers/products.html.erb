@@ -4,10 +4,10 @@
 <h5 class="col mt-4"><%=@restaurant.name%></h5>
 <div class="row mb-4 mt-3"  style="justify-content:space-evenly">
   <% @products.each do |product| %>
-  <div class="col-3 m-2 ">
-  <%= link_to create_cart_item_path(:product=>product),  :action => create_cart_item_path(:product=>product),method: :post,:style=>"width:100%" do %>
+  <div class="col-3 m-2 shadow-sm rounded">
+ 
     
-      <div class="row no-gutters shadow-sm rounded overflow-hidden flex-md-row m-1 h-md-250 position-relative" ">
+      <div class="row no-gutters  overflow-hidden flex-md-row m-1 h-md-250 position-relative" ">
       <div class="col-auto d-flex flex-column" style="justify-content:center">
           <%= image_tag product.image_url ,style: 'padding:1rem;height:120px;width:120px;' %>
         </div>
@@ -17,11 +17,15 @@
           <div class="mb-1 text-muted"><%= product.category %></div>
         </div>
         
-        
-      </div>
       
 
-<%end%>
+        
+      </div>
+   <div>
+   
+           <%= link_to "Add", create_cart_item_path(:product=>product),  :action => create_cart_item_path(:product=>product),method: :post,:style=>"width:100%",:class=>"btn btn-success"  %>
+        </div>   
+
     </div>
   <% end %>
 </div>
