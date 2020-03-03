@@ -45,7 +45,9 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-rvm',     require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'selenium-webdriver'
+
+  # gem 'capistrano3-puma',   require: false
 end
 
 group :development do
