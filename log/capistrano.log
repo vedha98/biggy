@@ -1382,3 +1382,1145 @@ To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
  DEBUG [46917ef3] 	
  DEBUG [46917ef3] 	(See full trace by running task with --trace)
  DEBUG [46917ef3] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 11:57:03 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e1413c17] Running [ -d ~/.rvm ] as root@15.206.148.242
+ DEBUG [e1413c17] Command: [ -d ~/.rvm ]
+ DEBUG [e1413c17] Finished in 1.069 seconds with exit status 1 (failed).
+ DEBUG [154aa757] Running [ -d /usr/local/rvm ] as root@15.206.148.242
+ DEBUG [154aa757] Command: [ -d /usr/local/rvm ]
+ DEBUG [154aa757] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [6ebe337e] Running /usr/local/rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [6ebe337e] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [6ebe337e] 	rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [6ebe337e] 	
+ DEBUG [6ebe337e] Finished in 0.780 seconds with exit status 0 (successful).
+ DEBUG [f2c6b9fa] Running /usr/local/rvm/bin/rvm current as root@15.206.148.242
+ DEBUG [f2c6b9fa] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [f2c6b9fa] 	ruby-2.6.3
+ DEBUG [f2c6b9fa] 	
+ DEBUG [f2c6b9fa] Finished in 0.409 seconds with exit status 0 (successful).
+ DEBUG [bedc6975] Running /usr/local/rvm/bin/rvm default do ruby --version as root@15.206.148.242
+ DEBUG [bedc6975] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [bedc6975] 	ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux]
+ DEBUG [bedc6975] 	
+ DEBUG [bedc6975] Finished in 0.523 seconds with exit status 0 (successful).
+  INFO [d66a1bbb] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [d66a1bbb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d66a1bbb] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [eaad3a2c] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [eaad3a2c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [eaad3a2c] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [d7ad992e] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [d7ad992e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [d7ad992e] 	3f43101149a388967258f0953cd2f0f5f333695c
+ DEBUG [d7ad992e] 		HEAD
+  INFO [d7ad992e] Finished in 2.600 seconds with exit status 0 (successful).
+  INFO [350b0267] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [350b0267] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [350b0267] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [3ecc36e8] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [3ecc36e8] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [3ecc36e8] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [9f106346] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [9f106346] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [9f106346] Finished in 0.214 seconds with exit status 1 (failed).
+ DEBUG [10091653] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [10091653] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [10091653] Finished in 0.221 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [093d21a3] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [093d21a3] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [093d21a3] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [4b4f4713] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [4b4f4713] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+ DEBUG [4b4f4713] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [4b4f4713] 	
+ DEBUG [4b4f4713] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [4b4f4713] 	
+ DEBUG [4b4f4713] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [4b4f4713] 	
+ DEBUG [4b4f4713] 	
+  INFO [4b4f4713] Finished in 0.341 seconds with exit status 0 (successful).
+  INFO [2dd97331] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [2dd97331] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [2dd97331] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	Fetching origin
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	remote: Enumerating objects: 49, done.[K
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	remote: Counting objects:   2% (1/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:   5% (2/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:   8% (3/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  11% (4/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  14% (5/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  17% (6/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  20% (7/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  23% (8/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  26% (9/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  29% (10/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  32% (11/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  35% (12/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  38% (13/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  41% (14/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  44% (15/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  47% (16/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  50% (17/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  52% (18/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  55% (19/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  58% (20/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  61% (21/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  64% (22/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  67% (23/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  70% (24/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  73% (25/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  76% (26/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  79% (27/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  82% (28/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  85% (29/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  88% (30/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  91% (31/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  94% (32/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects:  97% (33/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects: 100% (34/34)[K
+ DEBUG [2dd97331] 	remote: Counting objects: 100% (34/34), done.[K
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	remote: Compressing objects:   7% (1/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  15% (2/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  23% (3/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  30% (4/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  38% (5/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  46% (6/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  53% (7/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  61% (8/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  69% (9/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  76% (10/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  84% (11/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects:  92% (12/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects: 100% (13/13)[K
+ DEBUG [2dd97331] 	remote: Compressing objects: 100% (13/13), done.[K
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	remote: Total 19 (delta 11), reused 12 (delta 6), pack-reused 0[K
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	Unpacking objects:   5% (1/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  10% (2/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  15% (3/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  21% (4/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  26% (5/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  31% (6/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  36% (7/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  42% (8/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  47% (9/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  52% (10/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  57% (11/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  63% (12/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  68% (13/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  73% (14/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  78% (15/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  84% (16/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  89% (17/19)   
+ DEBUG [2dd97331] 	Unpacking objects:  94% (18/19)   
+ DEBUG [2dd97331] 	Unpacking objects: 100% (19/19)   
+ DEBUG [2dd97331] 	Unpacking objects: 100% (19/19), done.
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	From github.com:vedha98/biggy
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	   705f5d0..3f43101  master            -> master
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	 + c255bbf...c1ee3c4 refs/pull/2/merge -> refs/pull/2/merge  (forced update)
+ DEBUG [2dd97331] 	
+ DEBUG [2dd97331] 	 + d9a377f...e4a94b1 refs/pull/3/merge -> refs/pull/3/merge  (forced update)
+ DEBUG [2dd97331] 	
+  INFO [2dd97331] Finished in 2.651 seconds with exit status 0 (successful).
+ DEBUG [71877088] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [71877088] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [71877088] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [fea02e82] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303062716 as root@15.206.148.242
+ DEBUG [fea02e82] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303062716 )
+ DEBUG [fea02e82] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [fea02e82] 	
+ DEBUG [fea02e82] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [fea02e82] 	
+ DEBUG [fea02e82] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [fea02e82] 	
+ DEBUG [fea02e82] 	
+  INFO [fea02e82] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [b0c1c7d9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303062716 as root@15.206.148.242
+ DEBUG [b0c1c7d9] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303062716 )
+ DEBUG [b0c1c7d9] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [b0c1c7d9] 	
+ DEBUG [b0c1c7d9] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [b0c1c7d9] 	
+ DEBUG [b0c1c7d9] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [b0c1c7d9] 	
+ DEBUG [b0c1c7d9] 	
+  INFO [b0c1c7d9] Finished in 1.856 seconds with exit status 0 (successful).
+ DEBUG [1b6ffa8c] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [1b6ffa8c] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [1b6ffa8c] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [78a0ee9a] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [78a0ee9a] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [78a0ee9a] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [78a0ee9a] 	
+ DEBUG [78a0ee9a] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [78a0ee9a] 	
+ DEBUG [78a0ee9a] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [78a0ee9a] 	
+ DEBUG [78a0ee9a] 	
+ DEBUG [78a0ee9a] 	3f43101149a388967258f0953cd2f0f5f333695c
+ DEBUG [78a0ee9a] 	
+ DEBUG [78a0ee9a] Finished in 0.291 seconds with exit status 0 (successful).
+ DEBUG [4c42cf59] Running if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [4c42cf59] Command: if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi
+ DEBUG [4c42cf59] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [479b94f2] Running /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3f43101149a388967258f0953cd2f0f5f333695c" > REVISION as root@15.206.148.242
+ DEBUG [479b94f2] Command: cd /var/www/biggy/releases/20200303062716 && /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3f43101149a388967258f0953cd2f0f5f333695c" > REVISION
+ DEBUG [479b94f2] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [479b94f2] 	
+ DEBUG [479b94f2] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303062716/Gemfile'.
+ DEBUG [479b94f2] 	
+ DEBUG [479b94f2] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [479b94f2] 	
+ DEBUG [479b94f2] 	
+  INFO [479b94f2] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO [85bd3328] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303062716/public as root@15.206.148.242
+ DEBUG [85bd3328] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303062716/public
+  INFO [85bd3328] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [a9da5455] Running [ -L /var/www/biggy/releases/20200303062716/public/assets ] as root@15.206.148.242
+ DEBUG [a9da5455] Command: [ -L /var/www/biggy/releases/20200303062716/public/assets ]
+ DEBUG [a9da5455] Finished in 0.257 seconds with exit status 1 (failed).
+ DEBUG [d2df3df4] Running [ -d /var/www/biggy/releases/20200303062716/public/assets ] as root@15.206.148.242
+ DEBUG [d2df3df4] Command: [ -d /var/www/biggy/releases/20200303062716/public/assets ]
+ DEBUG [d2df3df4] Finished in 0.249 seconds with exit status 1 (failed).
+  INFO [90cffb66] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303062716/public/assets as root@15.206.148.242
+ DEBUG [90cffb66] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303062716/public/assets
+  INFO [90cffb66] Finished in 0.257 seconds with exit status 0 (successful).
+ DEBUG [6bfea9a8] Running if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [6bfea9a8] Command: if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi
+ DEBUG [6bfea9a8] Finished in 0.274 seconds with exit status 0 (successful).
+ DEBUG [34844b33] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/biggy/shared/bundle as root@15.206.148.242
+ DEBUG [34844b33] Command: cd /var/www/biggy/releases/20200303062716 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/biggy/shared/bundle
+ DEBUG [34844b33] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303062716/Gemfile'.
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[33mYour Gemfile lists the gem selenium-webdriver (>= 0) more than once.
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	You should probably keep only one of them.
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	Remove any duplicate entries and specify the gem only once (per group).
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	While it's not a problem now, it could cause errors if you change the version of one of them later.[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31mThe following gems are missing[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * net-ssh (5.2.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * net-scp (2.0.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * sshkit (1.20.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * bindex (0.8.1)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * byebug (11.0.1)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * capistrano (3.12.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * capistrano-rvm (0.1.2)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * regexp_parser (1.6.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * xpath (3.2.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * capybara (3.30.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * rb-fsevent (0.10.3)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * rb-inotify (0.10.1)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * listen (3.1.5)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * rubyzip (2.0.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * spring (2.1.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * web-console (4.0.1)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[31m * webdrivers (4.2.0)[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [34844b33] 	
+ DEBUG [34844b33] Finished in 1.068 seconds with exit status 1 (failed).
+  INFO [569651a1] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet as root@15.206.148.242
+ DEBUG [569651a1] Command: cd /var/www/biggy/releases/20200303062716 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [569651a1] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [569651a1] 	
+ DEBUG [569651a1] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303062716/Gemfile'.
+ DEBUG [569651a1] 	
+ DEBUG [569651a1] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [569651a1] 	
+ DEBUG [569651a1] 	
+  INFO [569651a1] Finished in 1.390 seconds with exit status 0 (successful).
+ DEBUG [557d1d9f] Running if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [557d1d9f] Command: if test ! -d /var/www/biggy/releases/20200303062716; then echo "Directory does not exist '/var/www/biggy/releases/20200303062716'" 1>&2; false; fi
+ DEBUG [557d1d9f] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [9cd13f4f] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as root@15.206.148.242
+ DEBUG [9cd13f4f] Command: cd /var/www/biggy/releases/20200303062716 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [9cd13f4f] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303062716/Gemfile'.
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	rake aborted!
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	ArgumentError: Missing `secret_key_base` for 'production' environment, set this string with `rails credentials:edit`
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:580:in `validate_secret_key_base'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:423:in `secret_key_base'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:177:in `key_generator'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:201:in `message_verifier'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activestorage-6.0.2.1/lib/active_storage/engine.rb:97:in `block (2 levels) in <class:Engine>'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:69:in `block in execute_hook'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:62:in `with_execution_control'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:67:in `execute_hook'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:51:in `each'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application/finisher.rb:129:in `block in <module:Finisher>'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/initializable.rb:32:in `instance_exec'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/initializable.rb:32:in `run'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/initializable.rb:61:in `block in run_initializers'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/initializable.rb:60:in `run_initializers'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:363:i
+ DEBUG [9cd13f4f] 	n `initialize!'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/releases/20200303062716/config/environment.rb:5:in `<main>'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/zeitwerk-2.2.2/lib/zeitwerk/kernel.rb:23:in `require'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/dependencies.rb:325:in `block in require'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/dependencies.rb:291:in `load_dependency'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/activesupport-6.0.2.1/lib/active_support/dependencies.rb:325:in `require'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:339:in `require_environment!'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/railties-6.0.2.1/lib/rails/application.rb:515:in `block in run_tasks_blocks'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/task.rb:62:in `block (2 levels) in define'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/gems/rake-13.0.1/exe/rake:27:in `<top (required)>'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `eval'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	/var/www/biggy/shared/bundle/ruby/2.6.0/bin/ruby_executable_hooks:24:in `<main>'
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	Tasks: TOP => environment
+ DEBUG [9cd13f4f] 	
+ DEBUG [9cd13f4f] 	(See full trace by running task with --trace)
+ DEBUG [9cd13f4f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 11:59:54 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [73c6c96c] Running [ -d ~/.rvm ] as root@15.206.148.242
+ DEBUG [73c6c96c] Command: [ -d ~/.rvm ]
+ DEBUG [73c6c96c] Finished in 1.412 seconds with exit status 1 (failed).
+ DEBUG [65b61b16] Running [ -d /usr/local/rvm ] as root@15.206.148.242
+ DEBUG [65b61b16] Command: [ -d /usr/local/rvm ]
+ DEBUG [65b61b16] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [c9ca6faa] Running /usr/local/rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [c9ca6faa] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [c9ca6faa] 	rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [c9ca6faa] 	
+ DEBUG [c9ca6faa] Finished in 0.402 seconds with exit status 0 (successful).
+ DEBUG [17612ad1] Running /usr/local/rvm/bin/rvm current as root@15.206.148.242
+ DEBUG [17612ad1] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [17612ad1] 	ruby-2.6.3
+ DEBUG [17612ad1] 	
+ DEBUG [17612ad1] Finished in 0.415 seconds with exit status 0 (successful).
+ DEBUG [70123660] Running /usr/local/rvm/bin/rvm default do ruby --version as root@15.206.148.242
+ DEBUG [70123660] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [70123660] 	ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux]
+ DEBUG [70123660] 	
+ DEBUG [70123660] Finished in 0.814 seconds with exit status 0 (successful).
+  INFO [2e272112] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [2e272112] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2e272112] Finished in 0.225 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [9f52b94c] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [9f52b94c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [9f52b94c] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [971f7f51] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [971f7f51] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [971f7f51] 	3f43101149a388967258f0953cd2f0f5f333695c
+ DEBUG [971f7f51] 		HEAD
+  INFO [971f7f51] Finished in 3.518 seconds with exit status 0 (successful).
+  INFO [152bcc33] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [152bcc33] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [152bcc33] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [7eb7c426] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [7eb7c426] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [7eb7c426] Finished in 0.222 seconds with exit status 0 (successful).
+ DEBUG [44baea40] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [44baea40] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [44baea40] Finished in 0.218 seconds with exit status 1 (failed).
+ DEBUG [661c3553] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [661c3553] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [661c3553] Finished in 0.210 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [e6e270e6] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [e6e270e6] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [e6e270e6] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [0267510b] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [0267510b] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+ DEBUG [0267510b] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [0267510b] 	
+ DEBUG [0267510b] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [0267510b] 	
+ DEBUG [0267510b] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [0267510b] 	
+ DEBUG [0267510b] 	
+  INFO [0267510b] Finished in 0.281 seconds with exit status 0 (successful).
+  INFO [3bab92d8] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [3bab92d8] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3bab92d8] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	Fetching origin
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	remote: Enumerating objects: 7, done.[K
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	remote: Counting objects:  14% (1/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects:  28% (2/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects:  42% (3/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects:  57% (4/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects:  71% (5/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects:  85% (6/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects: 100% (7/7)[K
+ DEBUG [3bab92d8] 	remote: Counting objects: 100% (7/7), done.[K
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	remote: Compressing objects:  25% (1/4)[K
+ DEBUG [3bab92d8] 	remote: Compressing objects:  50% (2/4)[K
+ DEBUG [3bab92d8] 	remote: Compressing objects:  75% (3/4)[K
+ DEBUG [3bab92d8] 	remote: Compressing objects: 100% (4/4)[K
+ DEBUG [3bab92d8] 	remote: Compressing objects: 100% (4/4), done.[K
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	remote: Total 4 (delta 3), reused 0 (delta 0), pack-reused 0[K
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	Unpacking objects:  25% (1/4)   
+ DEBUG [3bab92d8] 	Unpacking objects:  50% (2/4)   
+ DEBUG [3bab92d8] 	Unpacking objects:  75% (3/4)   
+ DEBUG [3bab92d8] 	Unpacking objects: 100% (4/4)   
+ DEBUG [3bab92d8] 	Unpacking objects: 100% (4/4), done.
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	From github.com:vedha98/biggy
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	 + 4605290...940b4f3 dependabot/bundler/puma-4.3.2 -> dependabot/bundler/puma-4.3.2  (forced update)
+ DEBUG [3bab92d8] 	
+ DEBUG [3bab92d8] 	 + 4605290...940b4f3 refs/pull/2/head -> refs/pull/2/head  (forced update)
+ DEBUG [3bab92d8] 	
+  INFO [3bab92d8] Finished in 2.988 seconds with exit status 0 (successful).
+ DEBUG [13e5024e] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [13e5024e] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [13e5024e] Finished in 0.143 seconds with exit status 0 (successful).
+  INFO [8b54f523] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063008 as root@15.206.148.242
+ DEBUG [8b54f523] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063008 )
+ DEBUG [8b54f523] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [8b54f523] 	
+ DEBUG [8b54f523] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [8b54f523] 	
+ DEBUG [8b54f523] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [8b54f523] 	
+ DEBUG [8b54f523] 	
+  INFO [8b54f523] Finished in 0.299 seconds with exit status 0 (successful).
+  INFO [43c90bb4] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303063008 as root@15.206.148.242
+ DEBUG [43c90bb4] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303063008 )
+ DEBUG [43c90bb4] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [43c90bb4] 	
+ DEBUG [43c90bb4] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [43c90bb4] 	
+ DEBUG [43c90bb4] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [43c90bb4] 	
+ DEBUG [43c90bb4] 	
+  INFO [43c90bb4] Finished in 1.823 seconds with exit status 0 (successful).
+ DEBUG [dc836a75] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [dc836a75] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [dc836a75] Finished in 0.168 seconds with exit status 0 (successful).
+ DEBUG [43a39779] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [43a39779] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [43a39779] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [43a39779] 	
+ DEBUG [43a39779] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [43a39779] 	
+ DEBUG [43a39779] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [43a39779] 	
+ DEBUG [43a39779] 	
+ DEBUG [43a39779] 	3f43101149a388967258f0953cd2f0f5f333695c
+ DEBUG [43a39779] 	
+ DEBUG [43a39779] Finished in 0.329 seconds with exit status 0 (successful).
+ DEBUG [29b8427e] Running if test ! -d /var/www/biggy/releases/20200303063008; then echo "Directory does not exist '/var/www/biggy/releases/20200303063008'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [29b8427e] Command: if test ! -d /var/www/biggy/releases/20200303063008; then echo "Directory does not exist '/var/www/biggy/releases/20200303063008'" 1>&2; false; fi
+ DEBUG [29b8427e] Finished in 0.145 seconds with exit status 0 (successful).
+  INFO [3f244bde] Running /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3f43101149a388967258f0953cd2f0f5f333695c" > REVISION as root@15.206.148.242
+ DEBUG [3f244bde] Command: cd /var/www/biggy/releases/20200303063008 && /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3f43101149a388967258f0953cd2f0f5f333695c" > REVISION
+ DEBUG [3f244bde] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [3f244bde] 	
+ DEBUG [3f244bde] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063008/Gemfile'.
+ DEBUG [3f244bde] 	
+ DEBUG [3f244bde] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [3f244bde] 	
+ DEBUG [3f244bde] 	
+  INFO [3f244bde] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO [6f39d0b2] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063008/public as root@15.206.148.242
+ DEBUG [6f39d0b2] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063008/public
+  INFO [6f39d0b2] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG [cf9b7e65] Running [ -L /var/www/biggy/releases/20200303063008/public/assets ] as root@15.206.148.242
+ DEBUG [cf9b7e65] Command: [ -L /var/www/biggy/releases/20200303063008/public/assets ]
+ DEBUG [cf9b7e65] Finished in 0.212 seconds with exit status 1 (failed).
+ DEBUG [2f8c3dda] Running [ -d /var/www/biggy/releases/20200303063008/public/assets ] as root@15.206.148.242
+ DEBUG [2f8c3dda] Command: [ -d /var/www/biggy/releases/20200303063008/public/assets ]
+ DEBUG [2f8c3dda] Finished in 0.213 seconds with exit status 1 (failed).
+  INFO [c830a01a] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303063008/public/assets as root@15.206.148.242
+ DEBUG [c830a01a] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303063008/public/assets
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 12:03:04 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d1a96259] Running [ -d ~/.rvm ] as root@15.206.148.242
+ DEBUG [d1a96259] Command: [ -d ~/.rvm ]
+ DEBUG [d1a96259] Finished in 1.453 seconds with exit status 1 (failed).
+ DEBUG [1fe79c9e] Running [ -d /usr/local/rvm ] as root@15.206.148.242
+ DEBUG [1fe79c9e] Command: [ -d /usr/local/rvm ]
+ DEBUG [1fe79c9e] Finished in 0.212 seconds with exit status 0 (successful).
+ DEBUG [4ad4450a] Running /usr/local/rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [4ad4450a] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [4ad4450a] 	rvm 1.29.9 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+ DEBUG [4ad4450a] 	
+ DEBUG [4ad4450a] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG [97a30a56] Running /usr/local/rvm/bin/rvm current as root@15.206.148.242
+ DEBUG [97a30a56] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [97a30a56] 	ruby-2.6.3
+ DEBUG [97a30a56] 	
+ DEBUG [97a30a56] Finished in 0.422 seconds with exit status 0 (successful).
+ DEBUG [41ff7667] Running /usr/local/rvm/bin/rvm default do ruby --version as root@15.206.148.242
+ DEBUG [41ff7667] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [41ff7667] 	ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-linux]
+ DEBUG [41ff7667] 	
+ DEBUG [41ff7667] Finished in 0.803 seconds with exit status 0 (successful).
+  INFO [b0e53579] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [b0e53579] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b0e53579] Finished in 0.225 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [6a5cfdd3] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [6a5cfdd3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [6a5cfdd3] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO [465c14cf] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [465c14cf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [465c14cf] 	3185bb9f7dea9b11b609348146c6f8344d00eb19
+ DEBUG [465c14cf] 		HEAD
+  INFO [465c14cf] Finished in 3.124 seconds with exit status 0 (successful).
+  INFO [ae9aafcd] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [ae9aafcd] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [ae9aafcd] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [5664100a] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [5664100a] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [5664100a] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [420c1ee9] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [420c1ee9] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [420c1ee9] Finished in 0.226 seconds with exit status 1 (failed).
+ DEBUG [8590768d] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [8590768d] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [8590768d] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [644e0ec3] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [644e0ec3] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [644e0ec3] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [0a79e95a] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [0a79e95a] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+ DEBUG [0a79e95a] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [0a79e95a] 	
+ DEBUG [0a79e95a] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [0a79e95a] 	
+ DEBUG [0a79e95a] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [0a79e95a] 	
+ DEBUG [0a79e95a] 	
+  INFO [0a79e95a] Finished in 0.289 seconds with exit status 0 (successful).
+  INFO [58411ad0] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [58411ad0] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [58411ad0] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	Fetching origin
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	remote: Enumerating objects: 7, done.[K
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	remote: Counting objects:  14% (1/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects:  28% (2/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects:  42% (3/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects:  57% (4/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects:  71% (5/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects:  85% (6/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects: 100% (7/7)[K
+ DEBUG [58411ad0] 	remote: Counting objects: 100% (7/7), done.[K
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	remote: Compressing objects: 100% (1/1)[K
+ DEBUG [58411ad0] 	remote: Compressing objects: 100% (1/1), done.[K
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0[K
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	Unpacking objects:  25% (1/4)   
+ DEBUG [58411ad0] 	Unpacking objects:  50% (2/4)   
+ DEBUG [58411ad0] 	Unpacking objects:  75% (3/4)   
+ DEBUG [58411ad0] 	Unpacking objects: 100% (4/4)   
+ DEBUG [58411ad0] 	Unpacking objects: 100% (4/4), done.
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	From github.com:vedha98/biggy
+ DEBUG [58411ad0] 	
+ DEBUG [58411ad0] 	   3f43101..3185bb9  master     -> master
+ DEBUG [58411ad0] 	
+  INFO [58411ad0] Finished in 3.431 seconds with exit status 0 (successful).
+ DEBUG [1bc9a40f] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [1bc9a40f] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [1bc9a40f] Finished in 0.154 seconds with exit status 0 (successful).
+  INFO [d7ba609d] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318 as root@15.206.148.242
+ DEBUG [d7ba609d] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318 )
+ DEBUG [d7ba609d] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [d7ba609d] 	
+ DEBUG [d7ba609d] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [d7ba609d] 	
+ DEBUG [d7ba609d] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [d7ba609d] 	
+ DEBUG [d7ba609d] 	
+  INFO [d7ba609d] Finished in 0.315 seconds with exit status 0 (successful).
+  INFO [6aea249b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303063318 as root@15.206.148.242
+ DEBUG [6aea249b] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303063318 )
+ DEBUG [6aea249b] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [6aea249b] 	
+ DEBUG [6aea249b] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [6aea249b] 	
+ DEBUG [6aea249b] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [6aea249b] 	
+ DEBUG [6aea249b] 	
+  INFO [6aea249b] Finished in 1.870 seconds with exit status 0 (successful).
+ DEBUG [8200e776] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [8200e776] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [8200e776] Finished in 0.305 seconds with exit status 0 (successful).
+ DEBUG [6a05bdb9] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [6a05bdb9] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [6a05bdb9] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [6a05bdb9] 	
+ DEBUG [6a05bdb9] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+ DEBUG [6a05bdb9] 	
+ DEBUG [6a05bdb9] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [6a05bdb9] 	
+ DEBUG [6a05bdb9] 	
+ DEBUG [6a05bdb9] 	3185bb9f7dea9b11b609348146c6f8344d00eb19
+ DEBUG [6a05bdb9] 	
+ DEBUG [6a05bdb9] Finished in 0.304 seconds with exit status 0 (successful).
+ DEBUG [6137a9eb] Running if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [6137a9eb] Command: if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi
+ DEBUG [6137a9eb] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [0c3edc9e] Running /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3185bb9f7dea9b11b609348146c6f8344d00eb19" > REVISION as root@15.206.148.242
+ DEBUG [0c3edc9e] Command: cd /var/www/biggy/releases/20200303063318 && /usr/bin/env echo "RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/Gemfile'.
+To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+
+3185bb9f7dea9b11b609348146c6f8344d00eb19" > REVISION
+ DEBUG [0c3edc9e] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [0c3edc9e] 	
+ DEBUG [0c3edc9e] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [0c3edc9e] 	
+ DEBUG [0c3edc9e] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [0c3edc9e] 	
+ DEBUG [0c3edc9e] 	
+  INFO [0c3edc9e] Finished in 0.296 seconds with exit status 0 (successful).
+  INFO [1ee27a13] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318/public as root@15.206.148.242
+ DEBUG [1ee27a13] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318/public
+  INFO [1ee27a13] Finished in 0.226 seconds with exit status 0 (successful).
+ DEBUG [d4dadf28] Running [ -L /var/www/biggy/releases/20200303063318/public/assets ] as root@15.206.148.242
+ DEBUG [d4dadf28] Command: [ -L /var/www/biggy/releases/20200303063318/public/assets ]
+ DEBUG [d4dadf28] Finished in 0.222 seconds with exit status 1 (failed).
+ DEBUG [046d07b7] Running [ -d /var/www/biggy/releases/20200303063318/public/assets ] as root@15.206.148.242
+ DEBUG [046d07b7] Command: [ -d /var/www/biggy/releases/20200303063318/public/assets ]
+ DEBUG [046d07b7] Finished in 0.238 seconds with exit status 1 (failed).
+  INFO [0f18cbc1] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303063318/public/assets as root@15.206.148.242
+ DEBUG [0f18cbc1] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303063318/public/assets
+  INFO [0f18cbc1] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG [dd02f37d] Running if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [dd02f37d] Command: if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi
+ DEBUG [dd02f37d] Finished in 0.218 seconds with exit status 0 (successful).
+ DEBUG [8b0e3bae] Running /usr/local/rvm/bin/rvm default do bundle check --path /var/www/biggy/shared/bundle as root@15.206.148.242
+ DEBUG [8b0e3bae] Command: cd /var/www/biggy/releases/20200303063318 && /usr/local/rvm/bin/rvm default do bundle check --path /var/www/biggy/shared/bundle
+ DEBUG [8b0e3bae] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[33mYour Gemfile lists the gem selenium-webdriver (>= 0) more than once.
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	You should probably keep only one of them.
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	Remove any duplicate entries and specify the gem only once (per group).
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	While it's not a problem now, it could cause errors if you change the version of one of them later.[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31mThe following gems are missing[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * net-ssh (5.2.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * net-scp (2.0.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * sshkit (1.20.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * bindex (0.8.1)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * byebug (11.0.1)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * capistrano (3.12.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * capistrano-rvm (0.1.2)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * regexp_parser (1.6.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * xpath (3.2.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * capybara (3.30.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * rb-fsevent (0.10.3)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * rb-inotify (0.10.1)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * listen (3.1.5)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * rubyzip (2.0.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * spring (2.1.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * web-console (4.0.1)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[31m * webdrivers (4.2.0)[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [8b0e3bae] 	
+ DEBUG [8b0e3bae] Finished in 0.946 seconds with exit status 1 (failed).
+  INFO [c7e9ce44] Running /usr/local/rvm/bin/rvm default do bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet as root@15.206.148.242
+ DEBUG [c7e9ce44] Command: cd /var/www/biggy/releases/20200303063318 && /usr/local/rvm/bin/rvm default do bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [c7e9ce44] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [c7e9ce44] 	
+ DEBUG [c7e9ce44] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [c7e9ce44] 	
+ DEBUG [c7e9ce44] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [c7e9ce44] 	
+ DEBUG [c7e9ce44] 	
+  INFO [c7e9ce44] Finished in 1.555 seconds with exit status 0 (successful).
+ DEBUG [cd8a26f3] Running if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [cd8a26f3] Command: if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi
+ DEBUG [cd8a26f3] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO [25db94e7] Running /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile as root@15.206.148.242
+ DEBUG [25db94e7] Command: cd /var/www/biggy/releases/20200303063318 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [25db94e7] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[1myarn install v1.22.0[22m
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2m[1/4][22m Resolving packages...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	⠁ 
+ DEBUG [25db94e7] 	[0K
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[32msuccess[39m Already up-to-date.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	Done in 0.88s.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[1myarn install v1.22.0[22m
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2m[1/4][22m Resolving packages...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	⠁ 
+ DEBUG [25db94e7] 	[0K
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2m[2/4][22m Fetching packages...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[34minfo[39m fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[34minfo[39m "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[33mwarning[39m " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[33mwarning[39m "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	[2K
+ DEBUG [25db94e7] 	[1G
+ DEBUG [25db94e7] 	Done in 8.73s.
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.193650 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.197449 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.197747 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/address-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.198129 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/address-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.198722 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/application-6a1104129ce36de99cd56bf83ca33f198c70106a660f09964ee7506a95914744.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.199218 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/application-6a1104129ce36de99cd56bf83ca33f198c70106a660f09964ee7506a95914744.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.200752 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/customers-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.200934 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/customers-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.204870 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/home-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.205031 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/home-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.205208 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/products-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.205368 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/products-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.205566 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/restaurants-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	I, [2020-03-03T06:33:59.205742 #12300]  INFO -- : Writing /var/www/biggy/releases/20200303063318/public/assets/restaurants-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Compiling...
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Compiled all packs in /var/www/biggy/releases/20200303063318/public/packs
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Hash: ea4427a3161a1e035605
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Version: webpack 4.41.5
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Time: 7141ms
+ DEBUG [25db94e7] 	
+ DEBUG [25db94e7] 	Built at: 03/03/2020 6:34:08 AM
+ DEBUG [25db94e7] 	
+                                        Asset       Size  Chunks                         Chunk Names
+       js/application-b6c7cffdfadde57ae8a8.js   69.2 KiB       0  [emitted] [immutable]  application
+    js/application-b6c7cffdfadde57ae8a8.js.br   15.3 KiB          [emitted]              
+    js/application-b6c7cffdfadde57ae8a8.js.gz   17.7 KiB          [emitted]              
+   js/application-b6c7cffdfadde57ae8a8.js.map    205 KiB       0  [emitted] [dev]        application
+js/application-b6c7cffdfadde57ae8a8.js.map.br   43.9 KiB          [emitted]              
+js/application-b6c7cffdfadde57ae8a8.js.map.gz     51 KiB          [emitted]              
+                                manifest.json  364 bytes          [emitted]              
+                             manifest.json.br  125 bytes          [emitted]              
+                             manifest.json.gz  142 bytes          [emitted]              
+Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b6c7cffdfadde57ae8a8.js.map
+ DEBUG [25db94e7] 	
+[0] (webpack)/buildin/module.js 552 bytes {0} [built]
+[1] ./app/javascript/packs/application.js 742 bytes {0} [built]
+[5] ./app/javascript/channels/index.js 205 bytes {0} [built]
+[6] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]
+    + 3 hidden modules
+
+  INFO [25db94e7] Finished in 27.089 seconds with exit status 0 (successful).
+ DEBUG [2f5f95a1] Running if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [2f5f95a1] Command: if test ! -d /var/www/biggy/releases/20200303063318; then echo "Directory does not exist '/var/www/biggy/releases/20200303063318'" 1>&2; false; fi
+ DEBUG [2f5f95a1] Finished in 0.375 seconds with exit status 0 (successful).
+  INFO [d6f1824a] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318/assets_manifest_backup as root@15.206.148.242
+ DEBUG [d6f1824a] Command: cd /var/www/biggy/releases/20200303063318 && /usr/bin/env mkdir -p /var/www/biggy/releases/20200303063318/assets_manifest_backup
+ DEBUG [d6f1824a] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [d6f1824a] 	
+ DEBUG [d6f1824a] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [d6f1824a] 	
+ DEBUG [d6f1824a] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [d6f1824a] 	
+ DEBUG [d6f1824a] 	
+  INFO [d6f1824a] Finished in 0.303 seconds with exit status 0 (successful).
+ DEBUG [22702d62] Running /usr/bin/env ls /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [22702d62] Command: cd /var/www/biggy/releases/20200303063318 && /usr/bin/env ls /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest*
+ DEBUG [22702d62] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [22702d62] 	
+ DEBUG [22702d62] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [22702d62] 	
+ DEBUG [22702d62] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [22702d62] 	
+ DEBUG [22702d62] 	
+ DEBUG [22702d62] 	/var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest-f3eea1bea73907964050e0d2720bc920.json
+ DEBUG [22702d62] 	
+ DEBUG [22702d62] Finished in 0.306 seconds with exit status 0 (successful).
+ DEBUG [8a5cd21b] Running /usr/bin/env ls /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [8a5cd21b] Command: cd /var/www/biggy/releases/20200303063318 && /usr/bin/env ls /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest*
+ DEBUG [8a5cd21b] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [8a5cd21b] 	
+ DEBUG [8a5cd21b] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [8a5cd21b] 	
+ DEBUG [8a5cd21b] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [8a5cd21b] 	
+ DEBUG [8a5cd21b] 	
+ DEBUG [8a5cd21b] 	/var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest-f3eea1bea73907964050e0d2720bc920.json
+ DEBUG [8a5cd21b] 	
+ DEBUG [8a5cd21b] Finished in 0.302 seconds with exit status 0 (successful).
+  INFO [a5d7492b] Running /usr/bin/env cp RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,  you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.  To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.    /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest-f3eea1bea73907964050e0d2720bc920.json /var/www/biggy/releases/20200303063318/assets_manifest_backup as root@15.206.148.242
+ DEBUG [a5d7492b] Command: cd /var/www/biggy/releases/20200303063318 && /usr/bin/env cp RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,  you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.  To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.    /var/www/biggy/releases/20200303063318/public/assets/.sprockets-manifest-f3eea1bea73907964050e0d2720bc920.json /var/www/biggy/releases/20200303063318/assets_manifest_backup
+ DEBUG [a5d7492b] 	RVM used your Gemfile for selecting Ruby, it is all fine - Heroku does that too,
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	you can ignore these warnings with 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile'.
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	To ignore the warning for all files run 'rvm rvmrc warning ignore allGemfiles'.
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'RVM'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'used'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'your'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'for'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'selecting'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'Ruby,'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'it'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'is'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'all'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'fine'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat '-'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'Heroku'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'does'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'that'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'too,'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'you'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'can'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'ignore'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'these'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'warnings'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'with'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'rvm rvmrc warning ignore /var/www/biggy/releases/20200303063318/Gemfile.'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'To'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'ignore'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'the'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'warning'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'for'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'all'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'files'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'run'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
+ DEBUG [a5d7492b] 	cp: 
+ DEBUG [a5d7492b] 	cannot stat 'rvm rvmrc warning ignore allGemfiles.'
+ DEBUG [a5d7492b] 	: No such file or directory
+ DEBUG [a5d7492b] 	
