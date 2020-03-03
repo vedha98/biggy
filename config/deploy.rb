@@ -16,6 +16,9 @@ set :ssh_options, { :forward_agent => true,
                     :keepalive_interval => 3000 }
 set :migration_role, "app" # Defaults to 'db'
 set :assets_roles, [:app]
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+set :puma_state, "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
 # Change to true if using ActiveRecord
 
 ## Defaults:
