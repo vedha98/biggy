@@ -3693,3 +3693,8 @@ Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b
   INFO [0927e0ad] Running /usr/bin/env echo "Branch master (at 9534ec83d2dae68f0a882cf9b5c0654bd1cad0d3) deployed as release 20200303070607 by vedha" >> /var/www/biggy/revisions.log as root@15.206.148.242
  DEBUG [0927e0ad] Command: cd /var/www/biggy/releases && /usr/bin/env echo "Branch master (at 9534ec83d2dae68f0a882cf9b5c0654bd1cad0d3) deployed as release 20200303070607 by vedha" >> /var/www/biggy/revisions.log
   INFO [0927e0ad] Finished in 0.356 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 15:28:40 +0530 cap development deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8cbe17c2] Running [ -d ~/.rvm ] as root@15.206.148.242
+ DEBUG [8cbe17c2] Command: [ -d ~/.rvm ]
