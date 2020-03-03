@@ -42,16 +42,16 @@ end
 gem 'figaro'
 
 group :development do
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-yarn'
+  # Add this if you"re using rbenv
+  # gem 'capistrano-rbenv', '~> 2.1'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-
 end
 
 group :test do

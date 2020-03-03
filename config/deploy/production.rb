@@ -53,5 +53,7 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-
-server "root@15.206.148.242", user: "root", roles: %w{web app db}
+set :stage, :production
+set :rails_env, :production
+set :branch, "master"
+server "15.206.148.242", user: "root", roles: %w{web app db}

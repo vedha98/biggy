@@ -3698,3 +3698,453 @@ Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b
   INFO ---------------------------------------------------------------------------
  DEBUG [8cbe17c2] Running [ -d ~/.rvm ] as root@15.206.148.242
  DEBUG [8cbe17c2] Command: [ -d ~/.rvm ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 15:59:39 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1751e556] Running ~/.rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [1751e556] Command: ~/.rvm/bin/rvm version
+ DEBUG [1751e556] 	bash: /root/.rvm/bin/rvm: No such file or directory
+ DEBUG [1751e556] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 15:59:59 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [211a506f] Running ~/.rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [211a506f] Command: ~/.rvm/bin/rvm version
+ DEBUG [211a506f] 	bash: /root/.rvm/bin/rvm: No such file or directory
+ DEBUG [211a506f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:00:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [82f88d87] Running ~/.rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [82f88d87] Command: ~/.rvm/bin/rvm version
+ DEBUG [82f88d87] 	bash: /root/.rvm/bin/rvm: No such file or directory
+ DEBUG [82f88d87] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:03:51 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [60b8b3ff] Running ~/.rvm/bin/rvm version as root@15.206.148.242
+ DEBUG [60b8b3ff] Command: ~/.rvm/bin/rvm version
+ DEBUG [60b8b3ff] 	bash: /root/.rvm/bin/rvm: No such file or directory
+ DEBUG [60b8b3ff] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:35:45 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+ DEBUG [27513039] Running [ -d $HOME/.rbenv/versions/2.6.3 ] as root@15.206.148.242
+ DEBUG [27513039] Command: [ -d $HOME/.rbenv/versions/2.6.3 ]
+ DEBUG [27513039] Finished in 1.393 seconds with exit status 1 (failed).
+  WARN rbenv: 2.6.3 is not installed or not found in $HOME/.rbenv/versions/2.6.3 on 15.206.148.242
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:36:55 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [a2a17767] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [a2a17767] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a2a17767] Finished in 1.160 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [a7458076] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [a7458076] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [a7458076] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [aa7517cb] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [aa7517cb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [aa7517cb] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1	HEAD
+  INFO [aa7517cb] Finished in 2.716 seconds with exit status 0 (successful).
+  INFO [0e98fd75] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [0e98fd75] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [0e98fd75] Finished in 0.162 seconds with exit status 0 (successful).
+  INFO [0f514ab2] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [0f514ab2] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [0f514ab2] Finished in 0.295 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:37:17 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d2948a82] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [d2948a82] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d2948a82] Finished in 1.277 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [445324f9] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [445324f9] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [445324f9] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [37a9c129] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [37a9c129] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [37a9c129] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1	HEAD
+  INFO [37a9c129] Finished in 2.798 seconds with exit status 0 (successful).
+  INFO [eb2635f6] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [eb2635f6] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [eb2635f6] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [ef8daa72] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [ef8daa72] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [ef8daa72] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [5cc3bd8b] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [5cc3bd8b] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [5cc3bd8b] Finished in 0.309 seconds with exit status 1 (failed).
+ DEBUG [a5a288cc] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [a5a288cc] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [a5a288cc] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [042f0db3] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [042f0db3] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [042f0db3] Finished in 0.163 seconds with exit status 0 (successful).
+  INFO [e8c36535] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [e8c36535] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+  INFO [e8c36535] Finished in 0.254 seconds with exit status 0 (successful).
+  INFO [ddf559d5] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [ddf559d5] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ddf559d5] 	Fetching origin
+ DEBUG [ddf559d5] 	From github.com:vedha98/biggy
+   03518f5..e2567ac  master           -> master
+ * [new ref]         refs/pull/4/head -> refs/pull/4/head
+  INFO [ddf559d5] Finished in 3.277 seconds with exit status 0 (successful).
+ DEBUG [03fee4e6] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [03fee4e6] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [03fee4e6] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [a155bec7] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728 as root@15.206.148.242
+ DEBUG [a155bec7] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728 )
+  INFO [a155bec7] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO [b4fc0258] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303110728 as root@15.206.148.242
+ DEBUG [b4fc0258] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303110728 )
+  INFO [b4fc0258] Finished in 1.476 seconds with exit status 0 (successful).
+ DEBUG [3b7401a4] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [3b7401a4] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [3b7401a4] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG [7c7745f3] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [7c7745f3] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7c7745f3] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1
+ DEBUG [7c7745f3] Finished in 0.266 seconds with exit status 0 (successful).
+ DEBUG [db55b1fb] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [db55b1fb] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [db55b1fb] Finished in 0.159 seconds with exit status 0 (successful).
+  INFO [b481fdd6] Running /usr/bin/env echo "e2567ac948cba54e933d5421bfcff7d0dfe2abd1" > REVISION as root@15.206.148.242
+ DEBUG [b481fdd6] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env echo "e2567ac948cba54e933d5421bfcff7d0dfe2abd1" > REVISION
+  INFO [b481fdd6] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [27485d62] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/public as root@15.206.148.242
+ DEBUG [27485d62] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/public
+  INFO [27485d62] Finished in 0.321 seconds with exit status 0 (successful).
+ DEBUG [a5c0a434] Running [ -L /var/www/biggy/releases/20200303110728/public/assets ] as root@15.206.148.242
+ DEBUG [a5c0a434] Command: [ -L /var/www/biggy/releases/20200303110728/public/assets ]
+ DEBUG [a5c0a434] Finished in 0.407 seconds with exit status 1 (failed).
+ DEBUG [1ff5d33f] Running [ -d /var/www/biggy/releases/20200303110728/public/assets ] as root@15.206.148.242
+ DEBUG [1ff5d33f] Command: [ -d /var/www/biggy/releases/20200303110728/public/assets ]
+ DEBUG [1ff5d33f] Finished in 0.226 seconds with exit status 1 (failed).
+  INFO [e95e652b] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303110728/public/assets as root@15.206.148.242
+ DEBUG [e95e652b] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303110728/public/assets
+  INFO [e95e652b] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [12daa557] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [12daa557] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [12daa557] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [68f37875] Running /usr/bin/env bundle check --path /var/www/biggy/shared/bundle as root@15.206.148.242
+ DEBUG [68f37875] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env bundle check --path /var/www/biggy/shared/bundle
+ DEBUG [68f37875] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [68f37875] 	The following gems are missing
+ DEBUG [68f37875] 	 * concurrent-ruby (1.1.6)
+ DEBUG [68f37875] 	 * i18n (1.8.2)
+ DEBUG [68f37875] 	 * minitest (5.14.0)
+ DEBUG [68f37875] 	 * nokogiri (1.10.9)
+ DEBUG [68f37875] 	 * crass (1.0.6)
+ DEBUG [68f37875] 	 * rack (2.2.2)
+ DEBUG [68f37875] 	 * mimemagic (0.3.4)
+ DEBUG [68f37875] 	 * net-ssh (5.2.0)
+ DEBUG [68f37875] 	 * net-scp (2.0.0)
+ DEBUG [68f37875] 	 * sshkit (1.20.0)
+ DEBUG [68f37875] 	 * airbrussh (1.4.0)
+ DEBUG [68f37875] 	 * autoprefixer-rails (9.7.4)
+ DEBUG [68f37875] 	 * msgpack (1.3.3)
+ DEBUG [68f37875] 	 * bootsnap (1.4.6)
+ DEBUG [68f37875] 	 * thor (0.20.3)
+ DEBUG [68f37875] 	 * ffi (1.12.2)
+ DEBUG [68f37875] 	 * byebug (11.1.1)
+ DEBUG [68f37875] 	 * capistrano (3.12.0)
+ DEBUG [68f37875] 	 * capistrano-bundler (1.6.0)
+ DEBUG [68f37875] 	 * capistrano-rails (1.4.0)
+ DEBUG [68f37875] 	 * capistrano-rvm (0.1.2)
+ DEBUG [68f37875] 	 * puma (4.3.3)
+ DEBUG [68f37875] 	 * capistrano3-puma (4.0.0)
+ DEBUG [68f37875] 	 * regexp_parser (1.7.0)
+ DEBUG [68f37875] 	 * xpath (3.2.0)
+ DEBUG [68f37875] 	 * capybara (3.31.0)
+ DEBUG [68f37875] 	 * carrierwave (2.1.0)
+ DEBUG [68f37875] 	 * childprocess (3.0.0)
+ DEBUG [68f37875] 	 * figaro (1.1.1)
+ DEBUG [68f37875] 	 * geocoder (1.6.1)
+ DEBUG [68f37875] 	 * jbuilder (2.10.0)
+ DEBUG [68f37875] 	 * rubyzip (2.2.0)
+ DEBUG [68f37875] 	 * selenium-webdriver (3.142.7)
+ DEBUG [68f37875] 	 * webdrivers (4.2.0)
+ DEBUG [68f37875] 	Install missing gems with `bundle install`
+ DEBUG [68f37875] Finished in 0.781 seconds with exit status 1 (failed).
+  INFO [1e629501] Running /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet as root@15.206.148.242
+ DEBUG [1e629501] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [1e629501] Finished in 60.181 seconds with exit status 0 (successful).
+ DEBUG [80328ff9] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [80328ff9] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [80328ff9] Finished in 0.262 seconds with exit status 0 (successful).
+  INFO [c6bbc41c] Running /usr/bin/env yarn install --production as root@15.206.148.242
+ DEBUG [c6bbc41c] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env yarn install --production
+ DEBUG [c6bbc41c] 	yarn install v1.22.0
+ DEBUG [c6bbc41c] 	[1/4] Resolving packages...
+ DEBUG [c6bbc41c] 	[2/4] Fetching packages...
+ DEBUG [c6bbc41c] 	info fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [c6bbc41c] 	info "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [c6bbc41c] 	[3/4] Linking dependencies...
+ DEBUG [c6bbc41c] 	warning " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [c6bbc41c] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [c6bbc41c] 	[4/4] Building fresh packages...
+ DEBUG [c6bbc41c] 	Done in 9.09s.
+  INFO [c6bbc41c] Finished in 9.990 seconds with exit status 0 (successful).
+ DEBUG [e48bcfca] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [e48bcfca] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [e48bcfca] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [c1a54f61] Running bundle exec rake assets:precompile as root@15.206.148.242
+ DEBUG [c1a54f61] Command: cd /var/www/biggy/releases/20200303110728 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [c1a54f61] 	yarn install v1.22.0
+ DEBUG [c1a54f61] 	[1/4] Resolving packages...
+ DEBUG [c1a54f61] 	[2/4] Fetching packages...
+ DEBUG [c1a54f61] 	info fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [c1a54f61] 	info "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [c1a54f61] 	[3/4] Linking dependencies...
+ DEBUG [c1a54f61] 	warning " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [c1a54f61] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [c1a54f61] 	[4/4] Building fresh packages...
+ DEBUG [c1a54f61] 	Done in 4.57s.
+ DEBUG [c1a54f61] 	yarn install v1.22.0
+ DEBUG [c1a54f61] 	[1/4] Resolving packages...
+ DEBUG [c1a54f61] 	[2/4] Fetching packages...
+ DEBUG [c1a54f61] 	info fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [c1a54f61] 	info "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [c1a54f61] 	[3/4] Linking dependencies...
+ DEBUG [c1a54f61] 	warning " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [c1a54f61] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [c1a54f61] 	[4/4] Building fresh packages...
+ DEBUG [c1a54f61] 	Done in 3.90s.
+ DEBUG [c1a54f61] 	I, [2020-03-03T11:09:16.909768 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js
+I, [2020-03-03T11:09:16.911206 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/manifest-cadda289ef9c70eaa0879a36e6263cb33f7523a16b3ef862e0b8609cdc2bdab1.js.gz
+I, [2020-03-03T11:09:16.911393 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/address-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+I, [2020-03-03T11:09:16.911527 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/address-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+I, [2020-03-03T11:09:16.911664 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/application-6a1104129ce36de99cd56bf83ca33f198c70106a660f09964ee7506a95914744.css
+I, [2020-03-03T11:09:16.911775 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/application-6a1104129ce36de99cd56bf83ca33f198c70106a660f09964ee7506a95914744.css.gz
+I, [2020-03-03T11:09:16.911906 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/customers-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+I, [2020-03-03T11:09:16.912009 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/customers-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+I, [2020-03-03T11:09:16.912139 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/home-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+I, [2020-03-03T11:09:16.912236 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/home-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+I, [2020-03-03T11:09:16.912386 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/products-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+I, [2020-03-03T11:09:16.912486 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/products-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+I, [2020-03-03T11:09:16.912628 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/restaurants-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css
+ DEBUG [c1a54f61] 	I, [2020-03-03T11:09:16.912919 #18892]  INFO -- : Writing /var/www/biggy/releases/20200303110728/public/assets/restaurants-d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6.css.gz
+ DEBUG [c1a54f61] 	Compiling...
+ DEBUG [c1a54f61] 	Compiled all packs in /var/www/biggy/releases/20200303110728/public/packs
+Hash: ea4427a3161a1e035605
+Version: webpack 4.41.5
+Time: 5888ms
+Built at: 03/03/2020 11:09:24 AM
+                                        Asset       Size  Chunks                         Chunk Names
+       js/application-b6c7cffdfadde57ae8a8.js   69.2 KiB       0  [emitted] [immutable]  application
+    js/application-b6c7cffdfadde57ae8a8.js.br   15.3 KiB          [emitted]              
+    js/application-b6c7cffdfadde57ae8a8.js.gz   17.7 KiB          [emitted]              
+   js/application-b6c7cffdfadde57ae8a8.js.map    205 KiB       0  [emitted] [dev]        application
+js/application-b6c7cffdfadde57ae8a8.js.map.br   43.9 KiB          [emitted]              
+js/application-b6c7cffdfadde57ae8a8.js.map.gz     51 KiB          [emitted]              
+                                manifest.json  364 bytes          [emitted]              
+                             manifest.json.br  125 bytes          [emitted]              
+                             manifest.json.gz  142 bytes          [emitted]              
+Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b6c7cffdfadde57ae8a8.js.map
+[0] (webpack)/buildin/module.js 552 bytes {0} [built]
+[1] ./app/javascript/packs/application.js 742 bytes {0} [built]
+[5] ./app/javascript/channels/index.js 205 bytes {0} [built]
+[6] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]
+    + 3 hidden modules
+
+  INFO [c1a54f61] Finished in 24.742 seconds with exit status 0 (successful).
+ DEBUG [ecc5c0af] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [ecc5c0af] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [ecc5c0af] Finished in 0.400 seconds with exit status 0 (successful).
+  INFO [46aaaf3d] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/assets_manifest_backup as root@15.206.148.242
+ DEBUG [46aaaf3d] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/assets_manifest_backup
+  INFO [46aaaf3d] Finished in 0.264 seconds with exit status 0 (successful).
+ DEBUG [a01c52ec] Running /usr/bin/env ls /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [a01c52ec] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env ls /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest*
+ DEBUG [a01c52ec] 	/var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest-042220ff31d14c3080a4add0f198eb42.json
+ DEBUG [a01c52ec] Finished in 0.338 seconds with exit status 0 (successful).
+ DEBUG [919922cc] Running /usr/bin/env ls /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [919922cc] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env ls /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest*
+ DEBUG [919922cc] 	/var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest-042220ff31d14c3080a4add0f198eb42.json
+ DEBUG [919922cc] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [2d03f1bc] Running /usr/bin/env cp /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest-042220ff31d14c3080a4add0f198eb42.json /var/www/biggy/releases/20200303110728/assets_manifest_backup as root@15.206.148.242
+ DEBUG [2d03f1bc] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env cp /var/www/biggy/releases/20200303110728/public/assets/.sprockets-manifest-042220ff31d14c3080a4add0f198eb42.json /var/www/biggy/releases/20200303110728/assets_manifest_backup
+  INFO [2d03f1bc] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [2bc36c59] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [2bc36c59] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [2bc36c59] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [e19943c7] Running bundle exec rake db:migrate as root@15.206.148.242
+ DEBUG [e19943c7] Command: cd /var/www/biggy/releases/20200303110728 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+  INFO [e19943c7] Finished in 2.527 seconds with exit status 0 (successful).
+  INFO [2993b6d7] Running /usr/bin/env ln -s /var/www/biggy/releases/20200303110728 /var/www/biggy/releases/current as root@15.206.148.242
+ DEBUG [2993b6d7] Command: /usr/bin/env ln -s /var/www/biggy/releases/20200303110728 /var/www/biggy/releases/current
+  INFO [2993b6d7] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [fd41c499] Running /usr/bin/env mv /var/www/biggy/releases/current /var/www/biggy as root@15.206.148.242
+ DEBUG [fd41c499] Command: /usr/bin/env mv /var/www/biggy/releases/current /var/www/biggy
+  INFO [fd41c499] Finished in 0.435 seconds with exit status 0 (successful).
+ DEBUG [8988b969] Running if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [8988b969] Command: if test ! -d /var/www/biggy/releases/20200303110728; then echo "Directory does not exist '/var/www/biggy/releases/20200303110728'" 1>&2; false; fi
+ DEBUG [8988b969] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [9ed98a91] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/tmp as root@15.206.148.242
+ DEBUG [9ed98a91] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env mkdir -p /var/www/biggy/releases/20200303110728/tmp
+  INFO [9ed98a91] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [d3a70ff3] Running /usr/bin/env touch /var/www/biggy/releases/20200303110728/tmp/restart.txt as root@15.206.148.242
+ DEBUG [d3a70ff3] Command: cd /var/www/biggy/releases/20200303110728 && /usr/bin/env touch /var/www/biggy/releases/20200303110728/tmp/restart.txt
+  INFO [d3a70ff3] Finished in 0.344 seconds with exit status 0 (successful).
+ DEBUG [65a6d634] Running /usr/bin/env ls -x /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [65a6d634] Command: /usr/bin/env ls -x /var/www/biggy/releases
+ DEBUG [65a6d634] 	20200303085652	20200303110728
+ DEBUG [65a6d634] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [2c805373] Running if test ! -d /var/www/biggy/releases; then echo "Directory does not exist '/var/www/biggy/releases'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [2c805373] Command: if test ! -d /var/www/biggy/releases; then echo "Directory does not exist '/var/www/biggy/releases'" 1>&2; false; fi
+ DEBUG [2c805373] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO [af4b35dd] Running /usr/bin/env echo "Branch master (at e2567ac948cba54e933d5421bfcff7d0dfe2abd1) deployed as release 20200303110728 by vedha" >> /var/www/biggy/revisions.log as root@15.206.148.242
+ DEBUG [af4b35dd] Command: cd /var/www/biggy/releases && /usr/bin/env echo "Branch master (at e2567ac948cba54e933d5421bfcff7d0dfe2abd1) deployed as release 20200303110728 by vedha" >> /var/www/biggy/revisions.log
+  INFO [af4b35dd] Finished in 0.352 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 16:40:52 +0530 cap development deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f725bdec] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [f725bdec] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f725bdec] Finished in 1.598 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-development-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-development-vedha.sh 100.0%
+  INFO [12fa0fe7] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-development-vedha.sh as root@15.206.148.242
+ DEBUG [12fa0fe7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-development-vedha.sh
+  INFO [12fa0fe7] Finished in 0.226 seconds with exit status 0 (successful).
+  INFO [c7ee2195] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [c7ee2195] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [c7ee2195] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1	HEAD
+  INFO [c7ee2195] Finished in 2.844 seconds with exit status 0 (successful).
+  INFO [2178de11] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [2178de11] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [2178de11] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO [f53ac1ab] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [f53ac1ab] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [f53ac1ab] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [dad7b742] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [dad7b742] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [dad7b742] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [e982cbb7] Running /usr/bin/env cat /var/www/biggy/current/REVISION 2>/dev/null as root@15.206.148.242
+ DEBUG [e982cbb7] Command: /usr/bin/env cat /var/www/biggy/current/REVISION 2>/dev/null
+ DEBUG [e982cbb7] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1
+ DEBUG [e982cbb7] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [7f76ff03] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [7f76ff03] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [7f76ff03] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [9595f979] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [9595f979] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [9595f979] Finished in 0.152 seconds with exit status 0 (successful).
+  INFO [042c0763] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [042c0763] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+  INFO [042c0763] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [c5df8e3d] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [c5df8e3d] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c5df8e3d] 	Fetching origin
+  INFO [c5df8e3d] Finished in 3.067 seconds with exit status 0 (successful).
+ DEBUG [858c047b] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [858c047b] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [858c047b] Finished in 0.155 seconds with exit status 0 (successful).
+  INFO [2666a965] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303111104 as root@15.206.148.242
+ DEBUG [2666a965] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303111104 )
+  INFO [2666a965] Finished in 0.255 seconds with exit status 0 (successful).
+  INFO [cc46f1c7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303111104 as root@15.206.148.242
+ DEBUG [cc46f1c7] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303111104 )
+  INFO [cc46f1c7] Finished in 1.901 seconds with exit status 0 (successful).
+ DEBUG [3f60ebbe] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [3f60ebbe] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [3f60ebbe] Finished in 0.152 seconds with exit status 0 (successful).
+ DEBUG [741b27d4] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [741b27d4] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-development-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [741b27d4] 	e2567ac948cba54e933d5421bfcff7d0dfe2abd1
+ DEBUG [741b27d4] Finished in 0.326 seconds with exit status 0 (successful).
+ DEBUG [4d6f243d] Running if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [4d6f243d] Command: if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi
+ DEBUG [4d6f243d] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO [9034b5a0] Running /usr/bin/env echo "e2567ac948cba54e933d5421bfcff7d0dfe2abd1" > REVISION as root@15.206.148.242
+ DEBUG [9034b5a0] Command: cd /var/www/biggy/releases/20200303111104 && /usr/bin/env echo "e2567ac948cba54e933d5421bfcff7d0dfe2abd1" > REVISION
+  INFO [9034b5a0] Finished in 0.311 seconds with exit status 0 (successful).
+  INFO [43981ca2] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303111104/public as root@15.206.148.242
+ DEBUG [43981ca2] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303111104/public
+  INFO [43981ca2] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [56d8712d] Running [ -L /var/www/biggy/releases/20200303111104/public/assets ] as root@15.206.148.242
+ DEBUG [56d8712d] Command: [ -L /var/www/biggy/releases/20200303111104/public/assets ]
+ DEBUG [56d8712d] Finished in 0.228 seconds with exit status 1 (failed).
+ DEBUG [f23d8183] Running [ -d /var/www/biggy/releases/20200303111104/public/assets ] as root@15.206.148.242
+ DEBUG [f23d8183] Command: [ -d /var/www/biggy/releases/20200303111104/public/assets ]
+ DEBUG [f23d8183] Finished in 0.223 seconds with exit status 1 (failed).
+  INFO [1eb78642] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303111104/public/assets as root@15.206.148.242
+ DEBUG [1eb78642] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303111104/public/assets
+  INFO [1eb78642] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [b9d5c0d7] Running if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [b9d5c0d7] Command: if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi
+ DEBUG [b9d5c0d7] Finished in 0.222 seconds with exit status 0 (successful).
+ DEBUG [189e6b03] Running /usr/bin/env bundle check --path /var/www/biggy/shared/bundle as root@15.206.148.242
+ DEBUG [189e6b03] Command: cd /var/www/biggy/releases/20200303111104 && /usr/bin/env bundle check --path /var/www/biggy/shared/bundle
+ DEBUG [189e6b03] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [189e6b03] 	The following gems are missing
+ DEBUG [189e6b03] 	 * net-ssh (5.2.0)
+ DEBUG [189e6b03] 	 * net-scp (2.0.0)
+ DEBUG [189e6b03] 	 * sshkit (1.20.0)
+ DEBUG [189e6b03] 	 * airbrussh (1.4.0)
+ DEBUG [189e6b03] 	 * byebug (11.1.1)
+ DEBUG [189e6b03] 	 * capistrano (3.12.0)
+ DEBUG [189e6b03] 	 * capistrano-bundler (1.6.0)
+ DEBUG [189e6b03] 	 * capistrano-rails (1.4.0)
+ DEBUG [189e6b03] 	 * capistrano-rvm (0.1.2)
+ DEBUG [189e6b03] 	 * capistrano3-puma (4.0.0)
+ DEBUG [189e6b03] 	 * regexp_parser (1.7.0)
+ DEBUG [189e6b03] 	 * xpath (3.2.0)
+ DEBUG [189e6b03] 	 * capybara (3.31.0)
+ DEBUG [189e6b03] 	 * childprocess (3.0.0)
+ DEBUG [189e6b03] 	 * rubyzip (2.2.0)
+ DEBUG [189e6b03] 	 * selenium-webdriver (3.142.7)
+ DEBUG [189e6b03] 	 * webdrivers (4.2.0)
+ DEBUG [189e6b03] 	Install missing gems with `bundle install`
+ DEBUG [189e6b03] Finished in 0.931 seconds with exit status 1 (failed).
+  INFO [f5b89e9c] Running /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet as root@15.206.148.242
+ DEBUG [f5b89e9c] Command: cd /var/www/biggy/releases/20200303111104 && /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [f5b89e9c] Finished in 0.798 seconds with exit status 0 (successful).
+ DEBUG [7740f372] Running if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [7740f372] Command: if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi
+ DEBUG [7740f372] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [6367c72f] Running /usr/bin/env yarn install --production as root@15.206.148.242
+ DEBUG [6367c72f] Command: cd /var/www/biggy/releases/20200303111104 && /usr/bin/env yarn install --production
+ DEBUG [6367c72f] 	yarn install v1.22.0
+ DEBUG [6367c72f] 	[1/4] Resolving packages...
+ DEBUG [6367c72f] 	[2/4] Fetching packages...
+ DEBUG [6367c72f] 	info fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [6367c72f] 	info "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [6367c72f] 	[3/4] Linking dependencies...
+ DEBUG [6367c72f] 	warning " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [6367c72f] 	warning "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [6367c72f] 	[4/4] Building fresh packages...
+ DEBUG [6367c72f] 	Done in 8.66s.
+  INFO [6367c72f] Finished in 9.084 seconds with exit status 0 (successful).
+ DEBUG [3c3c1ed4] Running if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [3c3c1ed4] Command: if test ! -d /var/www/biggy/releases/20200303111104; then echo "Directory does not exist '/var/www/biggy/releases/20200303111104'" 1>&2; false; fi
+ DEBUG [3c3c1ed4] Finished in 0.494 seconds with exit status 0 (successful).
+  INFO [f3dbad91] Running bundle exec rake assets:precompile as root@15.206.148.242
+ DEBUG [f3dbad91] Command: cd /var/www/biggy/releases/20200303111104 && ( export RAILS_ENV="development" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [f3dbad91] 	warning Integrity check: Flags don't match
+ DEBUG [f3dbad91] 	error Integrity check failed
+ DEBUG [f3dbad91] 	error Found 1 errors.
+ DEBUG [f3dbad91] 	
+
+========================================
+  Your Yarn packages are out of date!
+  Please run `yarn install --check-files` to update.
+========================================
+
+
+To disable this check, please change `check_yarn_integrity`
+to `false` in your webpacker config file (config/webpacker.yml).
+
+
+yarn check v1.22.0
+info Visit https://yarnpkg.com/en/docs/cli/check for documentation about this command.
+
+
