@@ -6,7 +6,9 @@ require "capistrano/deploy"
 
 # This will add tasks to your deploy process
 require "capistrano/rails"
-require "capistrano/passenger"
+# require "capistrano/passenger"
+require "capistrano/puma"
+install_plugin Capistrano::Puma
 # require "capistrano/rbenv"
 require "capistrano/yarn"
 require "capistrano/bundler"
@@ -18,6 +20,6 @@ require "capistrano/bundler"
 # Load the SCM plugin appropriate to your project:
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
-
+install_plugin Capistrano::Puma::Nginx
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
