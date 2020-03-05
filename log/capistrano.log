@@ -5179,3 +5179,791 @@ Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b
   INFO [acb74904] Running /usr/bin/env rm -rf /var/www/biggy/releases/20200303125423 as root@15.206.148.242
  DEBUG [acb74904] Command: /usr/bin/env rm -rf /var/www/biggy/releases/20200303125423
   INFO [acb74904] Finished in 2.121 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 20:19:43 +0530 cap production puma:config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /var/www/biggy/shared/puma.rb 0.0%
+  INFO Uploading /var/www/biggy/shared/puma.rb 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-03 20:20:48 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c852d226] Running /usr/bin/env mkdir -p /tmp as root@15.206.148.242
+ DEBUG [c852d226] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c852d226] Finished in 1.282 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-biggy-production-vedha.sh 0.0%
+  INFO Uploading /tmp/git-ssh-biggy-production-vedha.sh 100.0%
+  INFO [86b2a7da] Running /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh as root@15.206.148.242
+ DEBUG [86b2a7da] Command: /usr/bin/env chmod 700 /tmp/git-ssh-biggy-production-vedha.sh
+  INFO [86b2a7da] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [17114a68] Running /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD as root@15.206.148.242
+ DEBUG [17114a68] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git ls-remote git@github.com:vedha98/biggy.git HEAD )
+ DEBUG [17114a68] 	46c0ae5f6479644de7ae0834edfc1963a246b563
+ DEBUG [17114a68] 		HEAD
+  INFO [17114a68] Finished in 2.303 seconds with exit status 0 (successful).
+  INFO [0fcc46bd] Running /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [0fcc46bd] Command: /usr/bin/env mkdir -p /var/www/biggy/shared /var/www/biggy/releases
+  INFO [0fcc46bd] Finished in 0.151 seconds with exit status 0 (successful).
+  INFO [320669f7] Running /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets as root@15.206.148.242
+ DEBUG [320669f7] Command: /usr/bin/env mkdir -p /var/www/biggy/shared/public/assets
+  INFO [320669f7] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [cce2b51d] Running [ -f /var/www/biggy/shared/puma.rb ] as root@15.206.148.242
+ DEBUG [cce2b51d] Command: [ -f /var/www/biggy/shared/puma.rb ]
+ DEBUG [cce2b51d] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [56bf1e84] Running [ -f /var/www/biggy/current/REVISION ] as root@15.206.148.242
+ DEBUG [56bf1e84] Command: [ -f /var/www/biggy/current/REVISION ]
+ DEBUG [56bf1e84] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG [75d8608a] Running /usr/bin/env cat /var/www/biggy/current/REVISION 2>/dev/null as root@15.206.148.242
+ DEBUG [75d8608a] Command: /usr/bin/env cat /var/www/biggy/current/REVISION 2>/dev/null
+ DEBUG [75d8608a] 	8aee67c1a002234d6f905799eeebedfdc1567437
+ DEBUG [75d8608a] 	
+ DEBUG [75d8608a] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [02e3396a] Running [ -f /var/www/biggy/repo/HEAD ] as root@15.206.148.242
+ DEBUG [02e3396a] Command: [ -f /var/www/biggy/repo/HEAD ]
+ DEBUG [02e3396a] Finished in 0.362 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/biggy/repo
+ DEBUG [64011ebe] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [64011ebe] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [64011ebe] Finished in 0.148 seconds with exit status 0 (successful).
+  INFO [0888ccc2] Running /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git as root@15.206.148.242
+ DEBUG [0888ccc2] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote set-url origin git@github.com:vedha98/biggy.git )
+  INFO [0888ccc2] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [58197de1] Running /usr/bin/env git remote update --prune as root@15.206.148.242
+ DEBUG [58197de1] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [58197de1] 	Fetching origin
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	remote: Enumerating objects: 18, done.[K
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	remote: Counting objects:   5% (1/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  11% (2/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  16% (3/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  22% (4/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  27% (5/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  33% (6/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  38% (7/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  44% (8/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  50% (9/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  55% (10/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  61% (11/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  66% (12/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  72% (13/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  77% (14/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  83% (15/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  88% (16/18)[K
+ DEBUG [58197de1] 	remote: Counting objects:  94% (17/18)[K
+ DEBUG [58197de1] 	remote: Counting objects: 100% (18/18)[K
+ DEBUG [58197de1] 	remote: Counting objects: 100% (18/18), done.[K
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	remote: Compressing objects:  33% (1/3)[K
+ DEBUG [58197de1] 	remote: Compressing objects:  66% (2/3)[K
+ DEBUG [58197de1] 	remote: Compressing objects: 100% (3/3)[K
+ DEBUG [58197de1] 	remote: Compressing objects: 100% (3/3), done.[K
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	remote: Total 10 (delta 7), reused 10 (delta 7), pack-reused 0[K
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	Unpacking objects:  10% (1/10)   
+ DEBUG [58197de1] 	Unpacking objects:  20% (2/10)   
+ DEBUG [58197de1] 	Unpacking objects:  30% (3/10)   
+ DEBUG [58197de1] 	Unpacking objects:  40% (4/10)   
+ DEBUG [58197de1] 	Unpacking objects:  50% (5/10)   
+ DEBUG [58197de1] 	Unpacking objects:  60% (6/10)   
+ DEBUG [58197de1] 	Unpacking objects:  70% (7/10)   
+ DEBUG [58197de1] 	Unpacking objects:  80% (8/10)   
+ DEBUG [58197de1] 	Unpacking objects:  90% (9/10)   
+ DEBUG [58197de1] 	Unpacking objects: 100% (10/10)   
+ DEBUG [58197de1] 	Unpacking objects: 100% (10/10), done.
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	From github.com:vedha98/biggy
+ DEBUG [58197de1] 	
+ DEBUG [58197de1] 	   8aee67c..46c0ae5  master     -> master
+ DEBUG [58197de1] 	
+  INFO [58197de1] Finished in 3.003 seconds with exit status 0 (successful).
+ DEBUG [f027dcdc] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [f027dcdc] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [f027dcdc] Finished in 0.153 seconds with exit status 0 (successful).
+  INFO [cb11a18f] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100 as root@15.206.148.242
+ DEBUG [cb11a18f] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100 )
+  INFO [cb11a18f] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [b59524ef] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303145100 as root@15.206.148.242
+ DEBUG [b59524ef] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/biggy/releases/20200303145100 )
+  INFO [b59524ef] Finished in 1.328 seconds with exit status 0 (successful).
+ DEBUG [e2bbb92f] Running if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [e2bbb92f] Command: if test ! -d /var/www/biggy/repo; then echo "Directory does not exist '/var/www/biggy/repo'" 1>&2; false; fi
+ DEBUG [e2bbb92f] Finished in 0.152 seconds with exit status 0 (successful).
+ DEBUG [94a639c0] Running /usr/bin/env git rev-list --max-count=1 master as root@15.206.148.242
+ DEBUG [94a639c0] Command: cd /var/www/biggy/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-biggy-production-vedha.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [94a639c0] 	46c0ae5f6479644de7ae0834edfc1963a246b563
+ DEBUG [94a639c0] 	
+ DEBUG [94a639c0] Finished in 0.277 seconds with exit status 0 (successful).
+ DEBUG [aa8da07b] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [aa8da07b] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [aa8da07b] Finished in 0.158 seconds with exit status 0 (successful).
+  INFO [fef6eb4e] Running /usr/bin/env echo "46c0ae5f6479644de7ae0834edfc1963a246b563" > REVISION as root@15.206.148.242
+ DEBUG [fef6eb4e] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env echo "46c0ae5f6479644de7ae0834edfc1963a246b563" > REVISION
+  INFO [fef6eb4e] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [6f1982da] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100/public as root@15.206.148.242
+ DEBUG [6f1982da] Command: /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100/public
+  INFO [6f1982da] Finished in 0.240 seconds with exit status 0 (successful).
+ DEBUG [b167ed33] Running [ -L /var/www/biggy/releases/20200303145100/public/assets ] as root@15.206.148.242
+ DEBUG [b167ed33] Command: [ -L /var/www/biggy/releases/20200303145100/public/assets ]
+ DEBUG [b167ed33] Finished in 0.218 seconds with exit status 1 (failed).
+ DEBUG [cf6e0f24] Running [ -d /var/www/biggy/releases/20200303145100/public/assets ] as root@15.206.148.242
+ DEBUG [cf6e0f24] Command: [ -d /var/www/biggy/releases/20200303145100/public/assets ]
+ DEBUG [cf6e0f24] Finished in 0.211 seconds with exit status 1 (failed).
+  INFO [cb842227] Running /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303145100/public/assets as root@15.206.148.242
+ DEBUG [cb842227] Command: /usr/bin/env ln -s /var/www/biggy/shared/public/assets /var/www/biggy/releases/20200303145100/public/assets
+  INFO [cb842227] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [b412370e] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [b412370e] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [b412370e] Finished in 0.210 seconds with exit status 0 (successful).
+ DEBUG [b8ec2c2c] Running /usr/bin/env bundle check --path /var/www/biggy/shared/bundle as root@15.206.148.242
+ DEBUG [b8ec2c2c] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env bundle check --path /var/www/biggy/shared/bundle
+ DEBUG [b8ec2c2c] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31mThe following gems are missing[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * net-ssh (5.2.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * net-scp (2.0.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * sshkit (1.20.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * byebug (11.1.1)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capistrano (3.12.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capistrano-yarn (2.0.2)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capistrano3-puma (4.0.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * xpath (3.2.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * capybara (3.31.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * rubyzip (2.2.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[31m * webdrivers (4.2.0)[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [b8ec2c2c] 	
+ DEBUG [b8ec2c2c] Finished in 0.646 seconds with exit status 1 (failed).
+  INFO [2a0c6a29] Running /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet as root@15.206.148.242
+ DEBUG [2a0c6a29] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env bundle install --path /var/www/biggy/shared/bundle --jobs 4 --without development test --deployment --quiet
+  INFO [2a0c6a29] Finished in 0.701 seconds with exit status 0 (successful).
+ DEBUG [d4e02f36] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [d4e02f36] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [d4e02f36] Finished in 0.212 seconds with exit status 0 (successful).
+  INFO [f2b754a1] Running /usr/bin/env yarn install --production as root@15.206.148.242
+ DEBUG [f2b754a1] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env yarn install --production
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1myarn install v1.22.0[22m
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[1/4][22m Resolving packages...
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	⠁ 
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/4][22m Fetching packages...
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[-----------------------------------------------------------------------] 0/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####-----------------------------------------------------------------] 64/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###########----------------------------------------------------------] 152/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############------------------------------------------------------] 216/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#######################----------------------------------------------] 336/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############################--------------------------------------] 448/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#######################################------------------------------] 560/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############################################----------------------] 672/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[######################################################---------------] 776/994
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##############################################################-------] 888/994
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[34minfo[39m fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[34minfo[39m "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####################################################################] 994/994
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[33mwarning[39m " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[33mwarning[39m "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[-----------------------------------------------------------------------] 0/900
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[---------------------------------------------------------------------] 0/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#------------------------------------------------------------------] 251/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##-----------------------------------------------------------------] 384/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###----------------------------------------------------------------] 640/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[####---------------------------------------------------------------] 883/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[######------------------------------------------------------------] 1128/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[######------------------------------------------------------------] 1323/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[########----------------------------------------------------------] 1554/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########---------------------------------------------------------] 1760/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########---------------------------------------------------------] 1920/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###########-------------------------------------------------------] 2165/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[############------------------------------------------------------] 2384/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#############-----------------------------------------------------] 2610/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##############----------------------------------------------------] 2816/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############---------------------------------------------------] 3069/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[################--------------------------------------------------] 3312/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#################-------------------------------------------------] 3564/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###################-----------------------------------------------] 3802/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[####################----------------------------------------------] 4015/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####################---------------------------------------------] 4223/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[######################--------------------------------------------] 4448/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#######################-------------------------------------------] 4695/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[########################------------------------------------------] 4942/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########################-----------------------------------------] 5195/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##########################----------------------------------------] 5402/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###########################---------------------------------------] 5613/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#############################-------------------------------------] 5839/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#############################-------------------------------------] 6016/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############################-----------------------------------] 6259/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[################################----------------------------------] 6477/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#################################---------------------------------] 6678/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##################################--------------------------------] 6911/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###################################-------------------------------] 7155/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[####################################------------------------------] 7391/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####################################-----------------------------] 7654/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[######################################----------------------------] 7864/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[########################################--------------------------] 8104/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########################################-------------------------] 8281/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########################################-------------------------] 8398/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##########################################------------------------] 8630/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###########################################-----------------------] 8879/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#############################################---------------------] 9146/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##############################################--------------------] 9404/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############################################-------------------] 9657/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[################################################------------------] 9911/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#################################################----------------] 10156/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##################################################---------------] 10410/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###################################################--------------] 10665/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####################################################------------] 10918/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#####################################################------------] 11093/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#######################################################----------] 11344/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[########################################################---------] 11611/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#########################################################--------] 11855/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##########################################################-------] 12097/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[############################################################-----] 12348/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#############################################################----] 12600/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##############################################################---] 12849/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###############################################################--] 13106/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[################################################################-] 13366/13488
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[#################################################################] 13488/13488
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[----------------------------------------------------------------------] 0/1661
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###################-------------------------------------------------] 476/1661
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[##########################################-------------------------] 1032/1661
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###########################################################--------] 1472/1661
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[###################################################################] 1661/1661
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	⠁ 
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	⠁ 
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠂ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[1/2][22m ⠂ core-js
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠄ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[1/2][22m ⠄ core-js
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⡀ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⡀ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⢀ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⢀ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠠ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠠ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G[2m[2/2][22m ⠐ node-sass[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠐ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠈ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠈ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠁ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠁ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠂ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠂ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠄ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠄ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⡀ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⡀ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⢀ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⢀ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠠ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠠ waiting...
+ DEBUG [f2b754a1] 	[0K[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠐ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠐ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2m[2/2][22m ⠈ node-sass
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2m[-/2][22m ⠈ waiting...
+ DEBUG [f2b754a1] 	[0K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1B
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[1A
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	[2K
+ DEBUG [f2b754a1] 	[1G
+ DEBUG [f2b754a1] 	Done in 8.64s.
+ DEBUG [f2b754a1] 	
+  INFO [f2b754a1] Finished in 9.068 seconds with exit status 0 (successful).
+ DEBUG [26898c1b] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [26898c1b] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [26898c1b] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [ffa2895f] Running bundle exec rake assets:precompile as root@15.206.148.242
+ DEBUG [ffa2895f] Command: cd /var/www/biggy/releases/20200303145100 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; bundle exec rake assets:precompile )
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[1myarn install v1.22.0[22m
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[1/4][22m Resolving packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	⠁ 
+ DEBUG [ffa2895f] 	[0K
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[2/4][22m Fetching packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[34minfo[39m fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[34minfo[39m "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[33mwarning[39m " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[33mwarning[39m "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	Done in 4.36s.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[1myarn install v1.22.0[22m
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[1/4][22m Resolving packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	⠁ 
+ DEBUG [ffa2895f] 	[0K
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[2/4][22m Fetching packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[34minfo[39m fsevents@1.2.11: The platform "linux" is incompatible with this module.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[34minfo[39m "fsevents@1.2.11" is an optional dependency and failed compatibility check. Excluding it from installation.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[3/4][22m Linking dependencies...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[33mwarning[39m " > webpack-dev-server@3.10.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0".
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[33mwarning[39m "webpack-dev-server > webpack-dev-middleware@3.7.2" has unmet peer dependency "webpack@^4.0.0".
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	[2m[4/4][22m Building fresh packages...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	[2K
+ DEBUG [ffa2895f] 	[1G
+ DEBUG [ffa2895f] 	Done in 3.74s.
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Compiling...
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Compiled all packs in /var/www/biggy/releases/20200303145100/public/packs
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Hash: ea4427a3161a1e035605
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Version: webpack 4.41.5
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Time: 5706ms
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	Built at: 03/03/2020 2:51:53 PM
+ DEBUG [ffa2895f] 	
+ DEBUG [ffa2895f] 	                                        Asset       Size  Chunks                         Chunk Names
+ DEBUG [ffa2895f] 	       js/application-b6c7cffdfadde57ae8a8.js   69.2 KiB       0  [emitted] [immutable]  application
+    js/application-b6c7cffdfadde57ae8a8.js.br   15.3 KiB          [emitted]              
+    js/application-b6c7cffdfadde57ae8a8.js.gz   17.7 KiB          [emitted]              
+   js/application-b6c7cffdfadde57ae8a8.js.map    205 KiB       0  [emitted] [dev]        application
+js/application-b6c7cffdfadde57ae8a8.js.map.br   43.9 KiB          [emitted]              
+js/application-b6c7cffdfadde57ae8a8.js.map.gz     51 KiB          [emitted]              
+                                manifest.json  364 bytes          [emitted]              
+                             manifest.json.br  125 bytes          [emitted]              
+                             manifest.json.gz  142 bytes          [emitted]              
+Entrypoint application = js/application-b6c7cffdfadde57ae8a8.js js/application-b6c7cffdfadde57ae8a8.js.map
+[0] (webpack)/buildin/module.js 552 bytes {0} [built]
+[1] ./app/javascript/packs/application.js 742 bytes {0} [built]
+[5] ./app/javascript/channels/index.js 205 bytes {0} [built]
+ DEBUG [ffa2895f] 	
+[6] ./app/javascript/channels sync _channel\.js$ 160 bytes {0} [built]
+    + 3 hidden modules
+
+  INFO [ffa2895f] Finished in 22.784 seconds with exit status 0 (successful).
+ DEBUG [5871b8a4] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [5871b8a4] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [5871b8a4] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [a7e98de9] Running /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100/assets_manifest_backup as root@15.206.148.242
+ DEBUG [a7e98de9] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env mkdir -p /var/www/biggy/releases/20200303145100/assets_manifest_backup
+  INFO [a7e98de9] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [620ae4a1] Running /usr/bin/env ls /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [620ae4a1] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env ls /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest*
+ DEBUG [620ae4a1] 	/var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest-2ce0627fa4c435b9862ef4dcb10e63fd.json
+ DEBUG [620ae4a1] 	
+ DEBUG [620ae4a1] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [096cff21] Running /usr/bin/env ls /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest* as root@15.206.148.242
+ DEBUG [096cff21] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env ls /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest*
+ DEBUG [096cff21] 	/var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest-2ce0627fa4c435b9862ef4dcb10e63fd.json
+ DEBUG [096cff21] 	
+ DEBUG [096cff21] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [a5f48c48] Running /usr/bin/env cp /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest-2ce0627fa4c435b9862ef4dcb10e63fd.json /var/www/biggy/releases/20200303145100/assets_manifest_backup as root@15.206.148.242
+ DEBUG [a5f48c48] Command: cd /var/www/biggy/releases/20200303145100 && /usr/bin/env cp /var/www/biggy/releases/20200303145100/public/assets/.sprockets-manifest-2ce0627fa4c435b9862ef4dcb10e63fd.json /var/www/biggy/releases/20200303145100/assets_manifest_backup
+  INFO [a5f48c48] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [98215822] Running if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [98215822] Command: if test ! -d /var/www/biggy/releases/20200303145100; then echo "Directory does not exist '/var/www/biggy/releases/20200303145100'" 1>&2; false; fi
+ DEBUG [98215822] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [96c8ddef] Running bundle exec rake db:migrate as root@15.206.148.242
+ DEBUG [96c8ddef] Command: cd /var/www/biggy/releases/20200303145100 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+  INFO [96c8ddef] Finished in 1.791 seconds with exit status 0 (successful).
+  INFO [67db5632] Running /usr/bin/env ln -s /var/www/biggy/releases/20200303145100 /var/www/biggy/releases/current as root@15.206.148.242
+ DEBUG [67db5632] Command: /usr/bin/env ln -s /var/www/biggy/releases/20200303145100 /var/www/biggy/releases/current
+  INFO [67db5632] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [cf0aa8cf] Running /usr/bin/env mv /var/www/biggy/releases/current /var/www/biggy as root@15.206.148.242
+ DEBUG [cf0aa8cf] Command: /usr/bin/env mv /var/www/biggy/releases/current /var/www/biggy
+  INFO [cf0aa8cf] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG [a73e1cfb] Running /usr/bin/env ls -x /var/www/biggy/releases as root@15.206.148.242
+ DEBUG [a73e1cfb] Command: /usr/bin/env ls -x /var/www/biggy/releases
+ DEBUG [a73e1cfb] 	20200303130056
+ DEBUG [a73e1cfb] 		
+ DEBUG [a73e1cfb] 	20200303130403
+ DEBUG [a73e1cfb] 		
+ DEBUG [a73e1cfb] 	20200303130922
+ DEBUG [a73e1cfb] 		
+ DEBUG [a73e1cfb] 	20200303131203
+ DEBUG [a73e1cfb] 		
+ DEBUG [a73e1cfb] 	20200303143951
+ DEBUG [a73e1cfb] 	
+ DEBUG [a73e1cfb] 	20200303145100
+ DEBUG [a73e1cfb] 	
+ DEBUG [a73e1cfb] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 15.206.148.242
+ DEBUG [0543367f] Running [ -d /var/www/biggy/current ] as root@15.206.148.242
+ DEBUG [0543367f] Command: [ -d /var/www/biggy/current ]
+ DEBUG [0543367f] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [5ecddac7] Running /usr/bin/env readlink /var/www/biggy/current as root@15.206.148.242
+ DEBUG [5ecddac7] Command: /usr/bin/env readlink /var/www/biggy/current
+ DEBUG [5ecddac7] 	/var/www/biggy/releases/20200303145100
+ DEBUG [5ecddac7] 	
+ DEBUG [5ecddac7] Finished in 0.211 seconds with exit status 0 (successful).
+  INFO [00d407e8] Running /usr/bin/env rm -rf /var/www/biggy/releases/20200303130056 as root@15.206.148.242
+ DEBUG [00d407e8] Command: /usr/bin/env rm -rf /var/www/biggy/releases/20200303130056
+  INFO [00d407e8] Finished in 2.162 seconds with exit status 0 (successful).
+ DEBUG [0748b3d6] Running if test ! -d /var/www/biggy/current; then echo "Directory does not exist '/var/www/biggy/current'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [0748b3d6] Command: if test ! -d /var/www/biggy/current; then echo "Directory does not exist '/var/www/biggy/current'" 1>&2; false; fi
+ DEBUG [0748b3d6] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [32782630] Running [ -f /var/www/biggy/shared/tmp/pids/puma.pid ] as root@15.206.148.242
+ DEBUG [32782630] Command: [ -f /var/www/biggy/shared/tmp/pids/puma.pid ]
+ DEBUG [32782630] Finished in 0.231 seconds with exit status 1 (failed).
+  INFO [1cdee299] Running mkdir /var/www/biggy/shared/tmp/sockets -p as root@15.206.148.242
+ DEBUG [1cdee299] Command: mkdir /var/www/biggy/shared/tmp/sockets -p
+  INFO [1cdee299] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [020f91ab] Running mkdir /var/www/biggy/shared/tmp/pids -p as root@15.206.148.242
+ DEBUG [020f91ab] Command: mkdir /var/www/biggy/shared/tmp/pids -p
+  INFO [020f91ab] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [b6da874f] Running [ -f /var/www/biggy/shared/puma.rb ] as root@15.206.148.242
+ DEBUG [b6da874f] Command: [ -f /var/www/biggy/shared/puma.rb ]
+ DEBUG [b6da874f] Finished in 0.218 seconds with exit status 0 (successful).
+  INFO using conf file /var/www/biggy/shared/puma.rb
+ DEBUG [d037a0aa] Running [ -f /var/www/biggy/shared/tmp/pids/puma.pid ] as root@15.206.148.242
+ DEBUG [d037a0aa] Command: [ -f /var/www/biggy/shared/tmp/pids/puma.pid ]
+ DEBUG [d037a0aa] Finished in 0.220 seconds with exit status 1 (failed).
+ DEBUG [9c2d900b] Running if test ! -d /var/www/biggy/current; then echo "Directory does not exist '/var/www/biggy/current'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [9c2d900b] Command: if test ! -d /var/www/biggy/current; then echo "Directory does not exist '/var/www/biggy/current'" 1>&2; false; fi
+ DEBUG [9c2d900b] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [3f90027b] Running bundle exec puma -C /var/www/biggy/shared/puma.rb --daemon as root@15.206.148.242
+ DEBUG [3f90027b] Command: cd /var/www/biggy/current && ( export RACK_ENV="production" ; bundle exec puma -C /var/www/biggy/shared/puma.rb --daemon )
+ DEBUG [3f90027b] 	Puma starting in single mode...
+ DEBUG [3f90027b] 	
+ DEBUG [3f90027b] 	* Version 4.3.3 (ruby 2.6.3-p62), codename: Mysterious Traveller
+ DEBUG [3f90027b] 	
+ DEBUG [3f90027b] 	* Min threads: 4, max threads: 16
+ DEBUG [3f90027b] 	
+ DEBUG [3f90027b] 	* Environment: production
+ DEBUG [3f90027b] 	
+ DEBUG [3f90027b] 	* Daemonizing...
+ DEBUG [3f90027b] 	
+  INFO [3f90027b] Finished in 0.853 seconds with exit status 0 (successful).
+ DEBUG [5f4b5aea] Running if test ! -d /var/www/biggy/releases; then echo "Directory does not exist '/var/www/biggy/releases'" 1>&2; false; fi as root@15.206.148.242
+ DEBUG [5f4b5aea] Command: if test ! -d /var/www/biggy/releases; then echo "Directory does not exist '/var/www/biggy/releases'" 1>&2; false; fi
+ DEBUG [5f4b5aea] Finished in 0.409 seconds with exit status 0 (successful).
+  INFO [b78b476e] Running /usr/bin/env echo "Branch master (at 46c0ae5f6479644de7ae0834edfc1963a246b563) deployed as release 20200303145100 by vedha" >> /var/www/biggy/revisions.log as root@15.206.148.242
+ DEBUG [b78b476e] Command: cd /var/www/biggy/releases && /usr/bin/env echo "Branch master (at 46c0ae5f6479644de7ae0834edfc1963a246b563) deployed as release 20200303145100 by vedha" >> /var/www/biggy/revisions.log
+  INFO [b78b476e] Finished in 0.811 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-04 19:48:09 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-03-04 19:48:30 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2a7be933] Running /usr/bin/env mkdir -p /tmp as root@localhost
+ DEBUG [2a7be933] Command: /usr/bin/env mkdir -p /tmp
